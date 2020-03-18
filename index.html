@@ -1,1 +1,1032 @@
 
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <!-- Load MBOX First -->
+    <script type="text/javascript" src="/themes/custom/cmatgame/js/mbox.js"></script>
+    <script type="text/javascript" src="/modules/custom/cmatgame_ads_analytics/js/advertisement-ads.js"></script>
+        <script type="text/javascript" src="/modules/custom/cmatgame_core/js/lazysizes.min.js" async=""></script>
+    <meta charset="utf-8" />
+<link rel="canonical" href="//www.coolmathgames.com/" />
+<meta name="keywords" content="coolmaths, coolmath, cool, math, maths, game, games, puzzle, puzzles, free, online, strategy, skill, shapes, colors, logic, memory, board, read, reading, spell, spelling, geography, science, coloring, maze, mazes, arithmetic, addition, subtraction, multiplication, division, decimals, fractions" />
+<meta name="description" content="Coolmath Games is a brain-training site, for everyone, where logic &amp; thinking &amp; math meets fun &amp; games. These games have no violence, no empty action, just a lot of challenges that will make you forget you&#039;re getting a mental workout!" />
+<meta property="og:image" content="//www.coolmathgames.com/themes/custom/cmatgame/images/CMG_OG_image.png" />
+<link media="only screen and (max-width: 640px)" rel="alternate" href="//m.coolmathgames.com/" />
+<link rel="shortcut icon" href="//www.coolmathgames.com/themes/custom/cmatgame/favicon.ico" type="image/vnd.microsoft.icon" />
+<script type="text/javascript">
+	  var valid_test_environment = false;
+      function getCookie(key) {
+        var keyValue = document.cookie.match("(^|;) ?" + key + "=([^;]*)(;|$)");
+        return keyValue ? keyValue[2] : null;
+      }
+      function setCookie1(cname, cvalue, hours) {
+        var d = new Date();
+        d.setTime(d.getTime() + (hours*60*60*1000));
+        var expires = 'expires='+ d.toUTCString();
+        document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
+      }
+      function getParameterByName(name) {
+        var regexS = '[\?&]' + name + '=([^&#]*)';
+        var regex = new RegExp(regexS);
+        var results = regex.exec(location.href);
+        if (results === null) {
+          return '';
+        }
+        return decodeURIComponent(results[1].replace(/\+/g, ' '));
+      }
+      var cmg_gdpr_check = getCookie('GDPR');
+      
+      var cmg_school_whitelisted = getCookie('cmg_schwl');
+      if(cmg_school_whitelisted === null && (typeof valid_test_environment !== 'undefined' && valid_test_environment) && typeof myDebugAction === 'function') {
+        cmg_school_whitelisted = myDebugAction();
+      }
+
+      var freeTrialUser = false;
+      var date = new Date();
+      var hours = date.getHours();
+      var currentMonth = date.getMonth();
+      var currentYear = date.getFullYear();
+      var day = date.getDay();
+      var month_names_short = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      var currentMonthName = month_names_short[currentMonth];
+      var schoolStartHour = 7;
+      var schoolEndHour = 15;
+      var cmg_no_ads_debug = false;
+      //var cmg_no_ads = false;
+      if(typeof subscriberLeg === 'undefined' || subscriberLeg === null || subscriberLeg === '') {
+        subscriberLeg = 'Default Leg';
+        if(typeof myDebugAction === 'function' && (typeof valid_test_environment !== 'undefined' && valid_test_environment) ) {
+          myDebugAction();
+        }
+      }
+      if(typeof freeGameLimit === 'undefined' || freeGameLimit === null) {
+        freeGameLimit = 0;
+      }
+      if(typeof cmg_no_ads === 'undefined' && cmg_no_ads_debug && (typeof valid_test_environment !== 'undefined' && valid_test_environment)) {
+        cmg_no_ads = true;
+      }
+      var schoolHours = false;
+      var schoolHolidays = ["Jul 4","Sep 3","Nov 22","Nov 23"];
+      var schoolHoliday = false;
+
+      //TODO -- Summer vacation dates
+      var summerVacationStart = new Date('07/1/'+currentYear);
+      var summerVacationEnd = new Date('07/10/'+currentYear);
+      
+      var today_month_day = currentMonthName + ' ' + date.getDate();
+      if(schoolHolidays.indexOf(today_month_day) !== -1 || (date >= summerVacationStart && date <= summerVacationEnd) || day === 6 || day == 0) {
+        schoolHoliday = true;
+      }
+      var currentMonthName = month_names_short[currentMonth];
+      if(!schoolHoliday && hours >= schoolStartHour && hours <= schoolEndHour) {
+        schoolHours = true;
+      }
+      var targetStateUser = false;
+      if(typeof targeted_state !== 'undefined' && targeted_state !== null && targeted_state) {
+        targetStateUser = true;
+      }
+      if(typeof watchAdtoUnlockGame == 'undefined') {
+        watchAdtoUnlockGame = false;
+      }
+      var cmg_active_anonymous_user = getCookie('cmg_active_anonymous_user');
+      var cmatgame_editor = getCookie('cmg_editor');
+      if(typeof cmg_active_anonymous_user !== 'undefined' && cmg_active_anonymous_user !== null) {
+        ////console.log('We have an active school hours session');
+      }
+      //Display Ads to anonymous users only if the user is not from a targeted state or it is school hours. 
+      //   Do not display ads for targeted state user during non school hours, but free game play is restricted 
+      if(!schoolHours && targetStateUser && cmg_active_anonymous_user === null && cmatgame_editor === null) {
+        freeTrialUser = true;
+     } 
+   </script>
+<script type="text/javascript">
+	   function checkIfFlashIsEnabled() {
+          var ie_flash;
+          try { ie_flash = (window.ActiveXObject && (new ActiveXObject("ShockwaveFlash.ShockwaveFlash")) !== false) } catch(err) { ie_flash = false; }
+          var _flash_installed = ((typeof navigator.plugins != "undefined" && typeof navigator.plugins["Shockwave Flash"] == "object") || ie_flash);
+          if(typeof _flash_installed == "undefined" || !_flash_installed) {
+            return false;
+          } else {
+            return true;
+          }
+       } 
+       function trackEvent(category, action, label, noninteraction) {
+          if(typeof __gaTracker === 'undefined')
+            return;
+            noninteraction = noninteraction || 0;
+           //console.log('Tracked: ' + category + ' ' + action + ' ' + label + ' noninteraction: ' + noninteraction);
+          __gaTracker('send', {
+              'hitType': 'event',          // Required.
+              'eventCategory': category,   // Required.
+              'eventAction': action,      // Required.
+              'eventLabel': label,
+              'eventValue': 0,
+              'nonInteraction': noninteraction
+          });
+      }
+      function trackSocial(network,action,target) {
+          if(typeof __gaTracker === 'undefined')
+            return;
+          __gaTracker('send', {
+              'hitType': 'social',          // Required.
+              'socialNetwork': network,
+              'socialAction': action,
+              'socialTarget': target
+          });
+      }
+	  </script>
+<script src="/modules/custom/cmatgame_ads_analytics/js/jquery.min.js?v=3.2.1"></script>
+<script type="text/javascript">
+		  var hide_preroll_ads = false; 
+          var preroll_ads_timer = 15;
+		  
+          cmatgame_subscriber = getCookie("cmg_sx");
+          //check if school is whitelisted
+          if(cmg_school_whitelisted !== null && getCookie("cmg_schwl") !== null) {
+            cmg_school_whitelisted = getCookie("cmg_schwl");
+            cmatgame_subscriber = getCookie("cmg_schwl");
+          } else if(cmg_school_whitelisted === null && typeof cmg_no_ads_debug !== "undefined" && cmg_no_ads_debug) {
+           //console.log("KY school hours");
+           cmatgame_subscriber = cmg_no_ads_debug;
+          }
+          if(cmg_gdpr_check !== null) {
+            var cmg_gdpr_all_check = getCookie("GDPR_All");  //GDPR_All cookie is set when user selects accept all cookies in the GDPR overlay
+            var cmg_gdpr_first_check = getCookie("GDPR_First");
+            var cmg_gdpr_reject_check = getCookie("GDPR_Reject");
+            if(cmg_gdpr_all_check == null && (cmg_gdpr_first_check != null || cmg_gdpr_reject_check !=null)) {  //user either accepted only first party cookies or rejected all cookies so do not display ads
+              cmatgame_subscriber = getCookie("GDPR");
+            }
+          }
+          isRemoveAdSwfJWPLayer = false;
+          jQuery(document).ready(function() {
+          if(typeof isAdblockerOn === "undefined"){
+            if(typeof __gaTracker !== "undefined") {
+             __gaTracker("send", {
+              "hitType": "event",          // Required.
+              "eventCategory": "Page-level-ad-blocker2",   // Required.
+              "eventAction": "AdBlockerDetected",      // Required.
+              "eventLabel": document.title,
+              "eventValue": 1,
+              "nonInteraction": 1
+              });
+            }
+          } else {
+           if(typeof __gaTracker !== "undefined") {
+              __gaTracker("send", {
+                "hitType": "event",          // Required.
+                "eventCategory": "Page-level-ad-blocker2",   // Required.
+                "eventAction": "AdBlockerNotDetected",      // Required.
+                "eventLabel": document.title,
+                "eventValue": 1,
+                "nonInteraction": 1
+            });
+           }
+         } 
+		 function removeAdSwfJWPLayer() {}
+         var isChrome = navigator.userAgent.toLowerCase().indexOf("chrome") > -1;
+         if(!jQuery(".adtxt").is(":visible") && isChrome) {
+           removeAdSwfJWPLayer();
+         } 
+        });         
+        </script>
+<script type="text/javascript">   
+           if((typeof cmatgame_subscriber === "undefined" || cmatgame_subscriber === "" || cmatgame_subscriber === null || typeof freeTrialUser === "undefined"  ) && !freeTrialUser) {
+
+               var tyche = { 
+               mode: "tyche", 
+               config: "//config.playwire.com/1023174/v2/websites/71134/banner.json"
+                };
+               var pwScript = document.createElement("script");
+               pwScript.type = "text/javascript";
+               pwScript.src = "//cdn.intergi.com/hera/tyche.js";
+               pwScript.async = true;
+               document.getElementsByTagName("head")[0].appendChild(pwScript);
+            }
+          </script>
+<script type="text/javascript">
+		  gamePage = false;
+          quizPage = false;
+          var ad_refresh_timer_interval = 60000; 
+          var ad_refresh_event_interval = 30000;
+		</script>
+<script type="text/javascript">
+          var $elements_with_events = jQuery('.js-track');
+          if($elements_with_events.length > 0) {
+            $elements_with_events.each(function(){
+            var action = typeof jQuery(this).data('action') !== 'undefined' ? jQuery(this).data('action') : 'click';
+            jQuery(this).on(action, function(){
+            var category, label;
+            category = typeof jQuery(this).data('category') !== 'undefined' ? jQuery(this).data('category') : ( jQuery(this).text() || 'Unassigned' ); 
+            label = typeof jQuery(this).data('label') !== 'undefined' ? jQuery(this).data('label') :  ( jQuery(this).attr('class') || 'Unassigned' );
+            trackEvent(category,'click',label);
+           });
+         });
+        }            
+       </script>
+
+      <title>Cool Math Games - Free Online Math Games, Cool Puzzles, and More</title>
+      <link rel="stylesheet" media="all" href="/sites/default/files/css/css_FLn9Vgaj1H-zO3jZ-GqN1nXlcK9yHiMTaPS5zXQQkbg.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_tPekSq3dahIk3gftFpe03_UoPATWcXA3m2gymxAn96E.css" />
+
+        <script type="text/javascript">
+          var userAgent = window.navigator.userAgent.toLowerCase();
+          if(userAgent.indexOf('macintosh') > -1 && 'ontouchend' in document) {  //Mobile
+            if(window.location.hostname.indexOf("d8-dev.coolmathgames") != -1) {  //stage
+              window.location = "https://d8-m-dev.coolmathgames.com" + window.location.pathname;
+            } else if(window.location.hostname.indexOf("www.coolmathgames") != -1) { //prod
+              window.location = "https://m.coolmathgames.com" + window.location.pathname;
+            }
+          }
+        </script>
+        <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"frontpage","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"clientside_validation_jquery":{"validate_all_ajax_forms":2,"force_validate_on_blur":false},"user":{"uid":0,"permissionsHash":"c95aaebf1ca44c4827454d0158fc52317722fd64b54ab1580fd1cfe15525a489"}}</script>
+
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="/sites/default/files/js/js_afLhJ8SH0nVtp69C7WRy_S9bkM9hPMJt5ulfOtTroaI.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="/sites/default/files/js/js_ZXit6v9_k5naT0civFtqbVFJbHOkxiUNeujZLO7ywbs.js"></script>
+
+        </head>
+        <body class="path-frontpage page-frontpage front not-active-user">
+                    <a href="#main-content" class="visually-hidden focusable">
+            Skip to main content
+          </a>
+          
+          <script type="text/javascript">
+            jQuery(document).ready(function() {
+              cmg_gdpr_check = getCookie("GDPR");
+              cmg_gdpr_all_check = getCookie("GDPR_All");
+              cmg_gdpr_first_check = getCookie("GDPR_First");
+              cmg_gdpr_reject_check = getCookie("GDPR_Reject");
+              if (cmg_gdpr_check != null && cmg_gdpr_check == "true") {
+                if (cmg_gdpr_all_check == null && cmg_gdpr_first_check == null && cmg_gdpr_reject_check == null) { // user is visiting our site firsttime from one of GDPR countries
+                  jQuery("#yourCookieChoices").show();
+                  //remove_ads_from_free_game_pages(); jQuery('.content-wrapper').css('pointer-events','default');
+                } else if (cmg_gdpr_first_check !== null || cmg_gdpr_reject_check !== null) { //user selected first party cookies or rejected all cookies so we need to remove ads
+                  remove_ads_from_free_game_pages();
+                  var footerlink = '<li class="menu__item is-leaf last leaf"><a href="/cookie-choices" class="menu__link">Your Cookie Choices</a></li>';
+                  jQuery(".footer-menu-column-0 .footer-menu").append(footerlink);
+                  //jQuery('.content-wrapper').css('pointer-events','default');
+                } else if (cmg_gdpr_all_check !== null) { //user accepted all cookies
+                  var footerlink = '<li class="menu__item is-leaf last leaf"><a href="/cookie-choices" class="menu__link">Your Cookie Choices</a></li>';
+                  jQuery(".footer-menu-column-0 .footer-menu").append(footerlink);
+                }
+              }
+            });
+          </script>
+                      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="global-wrapper">
+  <div class="global-content-wrapper">
+    <header class="main-header" role="banner" aria-label="Site header">
+      <div class="header-wrapper">
+          <div>
+      <div class="other-sites-wrapper">
+    <div class="pane-bean-flash-top">
+      <a href="https://www.coolmathgames.com/coolmath-games-and-flash">Coolmath Games and FLash</a>
+    </div>
+    <div class="pane-bean-cm4k-top">
+      <a href="https://www.coolmath4kids.com"><img src="/themes/custom/cmatgame/images/cmatgameimages/math-games-for-kids.png" alt="math-games-for-kids.png"></a>
+    </div>
+  </div>
+      <div class="logo-container">
+      <a href="/" title="Home" rel="home" class="site-branding__logo"><img src="/themes/custom/cmatgame/logo.png" alt="Home"/></a>
+    </div>
+    <div class="right-header-block">
+    <div class="pane-cmatgame-subscription-userloginbar2">
+      <div id="user-login-form">
+        <div class="item-list">
+          <ul class="welcome-box">
+                          <li>
+                <a href="/user/login?destination=" title="Subscriber Login">Subscriber Login</a>
+              </li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel-pane pane-block pane-bean-new-go-ad-free">
+      <a onclick="goadfree_event_handler();" href="/signup/b2df5a33?origin="><img src="/themes/custom/cmatgame/images/cmatgameimages/go-ad-free.png"></a>
+    </div>
+  </div>
+
+  </div>
+
+        <div class="header-banner-block">
+          
+            <div>
+    <nav role="navigation" aria-labelledby="block-desktopheadermenu-menu" id="block-desktopheadermenu">
+            
+  <h2 class="visually-hidden" id="block-desktopheadermenu-menu">Desktop Header menu</h2>
+  
+
+        
+      <div class="pane-menu-menu-desktop-header-menu">
+      <div class="pane-content">
+                                    <ul class="menu">
+                                                                                    <li>
+                                                                                        <a href="/1-strategy-games" class="menu_strategy menu__link" data-drupal-link-system-path="taxonomy/term/6">Strategy</a>
+                                              </li>
+                                                                                    <li>
+                                                                                        <a href="/1-skill-games" class="menu_skill menu__link" data-drupal-link-system-path="taxonomy/term/46">Skill</a>
+                                              </li>
+                                                                                    <li>
+                                                                                        <a href="/1-number-games" class="menu_numbers menu__link" data-drupal-link-system-path="taxonomy/term/151">Numbers</a>
+                                              </li>
+                                                                                    <li>
+                                                                                        <a href="/1-logic-games" class="menu_logic menu__link" data-drupal-link-system-path="taxonomy/term/91">Logic</a>
+                                              </li>
+                                                                                    <li>
+                                                                                        <a href="/trivia" class="menu_trivia menu__link" data-drupal-link-system-path="trivia">Trivia</a>
+                                              </li>
+                                          <li class="menu__item is-expanded expanded">
+                                                  <span  class="menu_more menu__link nolink">More</span>
+                                                                                  <div class="expandable-wrapper">
+                    <ul class="menu">
+                                                              <li >
+                                                                    <a href="/1-classic-games" class="menu_classic menu__link" data-drupal-link-system-path="taxonomy/term/211">Classic</a>
+                                              </li>
+                                                              <li >
+                                                                    <a href="/1-word-games" class="menu_word games menu__link" data-drupal-link-system-path="taxonomy/term/1059">Word Games</a>
+                                              </li>
+                                                              <li >
+                                                                    <a href="/0-jigsaw-puzzles" class="menu_puzzles menu__link" data-drupal-link-system-path="0-jigsaw-puzzles">Puzzles</a>
+                                              </li>
+                                                              <li >
+                                                                    <a href="/1-memory-games" class="menu_memory menu__link" data-drupal-link-system-path="taxonomy/term/181">Memory</a>
+                                              </li>
+                                                              <li >
+                                                                    <a href="/1-geography-games" class="menu_geography menu__link" data-drupal-link-system-path="taxonomy/term/206">Geography</a>
+                                              </li>
+                                                              <li >
+                                                                    <a href="/1-science-games" class="menu_science menu__link" data-drupal-link-system-path="taxonomy/term/626">Science</a>
+                                              </li>
+                                                              <li >
+                                                                    <a href="/1-html5-games" class="menu_html5 menu__link" data-drupal-link-system-path="taxonomy/term/943">HTML5</a>
+                                              </li>
+                      </ul>
+                    </div>
+                    
+                              </li>
+                                                                                    <li>
+                                                                                        <a href="/1-playlists" class="menu_playlists menu__link" data-drupal-link-system-path="1-playlists">Playlists</a>
+                                              </li>
+                                                                                    <li>
+                                                                                        <a href="/random" class="menu_random menu__link random-redirect">Random!</a>
+                                              </li>
+                                                                                    <li>
+                                                                                        <a href="/1-daily-games" class="menu_unlocked menu__link" data-drupal-link-system-path="taxonomy/term/1056">Daily Games</a>
+                                              </li>
+                                                                                    <li >
+                                                                                        <a href="/1-complete-game-list" class="menu_allgames menu__link" data-drupal-link-system-path="1-complete-game-list">All Games A-Z</a>
+                                              </li>
+                      </ul>
+                            </div>
+    </div>
+  
+
+  </nav>
+
+  </div>
+
+          <div class="panel-pane pane-block pane-cmatgame-search-search-game">
+            <div id="cmatgame-search-block-form">
+  <div class="form-item">
+    <label for="edit-search-bar">Search bar
+    </label>
+    <input placeholder="Search by game name" type="text" id="edit-search-bar" name="search_bar" value="" size="60" maxlength="128" class="form-text">
+    <div id="close-search-box" style="display: none;">X</div>
+  </div>
+  <div class="search-results-container" style="display: none;"></div>
+</div>
+          </div>
+        </div>
+          <div>
+    
+<div id="block-adstop-homepage-728x90" class="block block-cmatgame-core block-adstop-homepage-728x90">
+  
+    
+      <div class="view-content">
+      <div class="item-list"><ol><li class="first last"><div class="panel-pane pane-block pane-cmatgame-advertisement-cm-g-homepage-728-90 top-728x90"><div class="ad-wrapper"><!-- 728 x 90 ATF Desktop --><div data-pw-desk="leaderboard_atf"></div></div></div></li></ol></div>
+    </div>
+  </div>
+
+  </div>
+
+      </div>
+    </header>
+    <div class="content-column-wrapper clearfix">
+      <div class="content-layout">
+        <main class="main-column" role="main">
+          <section class="section">
+            <div class="inside">
+                                <div>
+    
+<div id="block-adsleft-homepage-160x600" class="block block-cmatgame-core block-adsleft-homepage-160x600">
+  
+    
+      <div class="view-content">
+      <div class="panel-pane pane-block pane-cmatgame-advertisement-cm-g-homepage-160x600-left" id="left-ad-home"><div class="ad-wrapper"><div id="left-ad" class="ad-holder"><!-- will be appended later if window/game size requirements are met<div data-pw-desk="sky_atf"></div> --></div></div></div>
+    </div>
+  </div>
+
+  </div>
+
+                            <div class="panel-pane pane-page-content">
+                <div class="pane-content">
+                  <div class="global-wrapper-content">
+                    <a id="main-content" tabindex="-1"></a>
+                      <div>
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+<div id="block-cmatgame-cmatgame-system-main" class="block block-system block-system-main-block">
+  
+    
+      <div class="view-content">
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block-region-content">
+<div class="block block-cmatgame-core block-newcategoryhome">
+  
+    
+      <div class="view-content">
+      <div class="panel-pane pane-entity-view pane-queues new-games"><div class="home-queues"><h2 class="common-title clearfix"><div class="link-in-title-block"><a href="/1-new-games">See more</a></div><span class="title-with-button">New Games</p></h2><div class="game-item"><div class="game-link-wrapper"><a href="/0-mathventure"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Mathventure Game" title="Mathventure" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/mathventure-game-logo.png?itok=gACAgfCa" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Mathventure</h3></a></div><div class="game-item-description"><div class="field-body"><p>Explore a huge mathiverse, chock full of equations. Grab the right numbers, watch out for traps, and hit the target score!</p>
+</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-leap-the-synth"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Leap the Synth Game" title="Leap the Synth" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/leap-the-synth-game-logo.png?itok=Z1eC7p5-" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Leap the Synth</h3></a></div><div class="game-item-description"><div class="field-body"><p>You've been warped into your own video game. Move to the beat, squash bugs in your code, and get back to reality!</p>
+</div></div></div><div class="homepage-trivia-promo-2"></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-swing-sticks"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Swing Sticks Game" title="Swing Sticks" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/swing-stricks-game-logo.png?itok=HkQPBynW" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Swing Sticks</h3></a></div><div class="game-item-description"><div class="field-body"><p>Time to get swingin'! Use rope-like movements to light up the circles.</p>
+</div></div></div><div class="game-queue-column-wrapper-new clearfix"><div class="game-item"><div class="game-link-wrapper"><a href="/0-cannon"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Cannon Game" title="Cannon" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/cannon-game-logo.png?itok=_7oVfYtb" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Cannon</h3></a></div><div class="game-item-description"><div class="field-body">Can you blast your way to the flag?</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-amidst-the-sky"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Amidst the Sky Game" title="Amidst the Sky" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/amidst-the-sky-game-logo.png?itok=ub37uN1r" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Amidst the Sky</h3></a></div><div class="game-item-description"><div class="field-body">Soar through the clouds.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-unblock-the-ball"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Unblock the Ball Game" title="Unblock the Ball" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/unblock-the-ball-game-logo.png?itok=dUuPdz4Q" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Unblock the Ball</h3></a></div><div class="game-item-description"><div class="field-body">Slide and roll to the goal!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-the-ranger-with-the-magic-bow"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="The Ranger with the Magic Bow Game" title="The Ranger with the Magic Bow" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/the-ranger-with-the-magic-bow-game-logo.png?itok=Gkku2onP" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">The Ranger with the Magic Bow</h3></a></div><div class="game-item-description"><div class="field-body">Unleash Fire and Ice!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-the-final-earth-2"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="The Final Earth 2 Game" title="The Final Earth 2" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/the-final-earth-2-game-logo.png?itok=5iV64xki" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">The Final Earth 2</h3></a></div><div class="game-item-description"><div class="field-body">Become the mayor of an outer space colony!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-black-vs-blue"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Black vs. Blue Game" title="Black vs. Blue" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/black-vs-blue-game-logo.png?itok=Sq0M2N3R" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Black vs. Blue</h3></a></div><div class="game-item-description"><div class="field-body">Capture the most territory!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-hexable"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Hexable Game" title="Hexable" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/hexable-game-logo.png?itok=iwRAfj85" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Hexable</h3></a></div><div class="game-item-description"><div class="field-body">A six-sided twist on 10x10.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-viewnemy"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Viewnemy Game" title="Viewnemy" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/viewnemy-game-logo.png?itok=my6_1bZ6" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Viewnemy</h3></a></div><div class="game-item-description"><div class="field-body">Sneak through the shadows.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-slice-of-zen"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Slice of Zen Game" title="Slice of Zen" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/slice-of-zen-game-logo.png?itok=vXZLRPsx" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Slice of Zen</h3></a></div><div class="game-item-description"><div class="field-body">Carve it up like a turkey dinner!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-o-well"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="O-Well Game" title="O-Well" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/o-well-game-logo.png?itok=M5LqUR1F" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">O-Well</h3></a></div><div class="game-item-description"><div class="field-body">See if you can climb your way out of this!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-marble-trap"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Marble Trap Game" title="Marble Trap" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/marble-trap-game-logo.png?itok=SHtU1Ei3" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Marble Trap</h3></a></div><div class="game-item-description"><div class="field-body">Don't lose your marble!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-link-it-up"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Link It Up! Game" title="Link It Up!" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/link-it-up-game-logo.png?itok=yQibm49p" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Link It Up!</h3></a></div><div class="game-item-description"><div class="field-body">Stretch the line to cross the spikes!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-get-10"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Get 10 Game" title="Get 10" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/get-10-game-logo.png?itok=IRXL2Wm9" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Get 10</h3></a></div><div class="game-item-description"><div class="field-body">As easy as 1, 2, 3... 10!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-fireboy-watergirl-5-elements"><div class="field-image"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Fireboy and Watergirl 5: Elements Game" title="Fireboy and Watergirl 5: Elements" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/fireboy-and-watergirl-elements-game-logo.png?itok=pp5s_MCA" class="lazyload" typeof="Image" />
+
+</div><h3 class="game-title">Fireboy and Watergirl 5: Elements</h3></a></div><div class="game-item-description"><div class="field-body">Explore all-new temples!</div></div></div></div></div><div class="top-games-container">
+
+<div class="game-jam-homepage">
+ <div class="game-jam-container">
+    <div class="top-container-game-jam">
+      <div class="game-jam-contest-and-text">
+        <a href="/game-jam">Think you can make a great game?</a>
+      </div>
+      <div class="game-jam-item">
+        <div class="game-jam-description"><img src="/sites/cmatgame/files/game-jam/game-jam-homepage/yellow-star.png" class="game-jam-star" /> Enter the Coolmath Game Jam, our <br>annual game creation contest!</div>
+      </div>
+      <div class="game-jam-item">
+        <div class="game-jam-description"><img src="/sites/cmatgame/files/game-jam/game-jam-homepage/yellow-star.png" class="game-jam-star" /> Here's the theme: "Escape!"</div>
+      </div>
+   <div class="game-jam-item">
+        <div class="game-jam-description"><img src="/sites/cmatgame/files/game-jam/game-jam-homepage/yellow-star.png" class="game-jam-star" /> Grand Prize: $1,500!</div>
+    </div>
+    <div class="game-jam-more-link"><a href="/game-jam">LEARN MORE</a></div>
+    <div class="deadline-text"><a href="/game-jam"><img src="/sites/default/files/game-jam/game-jam-homepage/deadline-image.png"></a></div>
+  </div>
+</div>
+</div>
+
+
+<div class="top-games clearfix"><h2 class="top-games-header">TOP TEN GAMES</h2><div class="top-game-item"><div class="game-link-wrapper"><a href="/0-run-3"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Run 3 Game" title="Run 3" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/run-3-game-logo-new.png?itok=c4fw5uBE" class="lazyload" typeof="Image" />
+
+<h3 class="top-game-title">Run 3</h3></a></div><div class="game-item-description"> Run, skate and jump through a brand new galaxy!</div></div><div class="top-game-item"><div class="game-link-wrapper"><a href="/0-fireboy-and-water-girl-in-the-forest-temple"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Fireboy and Watergirl in the Forest Temple Game" title="Fireboy and Watergirl in the Forest Temple" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/fireboy-watergirl-forest-temple-game-logo.png?itok=wS61AAff" class="lazyload" typeof="Image" />
+
+<h3 class="top-game-title">Fireboy and Watergirl in the Forest Temple</h3></a></div><div class="game-item-description">Help them work together!</div></div><div class="top-game-item"><div class="game-link-wrapper"><a href="/0-chess"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Chess Game" title="Chess" data-src="/sites/default/files/styles/thumbnail_small/public/chess-icon.png?itok=v9F2dhmN" class="lazyload" typeof="Image" />
+
+<h3 class="top-game-title">Chess</h3></a></div><div class="game-item-description">Play Chess against the computer or your friends!</div></div><div class="top-game-item"><div class="game-link-wrapper"><a href="/0-papas-freezeria"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Papa&#039;s Freezeria Game" title="Papa&#039;s Freezeria" data-src="/sites/default/files/styles/thumbnail_small/public/game-logo-papas-freezeria_1.gif?itok=15EwmCEb" class="lazyload" typeof="Image" />
+
+<h3 class="top-game-title">Papa's Freezeria</h3></a></div><div class="game-item-description">Use counting and time management.</div></div><div class="top-game-item"><div class="game-link-wrapper"><a href="/0-moto-x3m"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Moto X3M Game" title="Moto X3M" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/moto-x3m-game-logo.png?itok=PLQrXlit" class="lazyload" typeof="Image" />
+
+<h3 class="top-game-title">Moto X3M</h3></a></div><div class="game-item-description">Can you make it through the course?</div></div><div class="top-game-item"><div class="game-link-wrapper"><a href="/0-snake"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Snake Game" title="Snake" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/snake-game-logo.png?itok=0-4kMm9l" class="lazyload" typeof="Image" />
+
+<h3 class="top-game-title">Snake</h3></a></div><div class="game-item-description">Eat the apples. How long can you survive?</div></div><div class="top-game-item"><div class="game-link-wrapper"><a href="/0-8-ball-pool"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="8 Ball Pool Game" title="8 Ball Pool" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/8-ball-pool-game-logo_0.png?itok=BE3TUX_h" class="lazyload" typeof="Image" />
+
+<h3 class="top-game-title">8 Ball Pool</h3></a></div><div class="game-item-description">Grab a cue and take your best shot!</div></div><div class="top-game-item"><div class="game-link-wrapper"><a href="/0-copter-royale"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Copter Royale Game" title="Copter Royale" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/copter-royale-game-logo.png?itok=HBMnZ-_r" class="lazyload" typeof="Image" />
+
+<h3 class="top-game-title">Copter Royale</h3></a></div><div class="game-item-description">Upgrade your copter and be the last one flying!</div></div><div class="top-game-item"><div class="game-link-wrapper"><a href="/0-hangman"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Hangman Game" title="Hangman" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/hangman-game-logo-2.png?itok=hwzxvHLQ" class="lazyload" typeof="Image" />
+
+<h3 class="top-game-title">Hangman</h3></a></div><div class="game-item-description">Solve word puzzles to stay alive!</div></div><div class="top-game-item"><div class="game-link-wrapper"><a href="/0-powerline-io"><img src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Powerline.io Game" title="Powerline.io" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/powerline-icon-with-new-corner_0.png?itok=n9GEcFrI" class="lazyload" typeof="Image" />
+
+<h3 class="top-game-title">Powerline.io</h3></a></div><div class="game-item-description">Earn XP and Achievements in multiplayer Snake!</div></div></div></div><div class="link-more-wrapper clearfix"><a href="/1-new-games">More New Games</a></div>
+    </div>
+  </div>
+
+<div class="block block-cmatgame-core block-popularcategoryhome">
+  
+    
+      <div class="view-content">
+      <div class="pane-views-panes"><div class="pane-queues"><h2 class="common-title clearfix"><div class="link-in-title-block"><a href="/1-popular-games">See more</a></div><span class="title-with-button">Popular Games</span></h2><div class="game-queue-column-wrapper clearfix"><div class="game-item"><div class="game-link-wrapper"><a href="/0-papas-scooperia"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Papa&#039;s Scooperia Game" title="Papa&#039;s Scooperia" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/icon_83x50_text_coolmath1.gif?itok=uAbSEEti" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Papa's Scooperia</h3></a></div><div class="game-item-description"><div class="field-body">Grab your scoop and serve up cookie sundaes!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-b-cubed"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="B-Cubed Game" title="B-Cubed" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-b-cubed-83x50.gif?itok=DOTV8WHp" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">B-Cubed</h3></a></div><div class="game-item-description"><div class="field-body">Remove the cubes and get to the red square.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-run-2"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Run 2 Game" title="Run 2" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-run-2.gif?itok=OUON_qjA" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Run 2</h3></a></div><div class="game-item-description"><div class="field-body">Intense wall-jumping fun in a 3D obstacle course!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-worlds-hardest-game"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="World&#039;s Hardest Game Game" title="World&#039;s Hardest Game" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-worlds-hardest-game.gif?itok=hpcLyXM1" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">World's Hardest Game</h3></a></div><div class="game-item-description"><div class="field-body">It really is. Don't ask us how to beat it. We can't.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-iq-ball"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="IQ Ball Game" title="IQ Ball" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-iq-ball.gif?itok=uxRL9p9g" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">IQ Ball</h3></a></div><div class="game-item-description"><div class="field-body">Bullseye! Aim your grabber to reach the target.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-clicker-heroes"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Clicker Heroes Game" title="Clicker Heroes" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/clicker-heroes-game-logo.png?itok=B0r7I2gs" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Clicker Heroes</h3></a></div><div class="game-item-description"><div class="field-body">Defeat monsters and level up your heroes.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-bloxorz"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Bloxorz Game" title="Bloxorz" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-bloxorz.gif?itok=0lv9rpnh" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Bloxorz</h3></a></div><div class="game-item-description"><div class="field-body">Flip the block over and over to get it to fall in the hole.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-ovo"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="OvO Game" title="OvO" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/ovo-game-logo.png?itok=lKfbaYtT" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">OvO</h3></a></div><div class="game-item-description"><div class="field-body">Run, jump, slide, and dive into the flag!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-archery-world-tour"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Archery World Tour Game" title="Archery World Tour" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/archery-world-tour.png?itok=q1Uwb7xx" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Archery World Tour</h3></a></div><div class="game-item-description"><div class="field-body">Hit the bullseye and score a perfect 10!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-moto-x3m-pool-party"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Moto X3M Pool Party Game" title="Moto X3M Pool Party" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/moto-x3m-pool-party-logo.png?itok=m2sTiXzO" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Moto X3M Pool Party</h3></a></div><div class="game-item-description"><div class="field-body">Grab your bike and hit the pool!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-awesome-tanks-2"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Awesome Tanks 2 Game" title="Awesome Tanks 2" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/awesome-tanks-2-game-logo.png?itok=WPM8VdnE" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Awesome Tanks 2</h3></a></div><div class="game-item-description"><div class="field-body">Blast the enemy tanks with all new weapons!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-defly-io"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Defly.io Game" title="Defly.io" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/defly-io-game-logo.png?itok=qsh5cbdj" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Defly.io</h3></a></div><div class="game-item-description"><div class="field-body">Specialize your copter, build a base, conquer the map!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-poptropica"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Poptropica Game" title="Poptropica" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/poptropica-game-logo.png?itok=F32EkkMW" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Poptropica</h3></a></div><div class="game-item-description"><div class="field-body">Can you survive the all-new Wild Safari challenge?</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-retro-ping-pong"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Retro Ping Pong Game" title="Retro Ping Pong" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/retro-ping-pong-game-logo.png?itok=BnrKnQ9g" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Retro Ping Pong</h3></a></div><div class="game-item-description"><div class="field-body">Play the classic game or the all-new action mode!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-parking-fury-2"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Parking Fury 2 Game" title="Parking Fury 2" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/park_fury_2_83x50_0.png?itok=KQtqyPr2" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Parking Fury 2</h3></a></div><div class="game-item-description"><div class="field-body">More cool cars to park in tight spaces.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-idle-breakout"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Idle Breakout Game" title="Idle Breakout" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/idle-breakout-logo.png?itok=4jL52yqw" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Idle Breakout</h3></a></div><div class="game-item-description"><div class="field-body">Build the ultimate brick-busting machine!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-there-is-no-game"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="There Is No Game Game" title="There Is No Game" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/there-is-no-game-logo.png?itok=lWNVY-mD" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">There Is No Game</h3></a></div><div class="game-item-description"><div class="field-body">Sorry, you can't play this non-game.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-basket-and-ball"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Basket and Ball Game" title="Basket and Ball" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/basket-and-ball-logo.png?itok=CrmN6VDJ" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Basket and Ball</h3></a></div><div class="game-item-description"><div class="field-body">Get Ball to the basket safely!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-duck-life"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Duck Life Game" title="Duck Life" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-duck-life-1.gif?itok=ilGoCjc0" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Duck Life</h3></a></div><div class="game-item-description"><div class="field-body">Train your duck to win races and save the farm!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-candy-jump"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Candy Jump Game" title="Candy Jump" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/candy-jump-game-logo.png?itok=1zsZE7QV" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Candy Jump</h3></a></div><div class="game-item-description"><div class="field-body">Time your bounces to get through the obstacles!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-raft-wars"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Raft Wars Game" title="Raft Wars" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/raft-wars-game-logo.png?itok=W_kSfO7L" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Raft Wars</h3></a></div><div class="game-item-description"><div class="field-body">Hop in your raft and defend your treasure.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-bob-the-robber"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Bob the Robber Game" title="Bob the Robber" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/bob-the-robber-game-logo.png?itok=-3sA8lX6" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Bob the Robber</h3></a></div><div class="game-item-description"><div class="field-body">Help Bob expose the corrupt mayor.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-handulum"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Handulum+ Game" title="Handulum+" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/handulum-logo.png?itok=_KjeMq-0" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Handulum+</h3></a></div><div class="game-item-description"><div class="field-body">Swing your way through 30 challenging courses.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-tic-tac-toe"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Tic Tac Toe Game" title="Tic Tac Toe" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/tic-tac-toe-game-logo.png?itok=gIaFBfZj" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Tic Tac Toe</h3></a></div><div class="game-item-description"><div class="field-body">Outsmart your opponent in the game of X's and O's.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-crazy-eights"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Crazy Eights Game" title="Crazy Eights" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/crazy-eights-game-logo.png?itok=VEASqElb" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Crazy Eights</h3></a></div><div class="game-item-description"><div class="field-body">It's the classic game. Empty your hand first!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-2048"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="2048 Game" title="2048" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-2048.gif?itok=88rUVFZG" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">2048</h3></a></div><div class="game-item-description"><div class="field-body">Add like numbers to win this one. Can you get to 2048?</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-parkingmania"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Parking Mania Game" title="Parking Mania" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-parking-mania.gif?itok=JYEL19eZ" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Parking Mania</h3></a></div><div class="game-item-description"><div class="field-body"> Can you figure out how to parallel park?</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-diggy"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Diggy Game" title="Diggy" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-diggy.gif?itok=svXNEWOP" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Diggy</h3></a></div><div class="game-item-description"><div class="field-body">Help Diggy dig to the center of the earth.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-apple-worm"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Apple Worm Game" title="Apple Worm" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/apple-worm-game-logo.png?itok=7Jd5FJsf" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Apple Worm</h3></a></div><div class="game-item-description"><div class="field-body">Eat the apples and reach the portal.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-jelly-truck"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Jelly Truck Game" title="Jelly Truck" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-jelly-truck.gif?itok=tbrawQyv" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Jelly Truck</h3></a></div><div class="game-item-description"><div class="field-body">Drive the jelly truck to the end of each level.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-truck-loader-4"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Truck Loader 4 Game" title="Truck Loader 4" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-truck-loader-4.gif?itok=9v67PEqz" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Truck Loader 4</h3></a></div><div class="game-item-description"><div class="field-body">Use the magnetic tractor to load crates into the truck.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-block-the-pig"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Block the Pig Game" title="Block the Pig" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-block-the-pig.gif?itok=At8WDvm3" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Block the Pig</h3></a></div><div class="game-item-description"><div class="field-body">The Pig is on the loose! Can you catch him?</div></div></div></div><div class="link-more-wrapper clearfix"><a href="/1-popular-games">More Popular Games</a></div></div></div>
+    </div>
+  </div>
+
+<div class="block block-cmatgame-core block-subcategoryhome">
+  
+    
+      <div class="view-content">
+      <div class="pane-views-panes"><div class="pane-queues"><h2 class="common-title clearfix"><div class="link-in-title-block"><a href="/1-strategy-games">See more</a></div><span class="title-with-button">Strategy Games</span></h2><div class="game-queue-column-wrapper clearfix"><div class="game-item"><div class="game-link-wrapper"><a href="/0-toy-defense"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Toy Defense Game" title="Toy Defense" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/toy-defense-logo_1.png?itok=ESejJEyr" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Toy Defense</h3></a></div><div class="game-item-description"><div class="field-body">Deploy your plastic soldiers to defend your home!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-pre-civilization-bronze-age"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Pre-Civilization Bronze Age Game" title="Pre-Civilization Bronze Age" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-preciv-bronze-age_0.gif?itok=M2xJ4brL" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Pre-Civilization Bronze Age</h3></a></div><div class="game-item-description"><div class="field-body">Grow your civilization.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-copter-royale"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Copter Royale Game" title="Copter Royale" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/copter-royale-game-logo.png?itok=HBMnZ-_r" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Copter Royale</h3></a></div><div class="game-item-description"><div class="field-body">Upgrade your copter and be the last one flying!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-checkers"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Checkers Game" title="Checkers" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/checkers-game-logo_3.png?itok=W3BChVc4" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Checkers</h3></a></div><div class="game-item-description"><div class="field-body">Challenge the computer or try online matchmaking!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-papas-bakeria"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Papa&#039;s Bakeria Game" title="Papa&#039;s Bakeria" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/papas-bakeria-game-logo.gif?itok=-Hu55MRE" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Papa's Bakeria</h3></a></div><div class="game-item-description"><div class="field-body">Follow the recipe and bake delicious Papa's pies.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-table-tanks"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Table Tanks Game" title="Table Tanks" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/table-tanks-game-logo.png?itok=qgVbOe2f" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Table Tanks</h3></a></div><div class="game-item-description"><div class="field-body">Upgrade your tank and take out your foes!</div></div></div></div><div class="link-more-wrapper clearfix"><a href="/1-strategy-games">More Strategy Games</a></div></div><div class="pane-queues"><h2 class="common-title clearfix"><div class="link-in-title-block"><a href="/1-skill-games">See more</a></div><span class="title-with-button">Skill Games</span></h2><div class="game-queue-column-wrapper clearfix"><div class="game-item"><div class="game-link-wrapper"><a href="/0-johnny-upgrade"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Johnny Upgrade Game" title="Johnny Upgrade" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-johnny-upgrade.gif?itok=gRbR0zzB" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Johnny Upgrade</h3></a></div><div class="game-item-description"><div class="field-body">Do your math and spend wisely.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-tail-of-the-dragon"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Tail of the Dragon Game" title="Tail of the Dragon" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/tail-of-the-dragon-game-logo.png?itok=rC7vBvyt" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Tail of the Dragon</h3></a></div><div class="game-item-description"><div class="field-body">Breathe fire and smash towers!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-circloo-2"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="CircloO 2 Game" title="CircloO 2" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/circloo-2-game-logo.png?itok=g6A9UaSe" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">CircloO 2</h3></a></div><div class="game-item-description"><div class="field-body">Round and round you go...again!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-fireboy-watergirl-2-light-temple"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Fireboy and Water Girl 2 in The Light Temple Game" title="Fireboy and Water Girl 2 in The Light Temple" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/fireboy-watergirl-light-temple-game-logo.png?itok=WHdnMjf3" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Fireboy and Water Girl 2 in The Light Temple</h3></a></div><div class="game-item-description"><div class="field-body">Collect all the diamonds!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-60-second-burger-run"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="60 Second Burger Run Game" title="60 Second Burger Run" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-60-second-burger-run.gif?itok=MB4wDejP" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">60 Second Burger Run</h3></a></div><div class="game-item-description"><div class="field-body">Run through the obstacles to get to the burger!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-big-tower-tiny-square"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Big Tower Tiny Square Game" title="Big Tower Tiny Square" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/big-tower-tiny-square-game-logo.png?itok=gzYesemP" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Big Tower Tiny Square</h3></a></div><div class="game-item-description"><div class="field-body">Save your pineapple from evil Big Square!</div></div></div></div><div class="link-more-wrapper clearfix"><a href="/1-skill-games">More Skill Games</a></div></div><div class="pane-queues"><h2 class="common-title clearfix"><div class="link-in-title-block"><a href="/1-number-games">See more</a></div><span class="title-with-button">Number Games</span></h2><div class="game-queue-column-wrapper clearfix"><div class="game-item"><div class="game-link-wrapper"><a href="/0-sudoku"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Sudoku Game" title="Sudoku" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/sudoku-game-logo_0.png?itok=fm-OWTX_" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Sudoku</h3></a></div><div class="game-item-description"><div class="field-body">Fill in the spaces with the right numbers.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-johnny-upgrade"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Johnny Upgrade Game" title="Johnny Upgrade" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-johnny-upgrade.gif?itok=gRbR0zzB" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Johnny Upgrade</h3></a></div><div class="game-item-description"><div class="field-body">Do your math and spend wisely.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-grab-them-by-the-eyes"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Grab Them by the Eyes Game" title="Grab Them by the Eyes" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/grab-them-by-the-eyes-game-logo.png?itok=MTUGSGmM" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Grab Them by the Eyes</h3></a></div><div class="game-item-description"><div class="field-body">Buy signs and put Filthy Burger out of business.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-building-rush-2"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Building Rush 2 Game" title="Building Rush 2" data-src="/sites/default/files/styles/thumbnail_small/public/building-rush-game-logo.png?itok=WelE0ytM" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Building Rush 2</h3></a></div><div class="game-item-description"><div class="field-body">You're the CEO of a new construction company.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-crazy-taxi-m12"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Crazy Taxi M-12 Game" title="Crazy Taxi M-12" data-src="/sites/default/files/styles/thumbnail_small/public/game-logo-crazy-taxi-m12.gif?itok=QvNLAJLH" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Crazy Taxi M-12</h3></a></div><div class="game-item-description"><div class="field-body">Great driving game for times tables and multiples!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-into-space-2"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Into Space 2 Game" title="Into Space 2" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/into-space-2-game-logo.png?itok=QYm0Bd06" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Into Space 2</h3></a></div><div class="game-item-description"><div class="field-body">Can you make it to Mars?</div></div></div></div><div class="link-more-wrapper clearfix"><a href="/1-number-games">More Number Games</a></div></div><div class="pane-queues"><h2 class="common-title clearfix"><div class="link-in-title-block"><a href="/1-logic-games">See more</a></div><span class="title-with-button">Logic Games</span></h2><div class="game-queue-column-wrapper clearfix"><div class="game-item"><div class="game-link-wrapper"><a href="/0-divide"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Divide Game" title="Divide" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-divide.gif?itok=PdHVq3vA" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Divide</h3></a></div><div class="game-item-description"><div class="field-body">Cut blocks of wood into the right number of pieces.
+</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-red"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Red Game" title="Red" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/red-game-logo.png?itok=N2XOinXl" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Red</h3></a></div><div class="game-item-description"><div class="field-body">Nobody likes yellow. Paint the screen red instead!</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-sip"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="S.I.P. Game" title="S.I.P." data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-sip.png?itok=g9HlROMr" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">S.I.P.</h3></a></div><div class="game-item-description"><div class="field-body">You're a Special Intergalactic Painter.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-iq-ball"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="IQ Ball Game" title="IQ Ball" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/game-logo-iq-ball.gif?itok=uxRL9p9g" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">IQ Ball</h3></a></div><div class="game-item-description"><div class="field-body">Bullseye! Aim your grabber to reach the target.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-cannon-basketball"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Cannon Basketball Game" title="Cannon Basketball" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/cannon-basketball-game-logo.png?itok=XA1blXB7" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Cannon Basketball</h3></a></div><div class="game-item-description"><div class="field-body">Shoot hoops, but with a cannon.</div></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/0-puzzle-ball"><div class="field-image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="83" height="50" alt="Puzzle Ball Game" title="Puzzle Ball" data-src="/sites/default/files/styles/thumbnail_small/public/game_thumbnail/puzzle-ball-game-logo.png?itok=-HHbepM_" class="lazyload" typeof="foaf:Image" />
+
+</div><h3 class="game-title">Puzzle Ball</h3></a></div><div class="game-item-description"><div class="field-body">Slide wooden blocks and roll to the goal.</div></div></div></div><div class="link-more-wrapper clearfix"><a href="/1-logic-games">More Logic Games</a></div></div></div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+                  </div>
+                </div>
+              </div>
+                          </div>
+          </section>
+        </main>
+                  <div class="main-aside">
+            <aside class="section" role="complementary">
+              <div class="inside">
+                  <div>
+    
+<div id="block-adsrighttop-homepage-300x250" class="block block-cmatgame-core block-adsrighttop-homepage-300x250">
+  
+    
+      <div class="view-content">
+      <div class="panel-pane pane-block pane-cmatgame-advertisement-cm-g-homepage-300x250-top"><div class="ad-wrapper"><!-- 300 x 250 ATF Desktop --><div data-pw-desk="med_rect_atf"></div></div></div>
+    </div>
+  </div>
+<div id="block-homeandcategorypromomerchstore" class="block block-block-content block-block-contente94ec4b0-8f7b-48ee-a997-407cb6653df9">
+    
+        
+              <div class="field field--name-body field--type-text-with-summary field--label-hidden field__items">
+                <div class="field__item">
+        <div class="right-rail-promo"><a class="merch-store-promo" href="#" onclick="merchLinkHhandler();return false;" target="_blank">Merch Store Promo</a></div>
+<script type="text/javascript">
+jQuery('a.merch-store-promo').click(function(e){
+  e.preventDefault();
+  merchLinkHhandler(e);
+});
+function merchLinkHhandler(e) {
+  e.preventDefault();
+  url = 'https://www.teepublic.com/user/coolmathgames';
+  if(typeof __gaTracker !== "undefined") { 
+    __gaTracker('send', { hitType: 'event', eventCategory: 'Coolmath Gear Promo', eventAction: 'Merch Store Link Clicked', eventLabel: document.title, eventValue: '0' }); 
+  }
+  window.open(url,'_cmg_merch');
+}
+</script>
+            </div>
+          </div>
+<div class="right-rail-promo"></div>
+      </div>
+
+<div id="block-adsrightcenter-homepage-300x250" class="block block-cmatgame-core block-adsrightcenter-homepage-300x250">
+  
+    
+      <div class="view-content">
+      <div class="panel-pane pane-block pane-cmatgame-advertisement-cm-g-homepage-300x250-center"><div class="ad-wrapper"><!-- 300 x 250 BTF Desktop --><div data-pw-desk="med_rect_btf"></div></div></div>
+    </div>
+  </div>
+<div id="block-homepagerightrailpromopowerlineio" class="block block-block-content block-block-content78d323b2-e0bb-46b1-a40c-93090fdff054">
+    
+        
+              <div class="field field--name-body field--type-text-with-summary field--label-hidden field__items">
+                <div class="field__item">
+        <p><a class="powerline-promo" href="/0-powerline-io">Powerline IO</a></p>
+            </div>
+          </div>
+<div class="right-rail-promo"></div>
+      </div>
+
+<div id="block-adsrightbottom1-homepage-300x250" class="block block-cmatgame-core block-adsrightbottom1-homepage-300x250">
+  
+    
+      <div class="view-content">
+      <div class="panel-pane pane-block pane-cmatgame-advertisement-cm-g-homepage-300x250-bottom-1"><div class="ad-wrapper"><!-- 300 x 250 BTF Desktop --><div data-pw-desk="med_rect_btf"></div></div></div>
+    </div>
+  </div>
+<div id="block-homepagerightrailpromohangman" class="block block-block-content block-block-content702f8918-3590-4b28-88ef-f17dde8eaaf4">
+    
+        
+              <div class="field field--name-body field--type-text-with-summary field--label-hidden field__items">
+                <div class="field__item">
+        <p><a class="hangman-promo" href="/0-hangman">Hangman</a></p>
+            </div>
+          </div>
+<div class="right-rail-promo"></div>
+      </div>
+
+<div id="block-adsrightbottom2-homepage-300x250" class="block block-cmatgame-core block-adsrightbottom2-homepage-300x250">
+  
+    
+      <div class="view-content">
+      <div class="panel-pane pane-block pane-cmatgame-advertisement-cm-g-homepage-300x250-bottom-2"><div class="ad-wrapper"><!-- 300 x 250 BTF Desktop --><div data-pw-desk="med_rect_btf"></div></div></div>
+    </div>
+  </div>
+
+<div id="block-rightrailplaylistinhomepage" class="block block-cmatgame-core block-rightrailplaylistgames">
+  
+    
+      <div class="view-content">
+      <div class="panel-pane pane-block pane-bean-right-rail-bottom-playlist-hp right-rail-promo"><h2 class="pane-title clearfix">Playlists</h2><div class="game-item"><div class="game-link-wrapper"><a href="/1-eat-all-the-things"><img style="width:120px;height:90px;" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="120" height="90" alt="Eat All The Things Game" title="Eat All The Things" data-src="/sites/default/files/styles/playlist_grid/public/sites/cmatgame/files/taxonomy_icon/eatallthethings.gif?itok=1q57QH0G" class="lazyload" typeof="foaf:Image" />
+
+</a><br/><h3 class="game-title"><a href="/1-eat-all-the-things">Eat All The Things</a></h3></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/1-start-your-engines-games"><img style="width:120px;height:90px;" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="120" height="90" alt="Start Your Engines Games Game" title="Start Your Engines Games" data-src="/sites/default/files/styles/playlist_grid/public/sites/cmatgame/files/taxonomy_icon/start-your-engines-games-alternate.png?itok=YOHLtf7T" class="lazyload" typeof="foaf:Image" />
+
+</a><br/><h3 class="game-title"><a href="/1-start-your-engines-games">Start Your Engines Games</a></h3></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/1-ball-games"><img style="width:120px;height:90px;" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="120" height="90" alt="Ball Games Game" title="Ball Games" data-src="/sites/default/files/styles/playlist_grid/public/sites/cmatgame/files/taxonomy_icon/ball-games.png?itok=ovNcgysl" class="lazyload" typeof="foaf:Image" />
+
+</a><br/><h3 class="game-title"><a href="/1-ball-games">Ball Games</a></h3></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/1-ninja-games"><img style="width:120px;height:90px;" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="120" height="90" alt="Ninja Games Game" title="Ninja Games" data-src="/sites/default/files/styles/playlist_grid/public/sites/cmatgame/files/taxonomy_icon/ninja-games.png?itok=uxA-1Iut" class="lazyload" typeof="foaf:Image" />
+
+</a><br/><h3 class="game-title"><a href="/1-ninja-games">Ninja Games</a></h3></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/1-wacky-weird-and-wild"><img style="width:120px;height:90px;" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="120" height="90" alt="Wacky, Weird and Wild Game" title="Wacky, Weird and Wild" data-src="/sites/default/files/styles/playlist_grid/public/sites/cmatgame/files/taxonomy_icon/wackyweirdandwild.gif?itok=rlJA2C98" class="lazyload" typeof="foaf:Image" />
+
+</a><br/><h3 class="game-title"><a href="/1-wacky-weird-and-wild">Wacky, Weird and Wild</a></h3></div></div><div class="game-item"><div class="game-link-wrapper"><a href="/1-crazy-hard-games"><img style="width:120px;height:90px;" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="120" height="90" alt="Crazy Hard Games Game" title="Crazy Hard Games" data-src="/sites/default/files/styles/playlist_grid/public/sites/cmatgame/files/taxonomy_icon/hardgames.gif?itok=muQ41w30" class="lazyload" typeof="foaf:Image" />
+
+</a><br/><h3 class="game-title"><a href="/1-crazy-hard-games">Crazy Hard Games</a></h3></div></div></div>
+    </div>
+  </div>
+
+<div id="block-adsrightlast-homepage-300x250" class="block block-cmatgame-core block-adsrightlast-homepage-300x250">
+  
+    
+      <div class="view-content">
+      <div class="panel-pane pane-block pane-cmatgame-advertisement-cm-g-homepage-300x250-last"><div class="ad-wrapper"><!-- 300 x 250 BTF Desktop --><div data-pw-desk="med_rect_btf"></div></div></div>
+    </div>
+  </div>
+
+  </div>
+
+              </div>
+                          </aside>
+          </div>
+              </div>
+    </div>
+  </div>
+  <footer class="main-footer">
+    <div class="item-list">
+      <ol>
+                  <li>
+            <div class="pane-bean-footer-suggest-game">
+              <div class="field-text-block">
+                <p>
+                  <a href="/suggest-a-game">Suggest a game</a>
+                  If you've seen a cool game somewhere and want us to try and get it</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="pane-bean-footer-submit-game">
+              <div class="field-text-block">
+                <p>
+                  <a class="link-with-body-title" href="/submit-a-game">Submit a game</a>
+                  If you've developed a game and want to see it on the site</p>
+              </div>
+            </div>
+          </li>
+                <li>
+          <div class="pane-bean-footer-pivacy-policy">
+            <div class="link-with-body-title">
+              <a href="/privacyp">Coolmath games privacy policy</a>
+            </div>
+            <div class="field-text-block">
+              <p>If you believe that your own copyrighted content is on our Site without your permission, please follow this&nbsp;<a href="http://coolmath.com/copyright-infringement-notice-procedure">Copyright Infringement Notice procedure</a>.</p>
+            </div>
+          </div>
+        </li>
+                  <li>
+              <div>
+    <nav role="navigation" aria-labelledby="block-desktopfootermenu-menu" id="block-desktopfootermenu">
+            
+  <h2 class="visually-hidden" id="block-desktopfootermenu-menu">Desktop Footer menu</h2>
+  
+
+        
+      <div class="panel-pane pane-menu-tree pane-menu-desktop-footer-menu">
+      <div class="menu-name-menu-desktop-footer-menu">
+                          <ul class="footer-menu">
+                                                  <li class="menu__item is-expanded expanded footer-menu-column-0">
+                                            <span class="menu__link nolink">COOLMATHGAMES.COM</span>
+                                                                  <ul class="footer-menu">
+                                                      <li >
+                                                            <a href="/about-us" data-drupal-link-system-path="node/9901">About Us</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/terms-use" data-drupal-link-system-path="node/9906">Terms of Use</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/aboutourads" data-drupal-link-system-path="node/12889">About Our Ads</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/subscription-faq" data-drupal-link-system-path="node/10921">Subscription FAQ</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/adblock-faq" data-drupal-link-system-path="node/12937">Adblock FAQ</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/contact-us-about-subscriptions" data-drupal-link-system-path="node/11046">Subscription Support</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/contact-us" data-drupal-link-system-path="node/12581">CONTACT US</a>
+                                        </li>
+                  </ul>
+            
+                          </li>
+                                                  <li class="menu__item is-expanded expanded footer-menu-column-1">
+                                            <span class="menu__link nolink">BROWSE GAMES</span>
+                                                                  <ul class="footer-menu">
+                                                      <li >
+                                                            <a href="/1-strategy-games" title="Strategy Games" data-drupal-link-system-path="taxonomy/term/6">Strategy Games</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/1-skill-games" title="Skill Games" data-drupal-link-system-path="taxonomy/term/46">Skill Games</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/1-number-games" title="Number Games" data-drupal-link-system-path="taxonomy/term/151">Number Games</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/1-logic-games" title="Logic Games" data-drupal-link-system-path="taxonomy/term/91">Logic Games</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/1-memory-games" title="Memory Games" data-drupal-link-system-path="taxonomy/term/181">Memory Games</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/1-classic-games" title="Classic Games" data-drupal-link-system-path="taxonomy/term/211">Classic Games</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/0-jigsaw-puzzles" title="Jigsaw Puzzles" data-drupal-link-system-path="0-jigsaw-puzzles">Jigsaw Puzzles</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/1-science-games" title="Science Games" data-drupal-link-system-path="taxonomy/term/626">Science Games</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="/1-geography-games" title="Geography Games" data-drupal-link-system-path="taxonomy/term/206">Geography Games</a>
+                                        </li>
+                  </ul>
+            
+                          </li>
+                                                  <li class="menu__item is-expanded expanded footer-menu-column-2">
+                                            <span class="menu__link nolink">COOLMATH.COM</span>
+                                                                  <ul class="footer-menu">
+                                                      <li >
+                                                            <a href="https://www.coolmath.com/prealgebra" title="Pre-Algebra Lessons">Pre-Algebra Lessons</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath.com/algebra" title="Algebra Lessons">Algebra Lessons</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath.com/precalculus-review-calculus-intro" title="Pre-Calculus Lessons">Pre-Calculus Lessons</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://coolmath.com/reference/online-math-dictionary" title="Math Dictionary">Math Dictionary</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath.com/algebra/08-lines" title="Lines">Lines</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath.com/prealgebra/00-factors-primes" title="Factors and Primes">Factors and Primes</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath.com/prealgebra/02-decimals" title="Decimals">Decimals</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath.com/prealgebra/06-properties" title="Properties">Properties</a>
+                                        </li>
+                  </ul>
+            
+                          </li>
+                                                  <li class="menu__item is-expanded expanded footer-menu-column-3">
+                                            <span class="menu__link nolink">MORE FROM COOLMATH</span>
+                                                                  <ul class="footer-menu">
+                                                      <li >
+                                                            <a href="https://www.coolmath4kids.com" title="Coolmath4Kids">Coolmath4Kids</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath4kids.com/manipulatives/ten-frame" title="Ten Frame Manipulative">Ten Frame Manipulative</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath4kids.com/manipulatives/base-ten-blocks" title="Base Ten Blocks Manipulative">Base Ten Blocks Manipulative</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath4kids.com/manipulatives/number-line" title="Number Line Manipulative">Number Line Manipulative</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath4kids.com/manipulatives/pattern-blocks" title="Pattern Blocks Manipulative">Pattern Blocks Manipulative</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="https://www.coolmath4kids.com/quizzes" title="Math Quizzes">Math Quizzes</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="http://www.coolmath4teachers.com" title="Coolmath4Teachers">Coolmath4Teachers</a>
+                                        </li>
+                                                      <li >
+                                                            <a href="http://www.coolmath4parents.com" title="Coolmath4Parents">Coolmath4Parents</a>
+                                        </li>
+                  </ul>
+            
+                          </li>
+                  </ul>
+                  </div>
+    </div>
+  
+
+  </nav>
+
+  </div>
+
+          </li>
+                <li>
+          <div class="copyright-wrapper">
+            <p>© 2020 Coolmath.com LLC. All Rights Reserved.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </footer>
+</div>
+
+  </div>
+
+          
+          <script src="/sites/default/files/js/js_APCzBCTb0cwZSIGrrOzIymiQ2guvqNxekRxA6ZMRYM0.js"></script>
+
+            
+            <script type="text/javascript">
+              if (jQuery('body').hasClass('node-type-game')) {
+                var offset = 420;
+                var offsetMillis = offset * 60 * 1000;
+                var today = new Date();
+                var millis = today.getTime();
+                var timeZoneOffset = (today.getTimezoneOffset() * 60 * 1000);
+                var pst = millis - offsetMillis;
+                var currentDate = new Date(pst);
+                var dayarray = [
+                  'Sunday',
+                  'Monday',
+                  'Tuesday',
+                  'Wednesday',
+                  'Thursday',
+                  'Friday',
+                  'Saturday'
+                ];
+                var montharray = [
+                  'Jan.',
+                  'Feb.',
+                  'Mar.',
+                  'Apr.',
+                  'May.',
+                  'Jun.',
+                  'Jul.',
+                  'Aug.',
+                  'Sep.',
+                  'Oct.',
+                  'Nov.',
+                  'Dec.'
+                ];
+                var displaydate = dayarray[currentDate.getDay()] + ", " + montharray[currentDate.getMonth()] + " " + ordinal_suffix_of(currentDate.getDate());
+                jQuery('.node-type-game .global-wrapper-content .dailygames .common-title').html(
+                  "<div class='daily-games-text'><img src='/themes/custom/cmatgame/images/bird.png' alt='daily games' class='daily-games-header' /></div><span class='dailygamesdate'>" + displaydate + "</span>"
+                );
+              }
+            </script>
+            <script id="profitwell-js" data-pw-auth="112ca5554aa368c7638df5177116c556">
+              (function(i,s,o,g,r,a,m){i[o]=i[o]||function(){(i[o].q=i[o].q||[]).push(arguments)};
+              a=s.createElement(g);m=s.getElementsByTagName(g)[0];a.async=1;a.src=r+'?auth='+
+              s.getElementById(o+'-js').getAttribute('data-pw-auth');m.parentNode.insertBefore(a,m);
+              })(window,document,'profitwell','script','https://public.profitwell.com/js/profitwell.js');
+              profitwell('start', {});
+            </script>
+          </body>
+        </html>
