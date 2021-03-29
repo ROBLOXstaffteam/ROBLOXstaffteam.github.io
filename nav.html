@@ -73,4 +73,160 @@
     font-weight: bold; }
     #navigation .link > a:hover {
       background-color: rgba(0, 0, 0, 0.1); }
-</style><style type="text/css">/*
+</style><style type="text/css">
+
+  #navigation.staging .messages .message-count {
+  display: none; }
+  #navigation.staging .messages .message-count.show {
+    background-color: #4d97ff; }
+
+#navigation .logo {
+  margin-right: 10px; }
+  #navigation .logo a {
+    display: block;
+    transition: .15s ease all;
+    margin: 0 6px 0 0;
+    border: 0;
+    background-image: url("/images/logo_sm.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 95%;
+    width: 81px;
+    height: 50px; }
+    #navigation .logo a:hover {
+      transition: .15s ease all;
+      background-size: 100%; }
+
+#navigation .inner > ul > li.search {
+  margin: 0 20px;
+  border-right: 0;
+  color: white;
+  -webkit-flex-grow: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3; }
+  .ie9 #navigation .inner > ul > li.search {
+    width: 100%; }
+  #navigation .inner > ul > li.search .form {
+    margin: 0; }
+  #navigation .inner > ul > li.search .row .help-block {
+    display: none; }
+  #navigation .inner > ul > li.search .input,
+  #navigation .inner > ul > li.search .button {
+    display: inline-block;
+    margin-top: 5px;
+    outline: none;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 14px; }
+    #navigation .inner > ul > li.search .input[type=text],
+    #navigation .inner > ul > li.search .button[type=text] {
+      transition: .15s ease background-color;
+      padding: 0;
+      padding-right: 10px;
+      padding-left: 40px;
+      width: calc(100% - 50px);
+      height: 40px;
+      color: white;
+      font-size: .85em; }
+      #navigation .inner > ul > li.search .input[type=text]::-webkit-input-placeholder,
+      #navigation .inner > ul > li.search .button[type=text]::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.75); }
+      #navigation .inner > ul > li.search .input[type=text]:-ms-input-placeholder,
+      #navigation .inner > ul > li.search .button[type=text]:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.75); }
+      #navigation .inner > ul > li.search .input[type=text]::placeholder,
+      #navigation .inner > ul > li.search .button[type=text]::placeholder {
+        color: rgba(255, 255, 255, 0.75); }
+      #navigation .inner > ul > li.search .input[type=text]:focus,
+      #navigation .inner > ul > li.search .button[type=text]:focus {
+        transition: .15s ease background-color;
+        background-color: rgba(0, 0, 0, 0.2); }
+      .ie9 #navigation .inner > ul > li.search .input[type=text], .ie9
+      #navigation .inner > ul > li.search .button[type=text] {
+        width: 70px; }
+  #navigation .inner > ul > li.search .btn-search {
+    position: absolute;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: url("/images/nav-search-glass.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 14px 14px;
+    width: 40px;
+    height: 40px; }
+    #navigation .inner > ul > li.search .btn-search:hover {
+      box-shadow: none; }
+
+#navigation .messages > a,
+#navigation .mystuff > a {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 45%;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 30px;
+  overflow: hidden;
+  text-indent: 50px;
+  white-space: nowrap; }
+  #navigation .messages > a:hover,
+  #navigation .mystuff > a:hover {
+    background-size: 50%; }
+
+#navigation .messages > a {
+  background-image: url("/images/nav-notifications.png"); }
+
+#navigation .messages .message-count {
+  display: none; }
+  #navigation .messages .message-count.show {
+    display: block;
+    position: absolute;
+    top: .5rem;
+    right: .25rem;
+    border-radius: 1rem;
+    background-color: #ffab1a;
+    padding: 0 .25rem;
+    text-indent: 0;
+    line-height: 1rem;
+    color: white;
+    font-size: .7rem;
+    font-weight: bold; }
+
+#navigation .mystuff > a {
+  background-image: url("/images/mystuff.png"); }
+
+@media only screen and (max-width: 479px) {
+  #navigation .inner {
+    width: 18.75em; }
+    #navigation .inner > ul > li.login-item {
+      margin-left: 0; }
+    #navigation .inner .create,
+    #navigation .inner .discuss,
+    #navigation .inner .explore,
+    #navigation .inner .search,
+    #navigation .inner .help,
+    #navigation .inner .mystuff,
+    #navigation .inner .profile-name {
+      display: none; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #navigation .inner {
+    width: 28.75em; }
+    #navigation .inner > ul > li.login-item {
+      margin-left: 0; }
+    #navigation .inner .discuss,
+    #navigation .inner .explore,
+    #navigation .inner .search,
+    #navigation .inner .mystuff,
+    #navigation .inner .profile-name {
+      display: none; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #navigation .inner {
+    width: 38.75em; }
+    #navigation .inner > ul > li.login-item {
+      margin-left: 0; }
+    #navigation .inner .explore,
+    #navigation .inner .search,
+    #navigation .inner .mystuff {
+      display: none; } }
+</style><style type="text/css">
