@@ -1,2897 +1,2894 @@
-<?php
-echo '<html lang="en-US"><!--<![endif]--><head>';
-echo '<meta charset="UTF-8">';
-echo '';
-echo '<meta http-equiv="x-ua-compatible" content="ie=edge">';
-echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
-echo '';
-echo '<!-- Prevent mobile Safari from making phone numbers -->';
-echo '<meta name="format-detection" content="telephone=no">';
-echo '';
-echo '';
-echo '<title>Sobloxsy - Login</title>';
-echo '';
-echo '<!-- Search & Open Graph-->';
-echo '<meta name="description" content="Scratch is a free programming language and online community where you can create your own interactive stories, games, and animations.">';
-echo '<meta name="google-site-verification" content="m_3TAXDreGTFyoYnEmU9mcKB4Xtw5mw6yRkuJtXRKxM">';
-echo '';
-echo '<meta property="og:url" content="https://scratch.mit.edu/">';
-echo '<meta property="og:type" content="website">';
-echo '<meta property="og:title" content="Scratch - Join Scratch">';
-echo '<meta property="og:description" content="Scratch is a free programming language and online community where you can create your own interactive stories, games, and animations.">';
-echo '<meta property="og:image" content="https://scratch.mit.edu/images/scratch-og.png">';
-echo '<meta property="og:image:type" content="image/png">';
-echo '<meta property="og:image:width" content="986">';
-echo '<meta property="og:image:height" content="860">';
-echo '';
-echo '';
-echo '<!-- Favicon & CSS normalize -->';
-echo '<link rel="shortcut icon" href="/favicon.ico">';
-echo '<link rel="stylesheet" href="/css/lib/normalize.min.css">';
-echo '';
-echo '<!-- Polyfills -->';
-echo '<script async="" src="//www.google-analytics.com/analytics.js"></script><script src="/js/polyfill.min.js"></script>';
-echo '';
-echo '<!-- Analytics (GA) -->';
-echo '<script>';
-echo '/* eslint-disable */';
-echo '(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){';
-echo '(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),';
-echo 'm=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)';
-echo '})(window,document,'script','//www.google-analytics.com/analytics.js','ga');';
-echo '';
-echo 'ga('create', 'UA-30688952-1', {';
-echo ''sampleRate': 10';
-echo '});';
-echo 'ga('send', 'pageview');';
-echo 'window.GA_ID = 'UA-30688952-1';';
-echo '/* eslint-enable */';
-echo '</script>';
-echo '<style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '/* Tags */';
-echo 'html,';
-echo 'body {';
-echo 'display: block;';
-echo 'margin: 0;';
-echo 'background-color: #3d3d3d;';
-echo 'padding: 0;';
-echo 'color: #575e75;';
-echo 'font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; }';
-echo '';
-echo '/* Typography */';
-echo 'h1,';
-echo 'h2,';
-echo 'h3,';
-echo 'h4 {';
-echo 'margin: 0;';
-echo 'border: 0;';
-echo 'padding: 0;';
-echo 'color: #575e75;';
-echo 'font-weight: bold; }';
-echo '';
-echo 'h1 {';
-echo 'font-size: 2.5rem;';
-echo 'font-weight: bold; }';
-echo '';
-echo 'h2 {';
-echo 'font-size: 2rem;';
-echo 'font-weight: bold; }';
-echo '';
-echo 'h3 {';
-echo 'font-size: 1.4rem;';
-echo 'font-weight: bold; }';
-echo '';
-echo 'h4 {';
-echo 'font-size: 1rem;';
-echo 'font-weight: bold; }';
-echo '';
-echo 'h5 {';
-echo 'text-transform: uppercase;';
-echo 'letter-spacing: 2px;';
-echo 'font-size: .85rem;';
-echo 'font-weight: bold; }';
-echo '';
-echo 'p.legal {';
-echo 'font-size: .8rem; }';
-echo '';
-echo 'p.intro {';
-echo 'font-size: 1.1rem; }';
-echo '';
-echo 'p.callout {';
-echo 'margin: 1.5em 0;';
-echo 'border: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: .5rem;';
-echo 'background-color: rgba(77, 151, 255, 0.1);';
-echo 'padding: 1.25em; }';
-echo 'p.callout.orange {';
-echo 'background-color: rgba(244, 157, 37, 0.1); }';
-echo '';
-echo 'p a {';
-echo 'white-space: nowrap; }';
-echo '';
-echo 'b,';
-echo 'strong {';
-echo 'font-weight: bold; }';
-echo '';
-echo '/* Links */';
-echo 'a {';
-echo 'cursor: pointer;';
-echo 'color: #4d97ff;';
-echo 'font-weight: bold; }';
-echo 'a:link, a:visited, a:active {';
-echo 'text-decoration: none;';
-echo 'color: #4d97ff; }';
-echo 'a:hover {';
-echo 'text-decoration: none;';
-echo 'color: #4280d7; }';
-echo '';
-echo '/* Classes */';
-echo '.empty {';
-echo 'border: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: 5px;';
-echo 'background-color: rgba(77, 151, 255, 0.1);';
-echo 'padding: 10px;';
-echo 'text-align: center;';
-echo 'line-height: 2rem;';
-echo 'color: #575e75; }';
-echo '.empty h4 {';
-echo 'color: #575e75; }';
-echo '';
-echo 'h1,';
-echo 'h2,';
-echo 'h3,';
-echo 'h4,';
-echo 'h5,';
-echo 'p {';
-echo 'line-height: 1.7em;';
-echo 'color: #575e75; }';
-echo '';
-echo 'p {';
-echo 'font-size: 1rem;';
-echo 'font-weight: normal; }';
-echo '';
-echo '::selection {';
-echo 'background-color: rgba(77, 151, 255, 0.25); }';
-echo '';
-echo 'ol,';
-echo 'ul {';
-echo 'padding-left: 20px;';
-echo 'line-height: 1.5em;';
-echo 'font-size: 1rem;';
-echo 'font-weight: normal; }';
-echo 'ol li,';
-echo 'ul li {';
-echo 'margin: .75em 0; }';
-echo '';
-echo 'dl {';
-echo 'line-height: 1.5rem;';
-echo 'font-size: 1rem;';
-echo 'font-weight: normal; }';
-echo 'dl dt {';
-echo 'font-weight: bold; }';
-echo 'dl dd {';
-echo 'margin: 0; }';
-echo '';
-echo '#view {';
-echo 'display: inline-block;';
-echo '/* NOTE: Margin should match height in navigation.scss */';
-echo 'margin-top: 50px;';
-echo 'background-color: #fcfcfc;';
-echo 'padding: 20px 0;';
-echo 'min-width: 100%;';
-echo 'min-height: 680px; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.overflow-hidden {';
-echo '/* to avoid double scroll bars this';
-echo 'gets added to body while modal is open */';
-echo 'overflow: hidden; }';
-echo '';
-echo '.modal-content {';
-echo 'position: relative;';
-echo 'margin: 3.75rem auto;';
-echo 'border-radius: 1rem;';
-echo 'box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15);';
-echo 'background-color: white;';
-echo 'padding: 0;';
-echo 'width: 48.75rem; }';
-echo '.modal-content:focus {';
-echo 'outline: none; }';
-echo '@media only screen and (max-width: 941px) {';
-echo '.modal-content {';
-echo 'margin-top: 0;';
-echo 'width: 100%;';
-echo 'overflow: auto; } }';
-echo '@media only screen and (max-width: 479px), only screen and (max-height: 479px) {';
-echo '.modal-content {';
-echo 'border-radius: 0;';
-echo 'box-shadow: none;';
-echo 'height: 100%; } }';
-echo '';
-echo '.modal-overlay {';
-echo 'position: fixed;';
-echo 'top: 0;';
-echo 'right: 0;';
-echo 'bottom: 0;';
-echo 'left: 0;';
-echo 'z-index: 510;';
-echo 'background-color: rgba(77, 151, 255, 0.7); }';
-echo '';
-echo '.modal-content-close {';
-echo 'position: absolute;';
-echo 'top: 0.5rem;';
-echo 'right: 0.5rem;';
-echo 'border-radius: 1rem;';
-echo 'background-color: rgba(0, 0, 0, 0.2);';
-echo 'cursor: pointer;';
-echo 'width: 2rem;';
-echo 'height: 2rem;';
-echo 'text-align: center;';
-echo 'line-height: 2rem; }';
-echo '';
-echo '.modal-content-close-img {';
-echo 'padding-top: 0.5rem; }';
-echo '';
-echo '/* Close button, Submit button, etc. */';
-echo '.action-buttons {';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex;';
-echo 'margin: 1.125rem .8275rem .9375rem .8275rem;';
-echo 'line-height: 1.5rem;';
-echo '-webkit-justify-content: flex-end !important;';
-echo '-ms-flex-pack: end !important;';
-echo 'justify-content: flex-end !important;';
-echo '-webkit-align-items: flex-start;';
-echo '-ms-flex-align: start;';
-echo 'align-items: flex-start;';
-echo '-webkit-flex-wrap: nowrap;';
-echo '-ms-flex-wrap: nowrap;';
-echo 'flex-wrap: nowrap; }';
-echo '@media only screen and (max-width: 941px) {';
-echo '.action-buttons {';
-echo '-webkit-justify-content: center !important;';
-echo '-ms-flex-pack: center !important;';
-echo 'justify-content: center !important;';
-echo '-webkit-flex-direction: row !important;';
-echo '-ms-flex-direction: row !important;';
-echo 'flex-direction: row !important; } }';
-echo '';
-echo '/* setting overall modal to contain overflow looks good, but isn't';
-echo 'compatible with elements (like validation popups) that need to bleed';
-echo 'past modal boundary. This class can be used to force modal button';
-echo 'row to appear to contain overflow. */';
-echo '.action-buttons-overflow-fix {';
-echo 'margin-bottom: .9375rem; }';
-echo '';
-echo '/* For action button row where left/right margin is handled by parent element */';
-echo '.action-buttons.action-buttons-no-inset {';
-echo 'margin-left: 0;';
-echo 'margin-right: 0; }';
-echo '';
-echo '.action-button {';
-echo 'margin: 0 0 0 .54625rem;';
-echo 'border-radius: .25rem;';
-echo 'padding: 6px 1.25rem 14px 1.25rem;';
-echo 'height: 36px; }';
-echo '';
-echo '.action-button.close-button {';
-echo 'border: 1px solid rgba(0, 0, 0, 0.1); }';
-echo '';
-echo '.action-button-text {';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex; }';
-echo '';
-echo '.action-button.disabled {';
-echo 'background-color: rgba(0, 0, 0, 0.2); }';
-echo '';
-echo '.error-text {';
-echo 'display: block;';
-echo 'border: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: 5px;';
-echo 'background-color: #ffab1a;';
-echo 'padding: 1rem;';
-echo 'min-height: 1rem;';
-echo 'overflow: visible;';
-echo 'color: white; }';
-echo '';
-echo '.modal-sizes * {';
-echo 'box-sizing: border-box; }';
-echo '';
-echo '.modal-sizes {';
-echo 'margin: 100px auto;';
-echo 'outline: none;';
-echo 'padding: 0;';
-echo 'max-width: 36.25rem;';
-echo '/* 580px; */';
-echo '-webkit-user-select: none;';
-echo '-moz-user-select: none;';
-echo '-ms-user-select: none;';
-echo 'user-select: none; }';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px), only screen and (min-height: 480px) and (max-height: 767px) {';
-echo '.modal-sizes {';
-echo 'margin: 40px auto; } }';
-echo '@media only screen and (max-width: 479px), only screen and (max-height: 479px) {';
-echo '.modal-sizes {';
-echo 'margin: 0 auto;';
-echo 'width: auto; } }';
-echo '.modal-sizes .modal-header {';
-echo 'padding-top: .75rem;';
-echo 'width: 100%;';
-echo 'height: 3rem; }';
-echo '@media only screen and (max-width: 479px), only screen and (max-height: 479px) {';
-echo '.modal-sizes .modal-header {';
-echo 'border-radius: 0; } }';
-echo '.modal-sizes .modal-content {';
-echo 'font-size: .875rem; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.validation-message {';
-echo 'display: block;';
-echo 'position: absolute;';
-echo 'top: 0;';
-echo 'left: 0;';
-echo '-webkit-transform: translate(16rem, 0);';
-echo '-ms-transform: translate(16rem, 0);';
-echo 'transform: translate(16rem, 0);';
-echo 'margin-left: 1rem;';
-echo 'border: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: 5px;';
-echo 'background-color: #ffab1a;';
-echo 'padding: 1rem;';
-echo 'max-width: 18.75rem;';
-echo 'min-height: 1rem;';
-echo 'overflow: visible;';
-echo 'color: white;';
-echo 'z-index: 1;';
-echo 'font-weight: 500; }';
-echo '.validation-message:before {';
-echo 'display: block;';
-echo 'position: absolute;';
-echo 'top: 1rem;';
-echo 'left: -0.5rem;';
-echo '-webkit-transform: rotate(45deg);';
-echo '-ms-transform: rotate(45deg);';
-echo 'transform: rotate(45deg);';
-echo 'border-bottom: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-left: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: 5px;';
-echo 'background-color: #ffab1a;';
-echo 'width: 1rem;';
-echo 'height: 1rem;';
-echo 'content: ""; }';
-echo '';
-echo '.validation-left {';
-echo 'left: unset;';
-echo 'right: 0;';
-echo 'margin-left: unset;';
-echo 'margin-right: 1rem;';
-echo '-webkit-transform: translate(-16rem, 0);';
-echo '-ms-transform: translate(-16rem, 0);';
-echo 'transform: translate(-16rem, 0); }';
-echo '.validation-left:before {';
-echo 'left: unset;';
-echo 'right: -0.5rem;';
-echo 'border-top: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-right: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-bottom: none;';
-echo 'border-left: none; }';
-echo '';
-echo '@media only screen and (max-width: 941px) {';
-echo '.validation-message {';
-echo 'position: relative;';
-echo '-webkit-transform: none;';
-echo '-ms-transform: none;';
-echo 'transform: none;';
-echo 'margin: inherit;';
-echo 'width: 100%;';
-echo 'height: inherit; }';
-echo '.validation-message:before {';
-echo 'display: none; } }';
-echo '';
-echo '.validation-error {';
-echo 'background-color: #ffab1a; }';
-echo '.validation-error:before {';
-echo 'background-color: #ffab1a; }';
-echo '';
-echo '.validation-info {';
-echo 'background-color: #4d97ff;';
-echo 'box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.15); }';
-echo '.validation-info:before {';
-echo 'background-color: #4d97ff; }';
-echo '</style><style type="text/css">/*';
-echo '* Styles for the Row component used by formsy-react-components';
-echo '* Should be imported for each component that extends one of';
-echo '* the formsy-react-components';
-echo '*/';
-echo '.row .required-symbol {';
-echo 'display: none; }';
-echo '';
-echo '.row label {';
-echo 'display: inline-block;';
-echo 'margin-bottom: .75rem; }';
-echo '';
-echo '.row.no-label label {';
-echo 'display: none; }';
-echo '';
-echo '/* allow elements such as validation errors to position relative to this row */';
-echo '.row-with-tooltip {';
-echo 'position: relative; }';
-echo '';
-echo '.row-label {';
-echo 'margin-bottom: .75rem;';
-echo 'line-height: 1.7rem; }';
-echo '';
-echo '.row-inline {';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex; }';
-echo '';
-echo '/* override margin-bottom so placing a label next to a radio button does not';
-echo 'mess up vertical alignment */';
-echo '.row-inline label {';
-echo 'margin-bottom: 0; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '.formik-input {';
-echo 'height: 2.75rem;';
-echo 'border-radius: .5rem;';
-echo 'background-color: white;';
-echo 'margin-bottom: .5rem;';
-echo 'transition: all .5s ease, font-size 0s;';
-echo 'border: 1px solid rgba(0, 0, 0, 0.2);';
-echo 'padding: 0 1rem;';
-echo 'color: #575e75;';
-echo 'font-size: .875rem; }';
-echo '.formik-input:focus {';
-echo 'box-shadow: 0 0 0 0.25rem rgba(77, 151, 255, 0.25);';
-echo 'outline: none;';
-echo 'border: 1px solid #4d97ff;';
-echo 'transition: all .5s ease, font-size 0s; }';
-echo '.formik-input.fail {';
-echo 'border: 1px solid #ffab1a; }';
-echo '.formik-input.fail:focus {';
-echo 'box-shadow: 0 0 0 0.25rem rgba(244, 157, 37, 0.25);';
-echo 'outline: none; }';
-echo '.formik-input::-webkit-input-placeholder {';
-echo 'font-style: italic;';
-echo 'color: rgba(87, 94, 117, 0.6); }';
-echo '.formik-input:-ms-input-placeholder {';
-echo 'font-style: italic;';
-echo 'color: rgba(87, 94, 117, 0.6); }';
-echo '.formik-input::placeholder {';
-echo 'font-style: italic;';
-echo 'color: rgba(87, 94, 117, 0.6); }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo 'input[type="checkbox"].formik-checkbox {';
-echo 'display: block;';
-echo 'float: left;';
-echo 'margin-right: .625rem;';
-echo 'border: 1px solid rgba(0, 0, 0, 0.2);';
-echo 'border-radius: 3px;';
-echo 'width: 1.25rem;';
-echo 'height: 1.25rem;';
-echo '-webkit-appearance: none;';
-echo '-moz-appearance: none;';
-echo 'appearance: none; }';
-echo 'input[type="checkbox"].formik-checkbox:focus {';
-echo 'transition: all .25s ease;';
-echo 'outline: none;';
-echo 'box-shadow: 0 0 0 0.25rem rgba(77, 151, 255, 0.25); }';
-echo 'input[type="checkbox"].formik-checkbox:checked {';
-echo 'background-color: #4d97ff;';
-echo 'text-align: center;';
-echo 'text-indent: .125rem;';
-echo 'line-height: 1.25rem;';
-echo 'font-size: .75rem;';
-echo 'background-image: url("/svgs/forms/checkmark.svg");';
-echo 'background-position: center; }';
-echo '';
-echo '.formik-checkbox-label {';
-echo 'padding-top: .0625rem;';
-echo 'display: block; }';
-echo '</style><style type="text/css">.formik-label {';
-echo 'font-weight: 500; }';
-echo '</style><style type="text/css">.studio-status-icon-spinner {';
-echo '/* This class can be used on an icon that should spin.';
-echo 'It first plays the intro animation, then spins forever. */';
-echo '-webkit-animation-name: intro, spin;';
-echo 'animation-name: intro, spin;';
-echo '-webkit-animation-duration: .25s, 1s;';
-echo 'animation-duration: .25s, 1s;';
-echo '-webkit-animation-timing-function: cubic-bezier(0.3, -3, 0.6, 3), cubic-bezier(0.4, 0.1, 0.4, 1);';
-echo 'animation-timing-function: cubic-bezier(0.3, -3, 0.6, 3), cubic-bezier(0.4, 0.1, 0.4, 1);';
-echo '-webkit-animation-delay: 0s, .25s;';
-echo 'animation-delay: 0s, .25s;';
-echo '-webkit-animation-iteration-count: 1, infinite;';
-echo 'animation-iteration-count: 1, infinite;';
-echo '-webkit-animation-direction: normal;';
-echo 'animation-direction: normal;';
-echo 'width: 1.4rem;';
-echo '/* standard is 1.4 rem but can be overwritten by parent */';
-echo 'height: 1.4rem;';
-echo '-webkit-transform-origin: center;';
-echo '-ms-transform-origin: center;';
-echo 'transform-origin: center; }';
-echo '';
-echo '@-webkit-keyframes intro {';
-echo '0% {';
-echo '-webkit-transform: scale(0);';
-echo 'transform: scale(0);';
-echo 'opacity: 0; }';
-echo '100% {';
-echo '-webkit-transform: scale(1);';
-echo 'transform: scale(1);';
-echo 'opacity: 1; } }';
-echo '';
-echo '@keyframes intro {';
-echo '0% {';
-echo '-webkit-transform: scale(0);';
-echo 'transform: scale(0);';
-echo 'opacity: 0; }';
-echo '100% {';
-echo '-webkit-transform: scale(1);';
-echo 'transform: scale(1);';
-echo 'opacity: 1; } }';
-echo '';
-echo '@-webkit-keyframes spin {';
-echo '0% {';
-echo '-webkit-transform: rotate(0);';
-echo 'transform: rotate(0); }';
-echo '100% {';
-echo '-webkit-transform: rotate(359deg);';
-echo 'transform: rotate(359deg); } }';
-echo '';
-echo '@keyframes spin {';
-echo '0% {';
-echo '-webkit-transform: rotate(0);';
-echo 'transform: rotate(0); }';
-echo '100% {';
-echo '-webkit-transform: rotate(359deg);';
-echo 'transform: rotate(359deg); } }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '.modal-title {';
-echo 'box-sizing: border-box;';
-echo 'text-align: center;';
-echo 'color: white;';
-echo 'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;';
-echo 'font-size: 1rem;';
-echo 'font-weight: bold; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.modal-flush-bottom-button {';
-echo 'margin: 0;';
-echo 'width: 100%;';
-echo 'border: none;';
-echo 'border-bottom-left-radius: 1rem;';
-echo 'border-bottom-right-radius: 1rem;';
-echo 'height: 5.1875rem;';
-echo 'background-color: #ffab1a;';
-echo '/* match the small window setting for modal as a whole */ }';
-echo '.modal-flush-bottom-button:hover {';
-echo 'transition: background-color .25s ease;';
-echo 'background-color: rgba(255, 171, 26, 0.9); }';
-echo '@media only screen and (max-width: 479px), only screen and (max-height: 479px) {';
-echo '.modal-flush-bottom-button {';
-echo 'border-bottom-left-radius: 0;';
-echo 'border-bottom-right-radius: 0; } }';
-echo '';
-echo '.next-step-title {';
-echo 'font-size: 1.25rem;';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex;';
-echo '-webkit-justify-content: center;';
-echo '-ms-flex-pack: center;';
-echo 'justify-content: center;';
-echo '-webkit-align-items: center;';
-echo '-ms-flex-align: center;';
-echo 'align-items: center; }';
-echo '';
-echo '.next-step-spinner {';
-echo 'width: 2.625rem;';
-echo 'height: 2.625rem; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.modal-inner-content {';
-echo 'box-sizing: border-box;';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex;';
-echo 'border-radius: 0;';
-echo '-webkit-flex-direction: column;';
-echo '-ms-flex-direction: column;';
-echo 'flex-direction: column; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.join-flow-outer-content {';
-echo '/* hopefully this lets text expand the height of the modal, if need be */';
-echo 'min-height: 32.5rem;';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex;';
-echo '-webkit-justify-content: space-between;';
-echo '-ms-flex-pack: justify;';
-echo 'justify-content: space-between;';
-echo '-webkit-flex-direction: column;';
-echo '-ms-flex-direction: column;';
-echo 'flex-direction: column;';
-echo 'overflow-wrap: break-word; }';
-echo '';
-echo '.join-flow-inner-content {';
-echo 'box-shadow: none;';
-echo 'width: calc(50% + 7.84375rem);';
-echo '/* must use padding for top, rather than margin, because margins will collapse */';
-echo 'margin: 0 auto;';
-echo 'padding: 2.3125rem 0 2.5rem;';
-echo 'font-size: .875rem; }';
-echo '';
-echo '.join-flow-title {';
-echo 'color: #575e75;';
-echo 'font-size: 1.875rem; }';
-echo '';
-echo '.join-flow-description {';
-echo 'font-size: .875rem;';
-echo 'font-weight: bold;';
-echo 'line-height: 1.125rem;';
-echo 'margin-top: 0.78125rem;';
-echo 'margin-bottom: 1.875rem;';
-echo 'text-align: center; }';
-echo '';
-echo '/* overflow will only work if this class is set on parent of img, not img itself */';
-echo '.join-flow-header-image-wrapper {';
-echo 'width: 100%;';
-echo 'height: 7.5rem;';
-echo 'overflow: hidden;';
-echo 'margin: 0;';
-echo 'border-top-left-radius: 1rem;';
-echo 'border-top-right-radius: 1rem;';
-echo '/* match the small window setting for modal as a whole */ }';
-echo '@media only screen and (max-width: 479px), only screen and (max-height: 479px) {';
-echo '.join-flow-header-image-wrapper {';
-echo 'border-top-left-radius: 0rem;';
-echo 'border-top-right-radius: 0rem; } }';
-echo '';
-echo '.join-flow-header-image {';
-echo 'width: 100%; }';
-echo '';
-echo '.join-flow-footer-message {';
-echo 'width: 100%;';
-echo 'padding: 0.875rem 1.5rem;';
-echo 'background-color: rgba(77, 151, 255, 0.25);';
-echo 'font-size: .75rem;';
-echo 'font-weight: 500;';
-echo 'text-align: center;';
-echo 'color: #4d97ff; }';
-echo '';
-echo '.join-flow-footer-message a {';
-echo 'font-weight: 500; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.join-flow-input {';
-echo 'width: 100%;';
-echo 'height: 2.75rem;';
-echo 'border-radius: .5rem;';
-echo 'background-color: white;';
-echo 'margin-bottom: .5rem; }';
-echo '.join-flow-input:focus {';
-echo 'box-shadow: 0 0 0 0.25rem rgba(77, 151, 255, 0.25); }';
-echo '';
-echo '.join-flow-input-password {';
-echo 'font-size: 1.5rem; }';
-echo '';
-echo '.join-flow-password-confirm {';
-echo 'margin-bottom: .6875rem; }';
-echo '';
-echo '.join-flow-input-tall {';
-echo 'height: 3rem; }';
-echo '';
-echo '.join-flow-input-title {';
-echo 'font-weight: bold;';
-echo 'margin-bottom: .5rem; }';
-echo '';
-echo '.join-flow-instructions {';
-echo 'font-size: .875rem;';
-echo 'font-weight: bold;';
-echo 'line-height: 1.375rem;';
-echo 'margin-top: 1.25rem;';
-echo 'margin-bottom: .5rem;';
-echo 'text-align: center; }';
-echo '';
-echo '.validation-full-width-input {';
-echo '-webkit-transform: translate(21.8125rem, 0);';
-echo '-ms-transform: translate(21.8125rem, 0);';
-echo 'transform: translate(21.8125rem, 0); }';
-echo '';
-echo '.validation-birthdate-month {';
-echo '-webkit-transform: translate(-9.875rem, 0);';
-echo '-ms-transform: translate(-9.875rem, 0);';
-echo 'transform: translate(-9.875rem, 0); }';
-echo '';
-echo '.validation-birthdate-year {';
-echo '-webkit-transform: translate(9.375rem, 0);';
-echo '-ms-transform: translate(9.375rem, 0);';
-echo 'transform: translate(9.375rem, 0); }';
-echo '';
-echo '@media only screen and (max-width: 941px) {';
-echo '.validation-full-width-input {';
-echo '-webkit-transform: unset;';
-echo '-ms-transform: unset;';
-echo 'transform: unset;';
-echo 'margin-bottom: .75rem;';
-echo 'max-width: 100%; }';
-echo '.validation-country {';
-echo 'top: .5rem; }';
-echo '.validation-birthdate {';
-echo '-webkit-transform: unset;';
-echo '-ms-transform: unset;';
-echo 'transform: unset;';
-echo 'top: .5rem;';
-echo 'width: 19rem; }';
-echo '.validation-birthdate-month {';
-echo 'margin-right: -9.25rem; }';
-echo '.validation-birthdate-year {';
-echo 'margin-left: -9.625rem; } }';
-echo '';
-echo '.select .join-flow-select {';
-echo 'height: 3.5rem;';
-echo 'margin-bottom: 0;';
-echo 'padding-right: 3.25rem;';
-echo 'background-color: white;';
-echo 'border-color: rgba(0, 0, 0, 0.15);';
-echo 'font-size: 1rem;';
-echo 'font-weight: 500; }';
-echo '';
-echo '.select .join-flow-select-month {';
-echo 'margin-right: .5rem;';
-echo 'width: 9.125rem; }';
-echo '@media only screen and (max-width: 479px) {';
-echo '.select .join-flow-select-month {';
-echo 'width: 8.25rem; } }';
-echo '';
-echo '.select .join-flow-select-year {';
-echo 'width: 9.125rem; }';
-echo '@media only screen and (max-width: 479px) {';
-echo '.select .join-flow-select-year {';
-echo 'width: 8.25rem; } }';
-echo '';
-echo '.select .join-flow-select-country {';
-echo 'width: 100%;';
-echo 'margin: 0 auto; }';
-echo '';
-echo '.country-step-image {';
-echo 'background-color: #9966ff; }';
-echo '';
-echo '.join-flow-password-section {';
-echo 'margin-top: 1.125rem; }';
-echo '';
-echo '.birthdate-select-row {';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex;';
-echo 'margin: 0 auto; }';
-echo '';
-echo '.birthdate-step-image {';
-echo 'background-color: #cf63cf; }';
-echo '';
-echo '.join-flow-privacy-message {';
-echo 'margin: .5rem auto 1rem;';
-echo 'font-size: .75rem;';
-echo 'font-weight: 500;';
-echo 'color: rgba(87, 94, 117, 0.6);';
-echo 'text-align: center; }';
-echo '';
-echo '.join-flow-inner-username-step {';
-echo 'padding-top: 2.75rem; }';
-echo '';
-echo '.join-flow-inner-birthdate-step {';
-echo 'padding-top: 1rem;';
-echo 'padding-bottom: 2.25rem; }';
-echo '';
-echo '.join-flow-inner-gender-step {';
-echo 'padding-top: 2.625rem;';
-echo 'padding-bottom: 1rem; }';
-echo '';
-echo '.join-flow-inner-country-step {';
-echo 'padding-top: 0;';
-echo 'padding-bottom: 2.5rem; }';
-echo '';
-echo '.join-flow-inner-email-step {';
-echo 'padding-top: .75rem;';
-echo 'padding-bottom: 0; }';
-echo '';
-echo '.join-flow-inner-welcome-step {';
-echo 'padding-top: 0;';
-echo 'padding-bottom: 1rem; }';
-echo '';
-echo '.join-flow-inner-error-step {';
-echo '-webkit-user-select: text;';
-echo '-moz-user-select: text;';
-echo '-ms-user-select: text;';
-echo 'user-select: text;';
-echo '/* make text selectable, so users can copy errors */';
-echo 'padding-top: 5.5rem; }';
-echo '';
-echo '.join-flow-error-title {';
-echo 'margin-bottom: 2rem; }';
-echo '';
-echo '.join-flow-birthdate-title {';
-echo 'margin-bottom: 2.875rem; }';
-echo '';
-echo '.join-flow-email-title {';
-echo 'margin-bottom: 2rem; }';
-echo '';
-echo '.join-flow-email-privacy {';
-echo 'margin-top: 0; }';
-echo '';
-echo '.email-step-image {';
-echo 'background-color: rgba(30, 146, 185, 0.65); }';
-echo '';
-echo '.join-flow-gender-description {';
-echo 'margin-top: .625rem;';
-echo 'margin-bottom: 1.25rem; }';
-echo '';
-echo '.join-flow-gender-privacy {';
-echo 'margin-top: .5rem; }';
-echo '';
-echo '.join-flow-country-title {';
-echo 'margin-top: 0;';
-echo 'margin-bottom: 1.75rem; }';
-echo '';
-echo '.join-flow-welcome-title {';
-echo 'margin-bottom: 1rem; }';
-echo '';
-echo '.welcome-step-image {';
-echo 'background-color: #ffbf00; }';
-echo '';
-echo '.gender-radio-row {';
-echo 'transition: all .125s ease;';
-echo 'width: 97%;';
-echo 'min-height: 2.85rem;';
-echo 'background-color: #f2f2f2;';
-echo 'border-radius: .5rem;';
-echo 'margin: 0 auto 0.375rem;';
-echo 'padding-left: 0.8125rem;';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex;';
-echo '-webkit-align-items: center;';
-echo '-ms-flex-align: center;';
-echo 'align-items: center; }';
-echo '';
-echo '.gender-radio-row:hover {';
-echo 'background-color: rgba(77, 151, 255, 0.1); }';
-echo '';
-echo '.gender-radio-row-selected, .gender-radio-row-selected:hover {';
-echo 'transition: all .125s ease;';
-echo 'background-color: rgba(77, 151, 255, 0.25); }';
-echo '';
-echo '.join-flow-next-button-arrow {';
-echo 'width: 2rem;';
-echo 'height: 2rem;';
-echo 'margin-left: .5rem; }';
-echo '';
-echo '.modal-inner-content-email {';
-echo 'padding-top: 2.9rem; }';
-echo '';
-echo '.join-flow-email-checkbox-row {';
-echo 'font-size: .75rem;';
-echo 'margin: 1.5rem .125rem 1rem; }';
-echo '';
-echo 'a.join-flow-link:link, a.join-flow-link:visited, a.join-flow-link:active {';
-echo 'text-decoration: underline; }';
-echo '';
-echo '.yesNoCheckbox {';
-echo 'display: none; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.select label {';
-echo 'font-weight: 500; }';
-echo '';
-echo '.select select {';
-echo 'transition: border .5s ease;';
-echo 'margin-bottom: .75rem;';
-echo 'border: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: 5px;';
-echo 'background: #fafafa url(data:image/svg+xml;base64,PHN2ZyBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjY0Ij48cGF0aCBkPSJNMjQgMzcuNDNhMS44OCAxLjg4IDAgMCAxLTEuMzMtLjU1bC01LjExLTUuMTFhMS44NyAxLjg3IDAgMCAxIDAtMi42NGMuNzMtLjczIDEyLjE0LS43MyAxMi44NyAwYTEuODcgMS44NyAwIDAgMSAwIDIuNjRsLTUuMTEgNS4xMWExLjg2IDEuODYgMCAwIDEtMS4zMi41NXoiIGZpbGw9IiNiM2IzYjMiLz48cGF0aCBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiIGZpbGw9IiMyMzFmMjAiIG9wYWNpdHk9Ii4xIiBkPSJNLjAxIDBoMXY2NGgtMXoiLz48L3N2Zz4=) no-repeat right center;';
-echo 'padding-right: 4rem;';
-echo 'padding-left: 1rem;';
-echo 'width: 100%;';
-echo 'height: 3rem;';
-echo 'color: #575e75;';
-echo 'font-size: .875rem;';
-echo '-webkit-appearance: none;';
-echo '-moz-appearance: none;';
-echo 'appearance: none; }';
-echo '.select select::-ms-expand {';
-echo 'display: none; }';
-echo '.select select::-ms-value {';
-echo 'background-color: inherit;';
-echo 'padding-left: 1rem;';
-echo 'color: inherit; }';
-echo '.select select:focus {';
-echo 'outline: none;';
-echo 'border: 1px solid #4d97ff; }';
-echo '.select select:-moz-focusring {';
-echo 'text-shadow: 0 0 0 #575e75;';
-echo 'color: transparent; }';
-echo '.select select:focus, .select select:hover {';
-echo 'background: #fafafa url(data:image/svg+xml;base64,PHN2ZyBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjY0Ij48cGF0aCBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiIGZpbGw9IiMyMzFmMjAiIG9wYWNpdHk9Ii4xIiBkPSJNLjAxIDBoNDh2NjRoLTQ4eiIvPjxwYXRoIGQ9Ik0yNCAzNy41OGExLjg4IDEuODggMCAwIDEtMS4zMy0uNThsLTUuMTEtNS4xMWExLjg5IDEuODkgMCAwIDEgMC0yLjY1Yy43My0uNzMgMTIuMTQtLjczIDEyLjg3IDBhMS44NyAxLjg3IDAgMCAxIDAgMi42NEwyNS4zMiAzN2ExLjg2IDEuODYgMCAwIDEtMS4zMi41OHoiIGZpbGw9IiNiM2IzYjMiLz48L3N2Zz4=) no-repeat right center; }';
-echo '.select select > option {';
-echo 'background-color: white;';
-echo 'width: 100%; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '.select .fail {';
-echo 'border: 1px solid #ffab1a; }';
-echo '.select .fail:focus {';
-echo 'box-shadow: 0 0 0 0.25rem rgba(244, 157, 37, 0.25);';
-echo 'outline: none; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.info-button {';
-echo 'position: relative;';
-echo 'display: inline-block;';
-echo 'width: 2rem;';
-echo 'height: 2rem;';
-echo 'margin-left: -.125rem;';
-echo 'margin-top: -.75rem;';
-echo 'background-image: url("/svgs/info-button/info-button.svg");';
-echo 'background-size: cover;';
-echo 'top: .6875rem; }';
-echo '';
-echo '.info-button-message {';
-echo 'display: block;';
-echo 'position: absolute;';
-echo 'top: .375rem;';
-echo 'left: .5rem;';
-echo '-webkit-transform: translate(1rem, -1rem);';
-echo '-ms-transform: translate(1rem, -1rem);';
-echo 'transform: translate(1rem, -1rem);';
-echo 'width: 16.5rem;';
-echo 'min-height: 1rem;';
-echo 'margin-left: 1rem;';
-echo 'border: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: 5px;';
-echo 'box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.15);';
-echo 'padding: .75rem;';
-echo 'overflow: visible;';
-echo 'background-color: #4d97ff;';
-echo 'color: white;';
-echo 'line-height: 1.25rem;';
-echo 'text-align: left;';
-echo 'font-size: .875rem;';
-echo 'font-weight: 500;';
-echo 'z-index: 2; }';
-echo '.info-button-message:before {';
-echo 'display: block;';
-echo 'position: absolute;';
-echo 'top: 1rem;';
-echo 'left: -0.5rem;';
-echo '-webkit-transform: rotate(45deg);';
-echo '-ms-transform: rotate(45deg);';
-echo 'transform: rotate(45deg);';
-echo 'border-bottom: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-left: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: 5px;';
-echo 'background-color: #4d97ff;';
-echo 'width: 1rem;';
-echo 'height: 1rem;';
-echo 'content: ""; }';
-echo '';
-echo '@media only screen and (max-width: 941px) {';
-echo '.info-button-message {';
-echo 'position: absolute;';
-echo '-webkit-transform: none;';
-echo '-ms-transform: none;';
-echo 'transform: none;';
-echo '/* since we're positioning message relative to info-button's parent,';
-echo 'we need to center this element within its width. */';
-echo 'margin: 0 calc((100% - 16.5rem) / 2);';
-echo 'top: .125rem;';
-echo 'left: 0; }';
-echo '.info-button-message:before {';
-echo 'display: none; } }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '.formik-radio-label {';
-echo 'margin-left: 1rem; }';
-echo '';
-echo 'input[type="radio"].formik-radio-button {';
-echo 'margin-top: 1px;';
-echo 'border: 1px solid rgba(0, 0, 0, 0.15);';
-echo 'border-radius: 50%;';
-echo 'width: 1rem;';
-echo 'min-width: 1rem;';
-echo '/* necessary to prevent width from being too small in 'other' case */';
-echo 'height: 1rem;';
-echo '-webkit-appearance: none;';
-echo '-moz-appearance: none;';
-echo 'appearance: none;';
-echo 'background-color: white; }';
-echo 'input[type="radio"].formik-radio-button:checked, input[type="radio"].formik-radio-button:focus {';
-echo 'outline: none; }';
-echo 'input[type="radio"].formik-radio-button:checked {';
-echo 'transition: all .25s ease;';
-echo 'box-shadow: 0 0 0 2px rgba(77, 151, 255, 0.25);';
-echo 'border: 1px solid #4d97ff;';
-echo 'background-color: white; }';
-echo 'input[type="radio"].formik-radio-button:checked:after {';
-echo 'display: block;';
-echo '-webkit-transform: translate(0.125rem, 0.125rem);';
-echo '-ms-transform: translate(0.125rem, 0.125rem);';
-echo 'transform: translate(0.125rem, 0.125rem);';
-echo 'border-radius: 50%;';
-echo 'background-color: #4d97ff;';
-echo 'width: .625rem;';
-echo 'height: .625rem;';
-echo 'content: ""; }';
-echo '';
-echo 'input.formik-radio-input, .formik-radio-input input {';
-echo 'height: 2.1875rem;';
-echo 'width: 100%;';
-echo 'margin-bottom: 0;';
-echo 'border-radius: .5rem;';
-echo 'background-color: white; }';
-echo 'input.formik-radio-input:focus, .formik-radio-input input:focus {';
-echo 'box-shadow: 0 0 0 0.25rem rgba(77, 151, 255, 0.25); }';
-echo '';
-echo '.formik-radio-input-wrapper {';
-echo 'margin-left: auto;';
-echo 'margin-right: .25rem;';
-echo 'width: 10.25rem; }';
-echo '';
-echo '.formik-radio-label-other {';
-echo 'max-width: 7rem;';
-echo 'margin-right: .25rem; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '/* unusually for a modal, the join flow modal cares about the screen around it';
-echo 'being clickable, because of the standalone join view. */';
-echo '.mod-join {';
-echo 'width: 27.4375rem; }';
-echo '@media only screen and (max-width: 479px) {';
-echo '.mod-join {';
-echo 'width: auto; } }';
-echo '';
-echo '/* enable vertical scrolling when modal showing, if page is short */';
-echo '@media only screen and (max-height: 479px), only screen and (min-height: 480px) and (max-height: 767px) {';
-echo '.modal-overlay {';
-echo 'overflow: auto; } }';
-echo '';
-echo '@media only screen and (max-width: 479px), only screen and (max-height: 479px) {';
-echo '.modal-content {';
-echo 'height: unset; } }';
-echo '';
-echo '/* lower the modal slightly to accomodate Scratch logo above it */';
-echo '@media only screen and (max-width: 479px), only screen and (max-height: 479px), only screen and (min-width: 480px) and (max-width: 767px), only screen and (min-height: 480px) and (max-height: 767px) {';
-echo '.modal-sizes {';
-echo 'margin: 3.5rem auto; } }';
-echo '</style><style type="text/css">/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.modal-content.mod-registration {';
-echo 'width: 38.125rem;';
-echo 'overflow: hidden; }';
-echo '';
-echo '.modal-content-iframe.mod-registration {';
-echo 'width: 38.125rem;';
-echo 'min-height: 27.375rem; }';
-echo '';
-echo '.modal-content.recaptcha-open {';
-echo 'min-height: 500px; }';
-echo '';
-echo '.modal-content-iframe.recaptcha-open {';
-echo 'min-height: 500px; }';
-echo '';
-echo '@media only screen and (max-width: 941px) {';
-echo '.modal-content.mod-registration {';
-echo 'width: 100%;';
-echo 'overflow: scroll; }';
-echo '.modal-content-iframe.mod-registration {';
-echo 'height: 27.375rem; } }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '.button {';
-echo 'display: inline-block;';
-echo 'margin: .5em 0;';
-echo 'border: 0;';
-echo 'border-radius: .5rem;';
-echo 'background-color: #4d97ff;';
-echo 'cursor: pointer;';
-echo 'padding: 1em 1.25em;';
-echo 'color: white;';
-echo 'font-size: .8rem;';
-echo 'font-weight: bold;';
-echo '/* USER BUTTON STATES */';
-echo '/* DATA BUTTON STATES */ }';
-echo '.button:focus {';
-echo 'outline: none; }';
-echo '.button.white {';
-echo 'background-color: white;';
-echo 'color: #4d97ff; }';
-echo '.button.pass {';
-echo 'background-color: #0fbd8c; }';
-echo '.button.fail {';
-echo 'background-color: #ffab1a; }';
-echo '.button:disabled {';
-echo 'box-shadow: none; }';
-echo '.button.large {';
-echo 'border-radius: .25rem;';
-echo 'font-size: 1rem;';
-echo 'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;';
-echo 'padding: .75rem 1.25rem .8125rem; }';
-echo '.button.icon-right img {';
-echo 'height: 1.25rem;';
-echo 'margin-bottom: -.25rem;';
-echo 'margin-left: .5rem;';
-echo 'margin-right: -.25rem; }';
-echo '</style><style type="text/css">.crash-container {';
-echo '/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo 'margin: 3rem auto;';
-echo 'border: 1px solid #d9d9d9;';
-echo 'border-radius: 10px;';
-echo 'background-color: #fcfcfc;';
-echo 'width: 60%;';
-echo 'overflow: hidden;';
-echo 'text-align: center; }';
-echo '@media only screen and (max-width: 479px) {';
-echo '.crash-container #view {';
-echo 'text-align: center; }';
-echo '.crash-container .inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '.crash-container #view {';
-echo 'text-align: center; }';
-echo '.crash-container .inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '.crash-container #view {';
-echo 'text-align: center; }';
-echo '.crash-container .inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '@media only screen and (min-width: 942px) {';
-echo '.crash-container .inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '.crash-container img {';
-echo 'width: 100%; }';
-echo '.crash-container .crash-message {';
-echo 'margin: 2rem; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.row label {';
-echo 'font-weight: 500; }';
-echo '';
-echo '.input {';
-echo 'transition: all .5s ease;';
-echo 'margin-bottom: .75rem;';
-echo 'border: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: 5px;';
-echo 'background-color: #fafafa;';
-echo 'padding: 0 1rem;';
-echo 'height: 3rem;';
-echo 'color: #575e75;';
-echo 'font-size: .875rem;';
-echo '/* IE10/11-specific style resets */ }';
-echo '.input:focus {';
-echo 'transition: all .5s ease;';
-echo 'outline: none;';
-echo 'border: 1px solid #4d97ff; }';
-echo '.input.fail {';
-echo 'border: 1px solid #ffab1a; }';
-echo '.input.pass {';
-echo 'border: 1px solid #0fbd8c; }';
-echo '.input::-ms-reveal, .input::-ms-clear {';
-echo 'display: none; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.dropdown {';
-echo 'display: none;';
-echo 'position: absolute;';
-echo 'right: 0;';
-echo 'border: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: 0 0 5px 5px;';
-echo 'background-color: #4d97ff;';
-echo 'padding: 10px;';
-echo 'min-width: 9rem;';
-echo 'max-width: 16.25rem;';
-echo 'overflow: visible;';
-echo 'color: white;';
-echo 'font-size: .8125rem;';
-echo 'font-weight: normal; }';
-echo '.dropdown.staging {';
-echo 'background-color: #ffab1a; }';
-echo '.dropdown.open {';
-echo 'display: block; }';
-echo '.dropdown a:link, .dropdown a:visited, .dropdown a:active {';
-echo 'background-color: transparent;';
-echo 'color: white; }';
-echo '.dropdown input {';
-echo 'margin-bottom: 12px;';
-echo 'width: calc(100% - 30px); }';
-echo '.dropdown label {';
-echo 'display: block;';
-echo 'margin-bottom: 5px; }';
-echo '.dropdown > li {';
-echo 'display: block;';
-echo 'line-height: 30px; }';
-echo '.dropdown > li.divider {';
-echo 'margin-top: 10px;';
-echo 'border-top: 1px solid rgba(0, 0, 0, 0.1); }';
-echo '.dropdown > li a {';
-echo 'display: block;';
-echo 'padding: 0 10px; }';
-echo '.dropdown > li a:hover {';
-echo 'background-color: rgba(0, 0, 0, 0.1);';
-echo 'text-decoration: none; }';
-echo '.dropdown.with-arrow {';
-echo 'margin-top: 14px;';
-echo 'border-radius: 5px;';
-echo 'overflow: visible; }';
-echo '.dropdown.with-arrow:before {';
-echo 'display: block;';
-echo 'position: absolute;';
-echo 'top: -7px;';
-echo 'right: 10%;';
-echo '-webkit-transform: rotate(45deg);';
-echo '-ms-transform: rotate(45deg);';
-echo 'transform: rotate(45deg);';
-echo 'border-top: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-left: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'border-radius: 5px;';
-echo 'background-color: #4d97ff;';
-echo 'width: 14px;';
-echo 'height: 14px;';
-echo 'content: ""; }';
-echo '</style><style type="text/css">/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.flex-row {';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex;';
-echo '-webkit-flex-direction: row;';
-echo '-ms-flex-direction: row;';
-echo 'flex-direction: row;';
-echo '-webkit-flex-wrap: wrap;';
-echo '-ms-flex-wrap: wrap;';
-echo 'flex-wrap: wrap;';
-echo '-webkit-justify-content: space-around;';
-echo '-ms-flex-pack: distribute;';
-echo 'justify-content: space-around;';
-echo '-webkit-align-items: center;';
-echo '-ms-flex-align: center;';
-echo 'align-items: center; }';
-echo '.flex-row.column {';
-echo '-webkit-flex-direction: column;';
-echo '-ms-flex-direction: column;';
-echo 'flex-direction: column;';
-echo '-webkit-justify-content: center;';
-echo '-ms-flex-pack: center;';
-echo 'justify-content: center; }';
-echo '.flex-row.uneven {';
-echo '-webkit-align-items: flex-start;';
-echo '-ms-flex-align: start;';
-echo '-ms-grid-row-align: flex-start;';
-echo 'align-items: flex-start; }';
-echo '.flex-row.uneven .short {';
-echo 'width: 13.75em; }';
-echo '.flex-row.uneven .long {';
-echo 'width: 38.75em;';
-echo 'text-align: left; }';
-echo '@media only screen and (max-width: 767px) {';
-echo '.flex-row {';
-echo '-webkit-flex-direction: column;';
-echo '-ms-flex-direction: column;';
-echo 'flex-direction: column; }';
-echo '.flex-row.uneven .short,';
-echo '.flex-row.uneven .long {';
-echo 'margin: auto;';
-echo 'width: 90%; } }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '.login {';
-echo 'padding: 10px;';
-echo 'width: 200px;';
-echo 'line-height: 1.5rem;';
-echo 'white-space: normal;';
-echo 'color: white;';
-echo 'font-size: .8125rem; }';
-echo '.login .button {';
-echo 'padding: .75em; }';
-echo '.login .row {';
-echo 'margin-bottom: 1.25rem; }';
-echo '.login .input {';
-echo 'margin-bottom: 12px;';
-echo 'width: calc(100% - 30px);';
-echo 'height: 2.25rem; }';
-echo '.login label {';
-echo 'padding-top: 5px;';
-echo 'font-weight: bold; }';
-echo '.login .spinner {';
-echo 'margin: 0 .8rem;';
-echo 'width: 1rem;';
-echo 'vertical-align: middle; }';
-echo '.login .submit-row {';
-echo '-webkit-justify-content: space-between;';
-echo '-ms-flex-pack: justify;';
-echo 'justify-content: space-between;';
-echo '-webkit-flex-direction: row;';
-echo '-ms-flex-direction: row;';
-echo 'flex-direction: row; }';
-echo '.login .submit-button {';
-echo 'margin-top: 5px; }';
-echo '.login a {';
-echo 'margin: auto 0;';
-echo 'color: white; }';
-echo '.login a:link, .login a:visited, .login a:active {';
-echo 'color: white; }';
-echo '.login a:hover {';
-echo 'background-color: transparent; }';
-echo '.login .error {';
-echo 'border: 1px solid rgba(0, 0, 0, 0.2);';
-echo 'border-radius: 5px;';
-echo 'background-color: #ffab1a;';
-echo 'padding: .75em 1em; }';
-echo '</style><style type="text/css"></style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '#navigation {';
-echo 'display: block;';
-echo 'position: fixed;';
-echo 'top: 0;';
-echo 'left: 0;';
-echo 'z-index: 10;';
-echo 'border-bottom: 1px solid rgba(0, 0, 0, 0.1);';
-echo 'box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);';
-echo 'background-color: #4d97ff;';
-echo 'width: 100%;';
-echo '/* NOTE: Height should match offset settings in main.scss file */';
-echo 'height: 50px; }';
-echo '#navigation.staging {';
-echo 'background-color: #ffab1a; }';
-echo '.ie9 #navigation {';
-echo 'display: table;';
-echo 'table-layout: fixed; }';
-echo '#navigation .inner > ul {';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex;';
-echo 'margin: 0;';
-echo 'padding: 0;';
-echo 'height: 50px;';
-echo 'list-style: none;';
-echo '-webkit-flex-wrap: nowrap;';
-echo '-ms-flex-wrap: nowrap;';
-echo 'flex-wrap: nowrap;';
-echo '-webkit-flex-direction: row;';
-echo '-ms-flex-direction: row;';
-echo 'flex-direction: row;';
-echo '-webkit-justify-content: flex-start;';
-echo '-ms-flex-pack: start;';
-echo 'justify-content: flex-start; }';
-echo '.ie9 #navigation .inner > ul {';
-echo 'display: table-row; }';
-echo '#navigation .inner > ul > li {';
-echo 'display: inline-block;';
-echo 'position: relative;';
-echo 'float: left;';
-echo 'margin: 0;';
-echo 'height: 100%;';
-echo '-webkit-align-self: flex-start;';
-echo '-ms-flex-item-align: start;';
-echo 'align-self: flex-start; }';
-echo '#navigation .inner > ul > li.right {';
-echo 'float: right;';
-echo 'margin-left: auto;';
-echo '-webkit-align-self: flex-end;';
-echo '-ms-flex-item-align: end;';
-echo 'align-self: flex-end; }';
-echo '.ie9 #navigation .inner > ul > li.right {';
-echo 'float: none; }';
-echo '#navigation .inner > ul > li.right a:hover {';
-echo 'background-color: rgba(0, 0, 0, 0.1); }';
-echo '.ie9 #navigation .inner > ul > li {';
-echo 'display: table-cell;';
-echo 'float: none;';
-echo 'height: 50px;';
-echo 'vertical-align: bottom; }';
-echo '#navigation .link > a {';
-echo 'display: block;';
-echo 'padding: 13px 15px 4px 15px;';
-echo 'height: 33px;';
-echo 'text-decoration: none;';
-echo 'white-space: nowrap;';
-echo 'color: white;';
-echo 'font-size: .85rem;';
-echo 'font-weight: bold; }';
-echo '#navigation .link > a:hover {';
-echo 'background-color: rgba(0, 0, 0, 0.1); }';
-echo '</style><style type="text/css">/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.modal-content-iframe {';
-echo 'border: 0; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.account-nav .user-info {';
-echo 'display: inline-block;';
-echo 'padding: 14px 15px 4px 15px;';
-echo 'max-width: 260px;';
-echo 'height: 33px;';
-echo 'overflow: hidden;';
-echo 'text-decoration: none;';
-echo 'text-overflow: ellipsis;';
-echo 'white-space: nowrap;';
-echo 'color: white;';
-echo 'font-size: .8125rem;';
-echo 'font-weight: normal; }';
-echo '.account-nav .user-info .avatar {';
-echo 'margin-right: 10px;';
-echo 'border-radius: 3px;';
-echo 'width: 24px;';
-echo 'height: 24px;';
-echo 'vertical-align: middle; }';
-echo '.account-nav .user-info:hover {';
-echo 'background-color: rgba(0, 0, 0, 0.1); }';
-echo '.account-nav .user-info.open {';
-echo 'background-color: rgba(0, 0, 0, 0.1); }';
-echo '.account-nav .user-info:after {';
-echo 'display: inline-block;';
-echo 'margin-left: 8px;';
-echo 'background-image: url("/images/dropdown.png");';
-echo 'background-repeat: no-repeat;';
-echo 'background-position: center center;';
-echo 'background-size: 50%;';
-echo 'width: 20px;';
-echo 'height: 20px;';
-echo 'vertical-align: middle;';
-echo 'content: " "; }';
-echo '';
-echo '.account-nav .dropdown {';
-echo 'top: 50px;';
-echo 'padding: 0;';
-echo 'padding-top: 5px;';
-echo 'width: 100%;';
-echo 'box-sizing: border-box; }';
-echo '';
-echo '@media only screen and (max-width: 479px) {';
-echo '.account-nav {';
-echo 'margin-left: 0; }';
-echo '.account-nav .user-info .avatar {';
-echo 'margin-right: 0; }';
-echo '.account-nav .user-info:after {';
-echo 'display: none; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '.account-nav {';
-echo 'margin-left: 0; }';
-echo '.account-nav .user-info .avatar {';
-echo 'margin-right: 0; }';
-echo '.account-nav .user-info:after {';
-echo 'display: none; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '.account-nav {';
-echo 'margin-left: 0; } }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '#navigation.staging .messages .message-count {';
-echo 'display: none; }';
-echo '#navigation.staging .messages .message-count.show {';
-echo 'background-color: #4d97ff; }';
-echo '';
-echo '#navigation .logo {';
-echo 'margin-right: 10px; }';
-echo '#navigation .logo a {';
-echo 'display: block;';
-echo 'transition: .15s ease all;';
-echo 'margin: 0 6px 0 0;';
-echo 'border: 0;';
-echo 'background-image: url("/images/logo_sm.png");';
-echo 'background-repeat: no-repeat;';
-echo 'background-position: center center;';
-echo 'background-size: 95%;';
-echo 'width: 81px;';
-echo 'height: 50px; }';
-echo '#navigation .logo a:hover {';
-echo 'transition: .15s ease all;';
-echo 'background-size: 100%; }';
-echo '';
-echo '#navigation .inner > ul > li.search {';
-echo 'margin: 0 20px;';
-echo 'border-right: 0;';
-echo 'color: white;';
-echo '-webkit-flex-grow: 3;';
-echo '-ms-flex-positive: 3;';
-echo 'flex-grow: 3; }';
-echo '.ie9 #navigation .inner > ul > li.search {';
-echo 'width: 100%; }';
-echo '#navigation .inner > ul > li.search .form {';
-echo 'margin: 0; }';
-echo '#navigation .inner > ul > li.search .row .help-block {';
-echo 'display: none; }';
-echo '#navigation .inner > ul > li.search .input,';
-echo '#navigation .inner > ul > li.search .button {';
-echo 'display: inline-block;';
-echo 'margin-top: 5px;';
-echo 'outline: none;';
-echo 'border: 0;';
-echo 'background-color: rgba(0, 0, 0, 0.1);';
-echo 'height: 14px; }';
-echo '#navigation .inner > ul > li.search .input[type=text],';
-echo '#navigation .inner > ul > li.search .button[type=text] {';
-echo 'transition: .15s ease background-color;';
-echo 'padding: 0;';
-echo 'padding-right: 10px;';
-echo 'padding-left: 40px;';
-echo 'width: calc(100% - 50px);';
-echo 'height: 40px;';
-echo 'color: white;';
-echo 'font-size: .85em; }';
-echo '#navigation .inner > ul > li.search .input[type=text]::-webkit-input-placeholder,';
-echo '#navigation .inner > ul > li.search .button[type=text]::-webkit-input-placeholder {';
-echo 'color: rgba(255, 255, 255, 0.75); }';
-echo '#navigation .inner > ul > li.search .input[type=text]:-ms-input-placeholder,';
-echo '#navigation .inner > ul > li.search .button[type=text]:-ms-input-placeholder {';
-echo 'color: rgba(255, 255, 255, 0.75); }';
-echo '#navigation .inner > ul > li.search .input[type=text]::placeholder,';
-echo '#navigation .inner > ul > li.search .button[type=text]::placeholder {';
-echo 'color: rgba(255, 255, 255, 0.75); }';
-echo '#navigation .inner > ul > li.search .input[type=text]:focus,';
-echo '#navigation .inner > ul > li.search .button[type=text]:focus {';
-echo 'transition: .15s ease background-color;';
-echo 'background-color: rgba(0, 0, 0, 0.2); }';
-echo '.ie9 #navigation .inner > ul > li.search .input[type=text], .ie9';
-echo '#navigation .inner > ul > li.search .button[type=text] {';
-echo 'width: 70px; }';
-echo '#navigation .inner > ul > li.search .btn-search {';
-echo 'position: absolute;';
-echo 'box-shadow: none;';
-echo 'background-color: transparent;';
-echo 'background-image: url("/images/nav-search-glass.png");';
-echo 'background-repeat: no-repeat;';
-echo 'background-position: center center;';
-echo 'background-size: 14px 14px;';
-echo 'width: 40px;';
-echo 'height: 40px; }';
-echo '#navigation .inner > ul > li.search .btn-search:hover {';
-echo 'box-shadow: none; }';
-echo '';
-echo '#navigation .messages > a,';
-echo '#navigation .mystuff > a {';
-echo 'background-repeat: no-repeat;';
-echo 'background-position: center center;';
-echo 'background-size: 45%;';
-echo 'padding-right: 10px;';
-echo 'padding-left: 10px;';
-echo 'width: 30px;';
-echo 'overflow: hidden;';
-echo 'text-indent: 50px;';
-echo 'white-space: nowrap; }';
-echo '#navigation .messages > a:hover,';
-echo '#navigation .mystuff > a:hover {';
-echo 'background-size: 50%; }';
-echo '';
-echo '#navigation .messages > a {';
-echo 'background-image: url("/images/nav-notifications.png"); }';
-echo '';
-echo '#navigation .messages .message-count {';
-echo 'display: none; }';
-echo '#navigation .messages .message-count.show {';
-echo 'display: block;';
-echo 'position: absolute;';
-echo 'top: .5rem;';
-echo 'right: .25rem;';
-echo 'border-radius: 1rem;';
-echo 'background-color: #ffab1a;';
-echo 'padding: 0 .25rem;';
-echo 'text-indent: 0;';
-echo 'line-height: 1rem;';
-echo 'color: white;';
-echo 'font-size: .7rem;';
-echo 'font-weight: bold; }';
-echo '';
-echo '#navigation .mystuff > a {';
-echo 'background-image: url("/images/mystuff.png"); }';
-echo '';
-echo '@media only screen and (max-width: 479px) {';
-echo '#navigation .inner {';
-echo 'width: 18.75em; }';
-echo '#navigation .inner > ul > li.login-item {';
-echo 'margin-left: 0; }';
-echo '#navigation .inner .create,';
-echo '#navigation .inner .discuss,';
-echo '#navigation .inner .explore,';
-echo '#navigation .inner .search,';
-echo '#navigation .inner .help,';
-echo '#navigation .inner .mystuff,';
-echo '#navigation .inner .profile-name {';
-echo 'display: none; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#navigation .inner {';
-echo 'width: 28.75em; }';
-echo '#navigation .inner > ul > li.login-item {';
-echo 'margin-left: 0; }';
-echo '#navigation .inner .discuss,';
-echo '#navigation .inner .explore,';
-echo '#navigation .inner .search,';
-echo '#navigation .inner .mystuff,';
-echo '#navigation .inner .profile-name {';
-echo 'display: none; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#navigation .inner {';
-echo 'width: 38.75em; }';
-echo '#navigation .inner > ul > li.login-item {';
-echo 'margin-left: 0; }';
-echo '#navigation .inner .explore,';
-echo '#navigation .inner .search,';
-echo '#navigation .inner .mystuff {';
-echo 'display: none; } }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '#footer {';
-echo 'display: block;';
-echo 'background-color: #f2f2f2;';
-echo 'padding: 10px 0;';
-echo 'color: #575e75;';
-echo 'font-size: .85rem; }';
-echo '</style><style type="text/css">/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.language-chooser .select select {';
-echo 'width: 13.75rem;';
-echo '/* 3 columns */ }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '#footer .lists {';
-echo 'display: -webkit-flex;';
-echo 'display: -ms-flexbox;';
-echo 'display: flex;';
-echo 'text-align: center;';
-echo '-webkit-flex-direction: row;';
-echo '-ms-flex-direction: row;';
-echo 'flex-direction: row;';
-echo '-webkit-flex-wrap: nowrap;';
-echo '-ms-flex-wrap: nowrap;';
-echo 'flex-wrap: nowrap;';
-echo '-webkit-justify-content: space-between;';
-echo '-ms-flex-pack: justify;';
-echo 'justify-content: space-between; }';
-echo '#footer .lists dl {';
-echo 'display: inline-block;';
-echo 'vertical-align: top;';
-echo 'text-align: left;';
-echo 'font-size: .8rem; }';
-echo '#footer .lists dt {';
-echo 'display: block;';
-echo 'margin-bottom: 8px; }';
-echo '#footer .lists dd {';
-echo 'display: block;';
-echo 'margin: 5px 0;';
-echo 'line-height: 1.2rem; }';
-echo '#footer .lists dd a {';
-echo 'font-weight: 400; }';
-echo '';
-echo '#footer .copyright {';
-echo 'display: block;';
-echo 'width: 100%;';
-echo 'text-align: center; }';
-echo '#footer .copyright p {';
-echo 'font-size: .7rem; }';
-echo '';
-echo '#footer .language-chooser {';
-echo 'text-align: center; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '#donor {';
-echo 'color: #575e75;';
-echo 'font-size: .875rem;';
-echo 'line-height: 1.5em;';
-echo 'background-color: #f2f2f2;';
-echo 'padding-bottom: 2.5rem;';
-echo 'padding-top: 1rem; }';
-echo '#donor #donor-text {';
-echo 'text-align: center;';
-echo 'width: 58.75em;';
-echo 'margin: 0 auto; }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 942px) {';
-echo '#donor #donor-text {';
-echo 'width: 53.75em; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 768px) {';
-echo '#donor #donor-text {';
-echo 'width: 28.75em; } }';
-echo '';
-echo '@media only screen and (max-width: 480px) {';
-echo '#donor #donor-text {';
-echo 'width: 18.75em; } }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.title-banner {';
-echo 'transition: background-image .5s ease, background-color .5s ease;';
-echo 'margin-bottom: 40px;';
-echo 'background-color: #0fbd8c;';
-echo 'background-position: center;';
-echo 'background-size: cover;';
-echo 'padding: 20px 0;';
-echo 'width: 100%; }';
-echo '';
-echo '.title-banner-h1,';
-echo '.title-banner-p {';
-echo 'margin: 0 auto;';
-echo 'padding: 5px 0;';
-echo 'text-align: center;';
-echo 'color: white; }';
-echo '';
-echo '.title-banner-p {';
-echo 'max-width: 500px; }';
-echo '';
-echo '.title-banner-strong {';
-echo 'font-weight: 700; }';
-echo '';
-echo '.title-banner.mod-blue-bg {';
-echo 'background-color: #4d97ff; }';
-echo '.title-banner.mod-blue-bg a {';
-echo 'color: white; }';
-echo '.title-banner.mod-blue-bg a.mod-underline {';
-echo 'text-decoration: underline; }';
-echo '</style><style type="text/css">/* UI Primary Colors */';
-echo '/* #FF661A */';
-echo '/* UI Secondary Colors */';
-echo '/* 3.0 colors */';
-echo '/* Using www naming convention for now, should be consistent with gui */';
-echo '/* #CF63CF Sounds Primary */';
-echo '/* modals */';
-echo '/* Overlay UI Gray Colors */';
-echo '/* Typography Colors */';
-echo '/* Down Deep */';
-echo '.warning-banner {';
-echo 'background-color: #ff661a;';
-echo 'margin-bottom: 0; }';
-echo '.warning-banner .warning-banner-container {';
-echo '-webkit-justify-content: center;';
-echo '-ms-flex-pack: center;';
-echo 'justify-content: center; }';
-echo '</style><style type="text/css">/*';
-echo 'Frameless           <http://framelessgrid.com/>';
-echo 'by Joni Korpi       <http://jonikorpi.com/>';
-echo 'licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>';
-echo '*/';
-echo '/* Media Queries */';
-echo '/* Width */';
-echo '/*';
-echo '* ... small | medium     | intermediate | big ...';
-echo '* ... medium-and-smaller |';
-echo '*          ... intermediate-and-smaller |';
-echo '*/';
-echo '/* Height */';
-echo '@media only screen and (max-width: 479px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 100%; } }';
-echo '';
-echo '@media only screen and (min-width: 480px) and (max-width: 767px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 480px; } }';
-echo '';
-echo '@media only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '#view {';
-echo 'text-align: center; }';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 768px; } }';
-echo '';
-echo '@media only screen and (min-width: 942px) {';
-echo '.inner {';
-echo 'margin: 0 auto;';
-echo 'width: 942px; } }';
-echo '';
-echo '.join {';
-echo 'position: absolute;';
-echo 'z-index: 1000;';
-echo 'top: 12px;';
-echo 'left: 12px;';
-echo 'left: calc(25% - 76px); }';
-echo '.join .logo {';
-echo 'width: 76px; }';
-echo '';
-echo '@media only screen and (max-width: 479px), only screen and (min-width: 480px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 941px) {';
-echo '.join {';
-echo 'left: calc(50% - 38px); } }';
-echo '</style><style data-jss="">';
-echo '.\#honey-offers\,\ \#honey-offers\ div-0-0-1 {';
-echo 'fontFamily: SuisseIntl, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';';
-echo '}';
-echo '.\#honey-offers\ a-0-0-2 {';
-echo 'textDecoration: none;';
-echo '}';
-echo '</style></head>';
-echo '';
-echo '<body class="overflow-hidden" data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">';
-echo '<noscript>';
-echo '<p>Your browser has Javascript disabled. Please go to your browser preferences and enable Javascript in order to use Scratch.</p>';
-echo '</noscript>';
-echo '<div id="app" aria-hidden="true"><div class="join"><a aria-label="Scratch" href="/"><img class="logo" src="/images/logo_sm.png"></a></div><div></div></div>';
-echo '';
-echo '<!-- Vendor & Initialize (Session & Localization)-->';
-echo '<script src="/js/common.bundle.js"></script>';
-echo '';
-echo '<!-- Scripts -->';
-echo '<script src="/js/join.intl.js"></script>';
-echo '<script src="/js/join.bundle.js"></script><div class="ReactModalPortal"><div class="modal-overlay modal-overlay"><div class="modal-content mod-join modal-sizes modal-content mod-join" tabindex="-1" role="dialog"><div class="progression" step="0"><form autocomplete="off"><div class="join-flow-outer-content"><div><div class="modal-inner-content join-flow-inner-content join-flow-inner-username-step"><div class="modal-title join-flow-title">Login</div><div class="join-flow-description">Only Admins Please.</div><div><div class="join-flow-input-title">Your Username.</div><div class="col-sm-9 row row-with-tooltip"><input name="username" class="formik-input join-flow-input" autocapitalize="off" autocomplete="off" autocorrect="off" id="username" placeholder="Username" spellcheck="false" value=""></div><div class="join-flow-password-section"><div class="join-flow-input-title">Password.</div><div class="col-sm-9 row row-with-tooltip"><input name="password" class="formik-input join-flow-input" autocapitalize="off" autocomplete="off" autocorrect="off" id="password" placeholder="Password" spellcheck="false" type="text" value=""></div><div class="col-sm-9 row row-with-tooltip"></div><div class="checkbox"><input class="formik-checkbox" id="showPassword" name="showPassword" type="checkbox" form="[object Object]" value="true" checked=""><label class="formik-checkbox-label formik-label join-flow-input-title" for="showPassword">Show password</label></div></div></div></div></div><div><button class="modal-flush-bottom-button" type="submit"><div class="modal-title next-step-title">Lets Sign In!</div></button></div></div></form></div></div></div></div>';
-echo '';
-echo '<!-- Translate title element -->';
-echo '';
-echo '<script>';
-echo 'var loc = window._locale || 'en';';
-echo 'if (typeof window._messages !== 'undefined' && loc !== 'en') {';
-echo 'if (typeof window._messages[loc] === 'undefined') {';
-echo 'loc = loc.split('-')[0];';
-echo '}';
-echo 'if (typeof window._messages[loc] !== 'undefined') {';
-echo 'var localizedTitle = window._messages[loc]['general.' + 'Join Scratch'.toLowerCase()] || '';';
-echo 'if (localizedTitle.length > 0) {';
-echo 'document.title = 'Scratch - ' + localizedTitle;';
-echo '}';
-echo '}';
-echo '}';
-echo '</script>';
-echo '';
-echo '';
-echo '';
-echo '<a class="hss-abp-subscribe" href="abp:subscribe?location=https://www.joinhoney.com/whitelist/honey-smart-shopping.txt&amp;title=Honey-Smart-Shopping" style="position: fixed; display: block; opacity: 0; z-index: 2147483647;"></a></body></html>';
-echo '';
-?>
+<html lang="en-US"><!--<![endif]--><head>
+        <meta charset="UTF-8">
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Prevent mobile Safari from making phone numbers -->
+        <meta name="format-detection" content="telephone=no">
+
+        
+            <title>Sobloxsy - Login</title>
+
+            <!-- Search & Open Graph-->
+            <meta name="description" content="Scratch is a free programming language and online community where you can create your own interactive stories, games, and animations.">
+            <meta name="google-site-verification" content="m_3TAXDreGTFyoYnEmU9mcKB4Xtw5mw6yRkuJtXRKxM">
+
+            <meta property="og:url" content="https://scratch.mit.edu/">
+            <meta property="og:type" content="website">
+            <meta property="og:title" content="Scratch - Join Scratch">
+            <meta property="og:description" content="Scratch is a free programming language and online community where you can create your own interactive stories, games, and animations.">
+            <meta property="og:image" content="https://scratch.mit.edu/images/scratch-og.png">
+            <meta property="og:image:type" content="image/png">
+            <meta property="og:image:width" content="986">
+            <meta property="og:image:height" content="860">
+        
+
+        <!-- Favicon & CSS normalize -->
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/css/lib/normalize.min.css">
+
+        <!-- Polyfills -->
+        <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="/js/polyfill.min.js"></script>
+
+        <!-- Analytics (GA) -->
+        <script>
+            /* eslint-disable */
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-30688952-1', {
+                'sampleRate': 10
+            });
+            ga('send', 'pageview');
+            window.GA_ID = 'UA-30688952-1';
+            /* eslint-enable */
+        </script>
+    <style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+/* Tags */
+html,
+body {
+  display: block;
+  margin: 0;
+  background-color: #3d3d3d;
+  padding: 0;
+  color: #575e75;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; }
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  color: #575e75;
+  font-weight: bold; }
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold; }
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold; }
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: bold; }
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold; }
+
+h5 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .85rem;
+  font-weight: bold; }
+
+p.legal {
+  font-size: .8rem; }
+
+p.intro {
+  font-size: 1.1rem; }
+
+p.callout {
+  margin: 1.5em 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .5rem;
+  background-color: rgba(77, 151, 255, 0.1);
+  padding: 1.25em; }
+  p.callout.orange {
+    background-color: rgba(244, 157, 37, 0.1); }
+
+p a {
+  white-space: nowrap; }
+
+b,
+strong {
+  font-weight: bold; }
+
+/* Links */
+a {
+  cursor: pointer;
+  color: #4d97ff;
+  font-weight: bold; }
+  a:link, a:visited, a:active {
+    text-decoration: none;
+    color: #4d97ff; }
+  a:hover {
+    text-decoration: none;
+    color: #4280d7; }
+
+/* Classes */
+.empty {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: rgba(77, 151, 255, 0.1);
+  padding: 10px;
+  text-align: center;
+  line-height: 2rem;
+  color: #575e75; }
+  .empty h4 {
+    color: #575e75; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  line-height: 1.7em;
+  color: #575e75; }
+
+p {
+  font-size: 1rem;
+  font-weight: normal; }
+
+::selection {
+  background-color: rgba(77, 151, 255, 0.25); }
+
+ol,
+ul {
+  padding-left: 20px;
+  line-height: 1.5em;
+  font-size: 1rem;
+  font-weight: normal; }
+  ol li,
+  ul li {
+    margin: .75em 0; }
+
+dl {
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: normal; }
+  dl dt {
+    font-weight: bold; }
+  dl dd {
+    margin: 0; }
+
+#view {
+  display: inline-block;
+  /* NOTE: Margin should match height in navigation.scss */
+  margin-top: 50px;
+  background-color: #fcfcfc;
+  padding: 20px 0;
+  min-width: 100%;
+  min-height: 680px; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.overflow-hidden {
+  /* to avoid double scroll bars this
+    gets added to body while modal is open */
+  overflow: hidden; }
+
+.modal-content {
+  position: relative;
+  margin: 3.75rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15);
+  background-color: white;
+  padding: 0;
+  width: 48.75rem; }
+  .modal-content:focus {
+    outline: none; }
+  @media only screen and (max-width: 941px) {
+    .modal-content {
+      margin-top: 0;
+      width: 100%;
+      overflow: auto; } }
+  @media only screen and (max-width: 479px), only screen and (max-height: 479px) {
+    .modal-content {
+      border-radius: 0;
+      box-shadow: none;
+      height: 100%; } }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 510;
+  background-color: rgba(77, 151, 255, 0.7); }
+
+.modal-content-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem; }
+
+.modal-content-close-img {
+  padding-top: 0.5rem; }
+
+/* Close button, Submit button, etc. */
+.action-buttons {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1.125rem .8275rem .9375rem .8275rem;
+  line-height: 1.5rem;
+  -webkit-justify-content: flex-end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap; }
+  @media only screen and (max-width: 941px) {
+    .action-buttons {
+      -webkit-justify-content: center !important;
+          -ms-flex-pack: center !important;
+              justify-content: center !important;
+      -webkit-flex-direction: row !important;
+          -ms-flex-direction: row !important;
+              flex-direction: row !important; } }
+
+/* setting overall modal to contain overflow looks good, but isn't
+compatible with elements (like validation popups) that need to bleed
+past modal boundary. This class can be used to force modal button
+row to appear to contain overflow. */
+.action-buttons-overflow-fix {
+  margin-bottom: .9375rem; }
+
+/* For action button row where left/right margin is handled by parent element */
+.action-buttons.action-buttons-no-inset {
+  margin-left: 0;
+  margin-right: 0; }
+
+.action-button {
+  margin: 0 0 0 .54625rem;
+  border-radius: .25rem;
+  padding: 6px 1.25rem 14px 1.25rem;
+  height: 36px; }
+
+.action-button.close-button {
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.action-button-text {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.action-button.disabled {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.error-text {
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #ffab1a;
+  padding: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+  color: white; }
+
+.modal-sizes * {
+  box-sizing: border-box; }
+
+.modal-sizes {
+  margin: 100px auto;
+  outline: none;
+  padding: 0;
+  max-width: 36.25rem;
+  /* 580px; */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  @media only screen and (min-width: 480px) and (max-width: 767px), only screen and (min-height: 480px) and (max-height: 767px) {
+    .modal-sizes {
+      margin: 40px auto; } }
+  @media only screen and (max-width: 479px), only screen and (max-height: 479px) {
+    .modal-sizes {
+      margin: 0 auto;
+      width: auto; } }
+  .modal-sizes .modal-header {
+    padding-top: .75rem;
+    width: 100%;
+    height: 3rem; }
+    @media only screen and (max-width: 479px), only screen and (max-height: 479px) {
+      .modal-sizes .modal-header {
+        border-radius: 0; } }
+  .modal-sizes .modal-content {
+    font-size: .875rem; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.validation-message {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(16rem, 0);
+      -ms-transform: translate(16rem, 0);
+          transform: translate(16rem, 0);
+  margin-left: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #ffab1a;
+  padding: 1rem;
+  max-width: 18.75rem;
+  min-height: 1rem;
+  overflow: visible;
+  color: white;
+  z-index: 1;
+  font-weight: 500; }
+  .validation-message:before {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: -0.5rem;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #ffab1a;
+    width: 1rem;
+    height: 1rem;
+    content: ""; }
+
+.validation-left {
+  left: unset;
+  right: 0;
+  margin-left: unset;
+  margin-right: 1rem;
+  -webkit-transform: translate(-16rem, 0);
+      -ms-transform: translate(-16rem, 0);
+          transform: translate(-16rem, 0); }
+  .validation-left:before {
+    left: unset;
+    right: -0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: none;
+    border-left: none; }
+
+@media only screen and (max-width: 941px) {
+  .validation-message {
+    position: relative;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    margin: inherit;
+    width: 100%;
+    height: inherit; }
+    .validation-message:before {
+      display: none; } }
+
+.validation-error {
+  background-color: #ffab1a; }
+  .validation-error:before {
+    background-color: #ffab1a; }
+
+.validation-info {
+  background-color: #4d97ff;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.15); }
+  .validation-info:before {
+    background-color: #4d97ff; }
+</style><style type="text/css">/*
+ * Styles for the Row component used by formsy-react-components
+ * Should be imported for each component that extends one of
+ * the formsy-react-components
+ */
+.row .required-symbol {
+  display: none; }
+
+.row label {
+  display: inline-block;
+  margin-bottom: .75rem; }
+
+.row.no-label label {
+  display: none; }
+
+/* allow elements such as validation errors to position relative to this row */
+.row-with-tooltip {
+  position: relative; }
+
+.row-label {
+  margin-bottom: .75rem;
+  line-height: 1.7rem; }
+
+.row-inline {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+/* override margin-bottom so placing a label next to a radio button does not
+mess up vertical alignment */
+.row-inline label {
+  margin-bottom: 0; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+.formik-input {
+  height: 2.75rem;
+  border-radius: .5rem;
+  background-color: white;
+  margin-bottom: .5rem;
+  transition: all .5s ease, font-size 0s;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 1rem;
+  color: #575e75;
+  font-size: .875rem; }
+  .formik-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(77, 151, 255, 0.25);
+    outline: none;
+    border: 1px solid #4d97ff;
+    transition: all .5s ease, font-size 0s; }
+  .formik-input.fail {
+    border: 1px solid #ffab1a; }
+    .formik-input.fail:focus {
+      box-shadow: 0 0 0 0.25rem rgba(244, 157, 37, 0.25);
+      outline: none; }
+  .formik-input::-webkit-input-placeholder {
+    font-style: italic;
+    color: rgba(87, 94, 117, 0.6); }
+  .formik-input:-ms-input-placeholder {
+    font-style: italic;
+    color: rgba(87, 94, 117, 0.6); }
+  .formik-input::placeholder {
+    font-style: italic;
+    color: rgba(87, 94, 117, 0.6); }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+input[type="checkbox"].formik-checkbox {
+  display: block;
+  float: left;
+  margin-right: .625rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  width: 1.25rem;
+  height: 1.25rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+  input[type="checkbox"].formik-checkbox:focus {
+    transition: all .25s ease;
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(77, 151, 255, 0.25); }
+  input[type="checkbox"].formik-checkbox:checked {
+    background-color: #4d97ff;
+    text-align: center;
+    text-indent: .125rem;
+    line-height: 1.25rem;
+    font-size: .75rem;
+    background-image: url("/svgs/forms/checkmark.svg");
+    background-position: center; }
+
+.formik-checkbox-label {
+  padding-top: .0625rem;
+  display: block; }
+</style><style type="text/css">.formik-label {
+  font-weight: 500; }
+</style><style type="text/css">.studio-status-icon-spinner {
+  /* This class can be used on an icon that should spin.
+    It first plays the intro animation, then spins forever. */
+  -webkit-animation-name: intro, spin;
+          animation-name: intro, spin;
+  -webkit-animation-duration: .25s, 1s;
+          animation-duration: .25s, 1s;
+  -webkit-animation-timing-function: cubic-bezier(0.3, -3, 0.6, 3), cubic-bezier(0.4, 0.1, 0.4, 1);
+          animation-timing-function: cubic-bezier(0.3, -3, 0.6, 3), cubic-bezier(0.4, 0.1, 0.4, 1);
+  -webkit-animation-delay: 0s, .25s;
+          animation-delay: 0s, .25s;
+  -webkit-animation-iteration-count: 1, infinite;
+          animation-iteration-count: 1, infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  width: 1.4rem;
+  /* standard is 1.4 rem but can be overwritten by parent */
+  height: 1.4rem;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center; }
+
+@-webkit-keyframes intro {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@keyframes intro {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg); } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg); } }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+.modal-title {
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.modal-flush-bottom-button {
+  margin: 0;
+  width: 100%;
+  border: none;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  height: 5.1875rem;
+  background-color: #ffab1a;
+  /* match the small window setting for modal as a whole */ }
+  .modal-flush-bottom-button:hover {
+    transition: background-color .25s ease;
+    background-color: rgba(255, 171, 26, 0.9); }
+  @media only screen and (max-width: 479px), only screen and (max-height: 479px) {
+    .modal-flush-bottom-button {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0; } }
+
+.next-step-title {
+  font-size: 1.25rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.next-step-spinner {
+  width: 2.625rem;
+  height: 2.625rem; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.modal-inner-content {
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.join-flow-outer-content {
+  /* hopefully this lets text expand the height of the modal, if need be */
+  min-height: 32.5rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-wrap: break-word; }
+
+.join-flow-inner-content {
+  box-shadow: none;
+  width: calc(50% + 7.84375rem);
+  /* must use padding for top, rather than margin, because margins will collapse */
+  margin: 0 auto;
+  padding: 2.3125rem 0 2.5rem;
+  font-size: .875rem; }
+
+.join-flow-title {
+  color: #575e75;
+  font-size: 1.875rem; }
+
+.join-flow-description {
+  font-size: .875rem;
+  font-weight: bold;
+  line-height: 1.125rem;
+  margin-top: 0.78125rem;
+  margin-bottom: 1.875rem;
+  text-align: center; }
+
+/* overflow will only work if this class is set on parent of img, not img itself */
+.join-flow-header-image-wrapper {
+  width: 100%;
+  height: 7.5rem;
+  overflow: hidden;
+  margin: 0;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  /* match the small window setting for modal as a whole */ }
+  @media only screen and (max-width: 479px), only screen and (max-height: 479px) {
+    .join-flow-header-image-wrapper {
+      border-top-left-radius: 0rem;
+      border-top-right-radius: 0rem; } }
+
+.join-flow-header-image {
+  width: 100%; }
+
+.join-flow-footer-message {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background-color: rgba(77, 151, 255, 0.25);
+  font-size: .75rem;
+  font-weight: 500;
+  text-align: center;
+  color: #4d97ff; }
+
+.join-flow-footer-message a {
+  font-weight: 500; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.join-flow-input {
+  width: 100%;
+  height: 2.75rem;
+  border-radius: .5rem;
+  background-color: white;
+  margin-bottom: .5rem; }
+  .join-flow-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(77, 151, 255, 0.25); }
+
+.join-flow-input-password {
+  font-size: 1.5rem; }
+
+.join-flow-password-confirm {
+  margin-bottom: .6875rem; }
+
+.join-flow-input-tall {
+  height: 3rem; }
+
+.join-flow-input-title {
+  font-weight: bold;
+  margin-bottom: .5rem; }
+
+.join-flow-instructions {
+  font-size: .875rem;
+  font-weight: bold;
+  line-height: 1.375rem;
+  margin-top: 1.25rem;
+  margin-bottom: .5rem;
+  text-align: center; }
+
+.validation-full-width-input {
+  -webkit-transform: translate(21.8125rem, 0);
+      -ms-transform: translate(21.8125rem, 0);
+          transform: translate(21.8125rem, 0); }
+
+.validation-birthdate-month {
+  -webkit-transform: translate(-9.875rem, 0);
+      -ms-transform: translate(-9.875rem, 0);
+          transform: translate(-9.875rem, 0); }
+
+.validation-birthdate-year {
+  -webkit-transform: translate(9.375rem, 0);
+      -ms-transform: translate(9.375rem, 0);
+          transform: translate(9.375rem, 0); }
+
+@media only screen and (max-width: 941px) {
+  .validation-full-width-input {
+    -webkit-transform: unset;
+        -ms-transform: unset;
+            transform: unset;
+    margin-bottom: .75rem;
+    max-width: 100%; }
+  .validation-country {
+    top: .5rem; }
+  .validation-birthdate {
+    -webkit-transform: unset;
+        -ms-transform: unset;
+            transform: unset;
+    top: .5rem;
+    width: 19rem; }
+  .validation-birthdate-month {
+    margin-right: -9.25rem; }
+  .validation-birthdate-year {
+    margin-left: -9.625rem; } }
+
+.select .join-flow-select {
+  height: 3.5rem;
+  margin-bottom: 0;
+  padding-right: 3.25rem;
+  background-color: white;
+  border-color: rgba(0, 0, 0, 0.15);
+  font-size: 1rem;
+  font-weight: 500; }
+
+.select .join-flow-select-month {
+  margin-right: .5rem;
+  width: 9.125rem; }
+  @media only screen and (max-width: 479px) {
+    .select .join-flow-select-month {
+      width: 8.25rem; } }
+
+.select .join-flow-select-year {
+  width: 9.125rem; }
+  @media only screen and (max-width: 479px) {
+    .select .join-flow-select-year {
+      width: 8.25rem; } }
+
+.select .join-flow-select-country {
+  width: 100%;
+  margin: 0 auto; }
+
+.country-step-image {
+  background-color: #9966ff; }
+
+.join-flow-password-section {
+  margin-top: 1.125rem; }
+
+.birthdate-select-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto; }
+
+.birthdate-step-image {
+  background-color: #cf63cf; }
+
+.join-flow-privacy-message {
+  margin: .5rem auto 1rem;
+  font-size: .75rem;
+  font-weight: 500;
+  color: rgba(87, 94, 117, 0.6);
+  text-align: center; }
+
+.join-flow-inner-username-step {
+  padding-top: 2.75rem; }
+
+.join-flow-inner-birthdate-step {
+  padding-top: 1rem;
+  padding-bottom: 2.25rem; }
+
+.join-flow-inner-gender-step {
+  padding-top: 2.625rem;
+  padding-bottom: 1rem; }
+
+.join-flow-inner-country-step {
+  padding-top: 0;
+  padding-bottom: 2.5rem; }
+
+.join-flow-inner-email-step {
+  padding-top: .75rem;
+  padding-bottom: 0; }
+
+.join-flow-inner-welcome-step {
+  padding-top: 0;
+  padding-bottom: 1rem; }
+
+.join-flow-inner-error-step {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  /* make text selectable, so users can copy errors */
+  padding-top: 5.5rem; }
+
+.join-flow-error-title {
+  margin-bottom: 2rem; }
+
+.join-flow-birthdate-title {
+  margin-bottom: 2.875rem; }
+
+.join-flow-email-title {
+  margin-bottom: 2rem; }
+
+.join-flow-email-privacy {
+  margin-top: 0; }
+
+.email-step-image {
+  background-color: rgba(30, 146, 185, 0.65); }
+
+.join-flow-gender-description {
+  margin-top: .625rem;
+  margin-bottom: 1.25rem; }
+
+.join-flow-gender-privacy {
+  margin-top: .5rem; }
+
+.join-flow-country-title {
+  margin-top: 0;
+  margin-bottom: 1.75rem; }
+
+.join-flow-welcome-title {
+  margin-bottom: 1rem; }
+
+.welcome-step-image {
+  background-color: #ffbf00; }
+
+.gender-radio-row {
+  transition: all .125s ease;
+  width: 97%;
+  min-height: 2.85rem;
+  background-color: #f2f2f2;
+  border-radius: .5rem;
+  margin: 0 auto 0.375rem;
+  padding-left: 0.8125rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.gender-radio-row:hover {
+  background-color: rgba(77, 151, 255, 0.1); }
+
+.gender-radio-row-selected, .gender-radio-row-selected:hover {
+  transition: all .125s ease;
+  background-color: rgba(77, 151, 255, 0.25); }
+
+.join-flow-next-button-arrow {
+  width: 2rem;
+  height: 2rem;
+  margin-left: .5rem; }
+
+.modal-inner-content-email {
+  padding-top: 2.9rem; }
+
+.join-flow-email-checkbox-row {
+  font-size: .75rem;
+  margin: 1.5rem .125rem 1rem; }
+
+a.join-flow-link:link, a.join-flow-link:visited, a.join-flow-link:active {
+  text-decoration: underline; }
+
+.yesNoCheckbox {
+  display: none; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.select label {
+  font-weight: 500; }
+
+.select select {
+  transition: border .5s ease;
+  margin-bottom: .75rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background: #fafafa url(data:image/svg+xml;base64,PHN2ZyBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjY0Ij48cGF0aCBkPSJNMjQgMzcuNDNhMS44OCAxLjg4IDAgMCAxLTEuMzMtLjU1bC01LjExLTUuMTFhMS44NyAxLjg3IDAgMCAxIDAtMi42NGMuNzMtLjczIDEyLjE0LS43MyAxMi44NyAwYTEuODcgMS44NyAwIDAgMSAwIDIuNjRsLTUuMTEgNS4xMWExLjg2IDEuODYgMCAwIDEtMS4zMi41NXoiIGZpbGw9IiNiM2IzYjMiLz48cGF0aCBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiIGZpbGw9IiMyMzFmMjAiIG9wYWNpdHk9Ii4xIiBkPSJNLjAxIDBoMXY2NGgtMXoiLz48L3N2Zz4=) no-repeat right center;
+  padding-right: 4rem;
+  padding-left: 1rem;
+  width: 100%;
+  height: 3rem;
+  color: #575e75;
+  font-size: .875rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+  .select select::-ms-expand {
+    display: none; }
+  .select select::-ms-value {
+    background-color: inherit;
+    padding-left: 1rem;
+    color: inherit; }
+  .select select:focus {
+    outline: none;
+    border: 1px solid #4d97ff; }
+  .select select:-moz-focusring {
+    text-shadow: 0 0 0 #575e75;
+    color: transparent; }
+  .select select:focus, .select select:hover {
+    background: #fafafa url(data:image/svg+xml;base64,PHN2ZyBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjY0Ij48cGF0aCBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiIGZpbGw9IiMyMzFmMjAiIG9wYWNpdHk9Ii4xIiBkPSJNLjAxIDBoNDh2NjRoLTQ4eiIvPjxwYXRoIGQ9Ik0yNCAzNy41OGExLjg4IDEuODggMCAwIDEtMS4zMy0uNThsLTUuMTEtNS4xMWExLjg5IDEuODkgMCAwIDEgMC0yLjY1Yy43My0uNzMgMTIuMTQtLjczIDEyLjg3IDBhMS44NyAxLjg3IDAgMCAxIDAgMi42NEwyNS4zMiAzN2ExLjg2IDEuODYgMCAwIDEtMS4zMi41OHoiIGZpbGw9IiNiM2IzYjMiLz48L3N2Zz4=) no-repeat right center; }
+  .select select > option {
+    background-color: white;
+    width: 100%; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+.select .fail {
+  border: 1px solid #ffab1a; }
+  .select .fail:focus {
+    box-shadow: 0 0 0 0.25rem rgba(244, 157, 37, 0.25);
+    outline: none; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.info-button {
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-left: -.125rem;
+  margin-top: -.75rem;
+  background-image: url("/svgs/info-button/info-button.svg");
+  background-size: cover;
+  top: .6875rem; }
+
+.info-button-message {
+  display: block;
+  position: absolute;
+  top: .375rem;
+  left: .5rem;
+  -webkit-transform: translate(1rem, -1rem);
+      -ms-transform: translate(1rem, -1rem);
+          transform: translate(1rem, -1rem);
+  width: 16.5rem;
+  min-height: 1rem;
+  margin-left: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.15);
+  padding: .75rem;
+  overflow: visible;
+  background-color: #4d97ff;
+  color: white;
+  line-height: 1.25rem;
+  text-align: left;
+  font-size: .875rem;
+  font-weight: 500;
+  z-index: 2; }
+  .info-button-message:before {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: -0.5rem;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #4d97ff;
+    width: 1rem;
+    height: 1rem;
+    content: ""; }
+
+@media only screen and (max-width: 941px) {
+  .info-button-message {
+    position: absolute;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    /* since we're positioning message relative to info-button's parent,
+        we need to center this element within its width. */
+    margin: 0 calc((100% - 16.5rem) / 2);
+    top: .125rem;
+    left: 0; }
+    .info-button-message:before {
+      display: none; } }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+.formik-radio-label {
+  margin-left: 1rem; }
+
+input[type="radio"].formik-radio-button {
+  margin-top: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  width: 1rem;
+  min-width: 1rem;
+  /* necessary to prevent width from being too small in 'other' case */
+  height: 1rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: white; }
+  input[type="radio"].formik-radio-button:checked, input[type="radio"].formik-radio-button:focus {
+    outline: none; }
+  input[type="radio"].formik-radio-button:checked {
+    transition: all .25s ease;
+    box-shadow: 0 0 0 2px rgba(77, 151, 255, 0.25);
+    border: 1px solid #4d97ff;
+    background-color: white; }
+    input[type="radio"].formik-radio-button:checked:after {
+      display: block;
+      -webkit-transform: translate(0.125rem, 0.125rem);
+          -ms-transform: translate(0.125rem, 0.125rem);
+              transform: translate(0.125rem, 0.125rem);
+      border-radius: 50%;
+      background-color: #4d97ff;
+      width: .625rem;
+      height: .625rem;
+      content: ""; }
+
+input.formik-radio-input, .formik-radio-input input {
+  height: 2.1875rem;
+  width: 100%;
+  margin-bottom: 0;
+  border-radius: .5rem;
+  background-color: white; }
+  input.formik-radio-input:focus, .formik-radio-input input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(77, 151, 255, 0.25); }
+
+.formik-radio-input-wrapper {
+  margin-left: auto;
+  margin-right: .25rem;
+  width: 10.25rem; }
+
+.formik-radio-label-other {
+  max-width: 7rem;
+  margin-right: .25rem; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+/* unusually for a modal, the join flow modal cares about the screen around it
+being clickable, because of the standalone join view. */
+.mod-join {
+  width: 27.4375rem; }
+  @media only screen and (max-width: 479px) {
+    .mod-join {
+      width: auto; } }
+
+/* enable vertical scrolling when modal showing, if page is short */
+@media only screen and (max-height: 479px), only screen and (min-height: 480px) and (max-height: 767px) {
+  .modal-overlay {
+    overflow: auto; } }
+
+@media only screen and (max-width: 479px), only screen and (max-height: 479px) {
+  .modal-content {
+    height: unset; } }
+
+/* lower the modal slightly to accomodate Scratch logo above it */
+@media only screen and (max-width: 479px), only screen and (max-height: 479px), only screen and (min-width: 480px) and (max-width: 767px), only screen and (min-height: 480px) and (max-height: 767px) {
+  .modal-sizes {
+    margin: 3.5rem auto; } }
+</style><style type="text/css">/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.modal-content.mod-registration {
+  width: 38.125rem;
+  overflow: hidden; }
+
+.modal-content-iframe.mod-registration {
+  width: 38.125rem;
+  min-height: 27.375rem; }
+
+.modal-content.recaptcha-open {
+  min-height: 500px; }
+
+.modal-content-iframe.recaptcha-open {
+  min-height: 500px; }
+
+@media only screen and (max-width: 941px) {
+  .modal-content.mod-registration {
+    width: 100%;
+    overflow: scroll; }
+  .modal-content-iframe.mod-registration {
+    height: 27.375rem; } }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+.button {
+  display: inline-block;
+  margin: .5em 0;
+  border: 0;
+  border-radius: .5rem;
+  background-color: #4d97ff;
+  cursor: pointer;
+  padding: 1em 1.25em;
+  color: white;
+  font-size: .8rem;
+  font-weight: bold;
+  /* USER BUTTON STATES */
+  /* DATA BUTTON STATES */ }
+  .button:focus {
+    outline: none; }
+  .button.white {
+    background-color: white;
+    color: #4d97ff; }
+  .button.pass {
+    background-color: #0fbd8c; }
+  .button.fail {
+    background-color: #ffab1a; }
+  .button:disabled {
+    box-shadow: none; }
+  .button.large {
+    border-radius: .25rem;
+    font-size: 1rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: .75rem 1.25rem .8125rem; }
+  .button.icon-right img {
+    height: 1.25rem;
+    margin-bottom: -.25rem;
+    margin-left: .5rem;
+    margin-right: -.25rem; }
+</style><style type="text/css">.crash-container {
+  /* UI Primary Colors */
+  /* #FF661A */
+  /* UI Secondary Colors */
+  /* 3.0 colors */
+  /* Using www naming convention for now, should be consistent with gui */
+  /* #CF63CF Sounds Primary */
+  /* modals */
+  /* Overlay UI Gray Colors */
+  /* Typography Colors */
+  /* Down Deep */
+  /*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+  /* Media Queries */
+  /* Width */
+  /*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+  /* Height */
+  margin: 3rem auto;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  background-color: #fcfcfc;
+  width: 60%;
+  overflow: hidden;
+  text-align: center; }
+  @media only screen and (max-width: 479px) {
+    .crash-container #view {
+      text-align: center; }
+    .crash-container .inner {
+      margin: 0 auto;
+      width: 100%; } }
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .crash-container #view {
+      text-align: center; }
+    .crash-container .inner {
+      margin: 0 auto;
+      width: 480px; } }
+  @media only screen and (min-width: 768px) and (max-width: 941px) {
+    .crash-container #view {
+      text-align: center; }
+    .crash-container .inner {
+      margin: 0 auto;
+      width: 768px; } }
+  @media only screen and (min-width: 942px) {
+    .crash-container .inner {
+      margin: 0 auto;
+      width: 942px; } }
+  .crash-container img {
+    width: 100%; }
+  .crash-container .crash-message {
+    margin: 2rem; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.row label {
+  font-weight: 500; }
+
+.input {
+  transition: all .5s ease;
+  margin-bottom: .75rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #fafafa;
+  padding: 0 1rem;
+  height: 3rem;
+  color: #575e75;
+  font-size: .875rem;
+  /* IE10/11-specific style resets */ }
+  .input:focus {
+    transition: all .5s ease;
+    outline: none;
+    border: 1px solid #4d97ff; }
+  .input.fail {
+    border: 1px solid #ffab1a; }
+  .input.pass {
+    border: 1px solid #0fbd8c; }
+  .input::-ms-reveal, .input::-ms-clear {
+    display: none; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 5px 5px;
+  background-color: #4d97ff;
+  padding: 10px;
+  min-width: 9rem;
+  max-width: 16.25rem;
+  overflow: visible;
+  color: white;
+  font-size: .8125rem;
+  font-weight: normal; }
+  .dropdown.staging {
+    background-color: #ffab1a; }
+  .dropdown.open {
+    display: block; }
+  .dropdown a:link, .dropdown a:visited, .dropdown a:active {
+    background-color: transparent;
+    color: white; }
+  .dropdown input {
+    margin-bottom: 12px;
+    width: calc(100% - 30px); }
+  .dropdown label {
+    display: block;
+    margin-bottom: 5px; }
+  .dropdown > li {
+    display: block;
+    line-height: 30px; }
+    .dropdown > li.divider {
+      margin-top: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1); }
+    .dropdown > li a {
+      display: block;
+      padding: 0 10px; }
+      .dropdown > li a:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        text-decoration: none; }
+  .dropdown.with-arrow {
+    margin-top: 14px;
+    border-radius: 5px;
+    overflow: visible; }
+    .dropdown.with-arrow:before {
+      display: block;
+      position: absolute;
+      top: -7px;
+      right: 10%;
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      background-color: #4d97ff;
+      width: 14px;
+      height: 14px;
+      content: ""; }
+</style><style type="text/css">/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.flex-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .flex-row.column {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .flex-row.uneven {
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+                -ms-grid-row-align: flex-start;
+            align-items: flex-start; }
+    .flex-row.uneven .short {
+      width: 13.75em; }
+    .flex-row.uneven .long {
+      width: 38.75em;
+      text-align: left; }
+  @media only screen and (max-width: 767px) {
+    .flex-row {
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .flex-row.uneven .short,
+      .flex-row.uneven .long {
+        margin: auto;
+        width: 90%; } }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+.login {
+  padding: 10px;
+  width: 200px;
+  line-height: 1.5rem;
+  white-space: normal;
+  color: white;
+  font-size: .8125rem; }
+  .login .button {
+    padding: .75em; }
+  .login .row {
+    margin-bottom: 1.25rem; }
+  .login .input {
+    margin-bottom: 12px;
+    width: calc(100% - 30px);
+    height: 2.25rem; }
+  .login label {
+    padding-top: 5px;
+    font-weight: bold; }
+  .login .spinner {
+    margin: 0 .8rem;
+    width: 1rem;
+    vertical-align: middle; }
+  .login .submit-row {
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .login .submit-button {
+    margin-top: 5px; }
+  .login a {
+    margin: auto 0;
+    color: white; }
+    .login a:link, .login a:visited, .login a:active {
+      color: white; }
+    .login a:hover {
+      background-color: transparent; }
+  .login .error {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: #ffab1a;
+    padding: .75em 1em; }
+</style><style type="text/css"></style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+#navigation {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  background-color: #4d97ff;
+  width: 100%;
+  /* NOTE: Height should match offset settings in main.scss file */
+  height: 50px; }
+  #navigation.staging {
+    background-color: #ffab1a; }
+  .ie9 #navigation {
+    display: table;
+    table-layout: fixed; }
+  #navigation .inner > ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    list-style: none;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+    .ie9 #navigation .inner > ul {
+      display: table-row; }
+    #navigation .inner > ul > li {
+      display: inline-block;
+      position: relative;
+      float: left;
+      margin: 0;
+      height: 100%;
+      -webkit-align-self: flex-start;
+          -ms-flex-item-align: start;
+              align-self: flex-start; }
+      #navigation .inner > ul > li.right {
+        float: right;
+        margin-left: auto;
+        -webkit-align-self: flex-end;
+            -ms-flex-item-align: end;
+                align-self: flex-end; }
+        .ie9 #navigation .inner > ul > li.right {
+          float: none; }
+        #navigation .inner > ul > li.right a:hover {
+          background-color: rgba(0, 0, 0, 0.1); }
+      .ie9 #navigation .inner > ul > li {
+        display: table-cell;
+        float: none;
+        height: 50px;
+        vertical-align: bottom; }
+  #navigation .link > a {
+    display: block;
+    padding: 13px 15px 4px 15px;
+    height: 33px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: white;
+    font-size: .85rem;
+    font-weight: bold; }
+    #navigation .link > a:hover {
+      background-color: rgba(0, 0, 0, 0.1); }
+</style><style type="text/css">/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.modal-content-iframe {
+  border: 0; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.account-nav .user-info {
+  display: inline-block;
+  padding: 14px 15px 4px 15px;
+  max-width: 260px;
+  height: 33px;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+  font-size: .8125rem;
+  font-weight: normal; }
+  .account-nav .user-info .avatar {
+    margin-right: 10px;
+    border-radius: 3px;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle; }
+  .account-nav .user-info:hover {
+    background-color: rgba(0, 0, 0, 0.1); }
+  .account-nav .user-info.open {
+    background-color: rgba(0, 0, 0, 0.1); }
+  .account-nav .user-info:after {
+    display: inline-block;
+    margin-left: 8px;
+    background-image: url("/images/dropdown.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    content: " "; }
+
+.account-nav .dropdown {
+  top: 50px;
+  padding: 0;
+  padding-top: 5px;
+  width: 100%;
+  box-sizing: border-box; }
+
+@media only screen and (max-width: 479px) {
+  .account-nav {
+    margin-left: 0; }
+    .account-nav .user-info .avatar {
+      margin-right: 0; }
+    .account-nav .user-info:after {
+      display: none; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .account-nav {
+    margin-left: 0; }
+    .account-nav .user-info .avatar {
+      margin-right: 0; }
+    .account-nav .user-info:after {
+      display: none; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  .account-nav {
+    margin-left: 0; } }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+#navigation.staging .messages .message-count {
+  display: none; }
+  #navigation.staging .messages .message-count.show {
+    background-color: #4d97ff; }
+
+#navigation .logo {
+  margin-right: 10px; }
+  #navigation .logo a {
+    display: block;
+    transition: .15s ease all;
+    margin: 0 6px 0 0;
+    border: 0;
+    background-image: url("/images/logo_sm.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 95%;
+    width: 81px;
+    height: 50px; }
+    #navigation .logo a:hover {
+      transition: .15s ease all;
+      background-size: 100%; }
+
+#navigation .inner > ul > li.search {
+  margin: 0 20px;
+  border-right: 0;
+  color: white;
+  -webkit-flex-grow: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3; }
+  .ie9 #navigation .inner > ul > li.search {
+    width: 100%; }
+  #navigation .inner > ul > li.search .form {
+    margin: 0; }
+  #navigation .inner > ul > li.search .row .help-block {
+    display: none; }
+  #navigation .inner > ul > li.search .input,
+  #navigation .inner > ul > li.search .button {
+    display: inline-block;
+    margin-top: 5px;
+    outline: none;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 14px; }
+    #navigation .inner > ul > li.search .input[type=text],
+    #navigation .inner > ul > li.search .button[type=text] {
+      transition: .15s ease background-color;
+      padding: 0;
+      padding-right: 10px;
+      padding-left: 40px;
+      width: calc(100% - 50px);
+      height: 40px;
+      color: white;
+      font-size: .85em; }
+      #navigation .inner > ul > li.search .input[type=text]::-webkit-input-placeholder,
+      #navigation .inner > ul > li.search .button[type=text]::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.75); }
+      #navigation .inner > ul > li.search .input[type=text]:-ms-input-placeholder,
+      #navigation .inner > ul > li.search .button[type=text]:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.75); }
+      #navigation .inner > ul > li.search .input[type=text]::placeholder,
+      #navigation .inner > ul > li.search .button[type=text]::placeholder {
+        color: rgba(255, 255, 255, 0.75); }
+      #navigation .inner > ul > li.search .input[type=text]:focus,
+      #navigation .inner > ul > li.search .button[type=text]:focus {
+        transition: .15s ease background-color;
+        background-color: rgba(0, 0, 0, 0.2); }
+      .ie9 #navigation .inner > ul > li.search .input[type=text], .ie9
+      #navigation .inner > ul > li.search .button[type=text] {
+        width: 70px; }
+  #navigation .inner > ul > li.search .btn-search {
+    position: absolute;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: url("/images/nav-search-glass.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 14px 14px;
+    width: 40px;
+    height: 40px; }
+    #navigation .inner > ul > li.search .btn-search:hover {
+      box-shadow: none; }
+
+#navigation .messages > a,
+#navigation .mystuff > a {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 45%;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 30px;
+  overflow: hidden;
+  text-indent: 50px;
+  white-space: nowrap; }
+  #navigation .messages > a:hover,
+  #navigation .mystuff > a:hover {
+    background-size: 50%; }
+
+#navigation .messages > a {
+  background-image: url("/images/nav-notifications.png"); }
+
+#navigation .messages .message-count {
+  display: none; }
+  #navigation .messages .message-count.show {
+    display: block;
+    position: absolute;
+    top: .5rem;
+    right: .25rem;
+    border-radius: 1rem;
+    background-color: #ffab1a;
+    padding: 0 .25rem;
+    text-indent: 0;
+    line-height: 1rem;
+    color: white;
+    font-size: .7rem;
+    font-weight: bold; }
+
+#navigation .mystuff > a {
+  background-image: url("/images/mystuff.png"); }
+
+@media only screen and (max-width: 479px) {
+  #navigation .inner {
+    width: 18.75em; }
+    #navigation .inner > ul > li.login-item {
+      margin-left: 0; }
+    #navigation .inner .create,
+    #navigation .inner .discuss,
+    #navigation .inner .explore,
+    #navigation .inner .search,
+    #navigation .inner .help,
+    #navigation .inner .mystuff,
+    #navigation .inner .profile-name {
+      display: none; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #navigation .inner {
+    width: 28.75em; }
+    #navigation .inner > ul > li.login-item {
+      margin-left: 0; }
+    #navigation .inner .discuss,
+    #navigation .inner .explore,
+    #navigation .inner .search,
+    #navigation .inner .mystuff,
+    #navigation .inner .profile-name {
+      display: none; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #navigation .inner {
+    width: 38.75em; }
+    #navigation .inner > ul > li.login-item {
+      margin-left: 0; }
+    #navigation .inner .explore,
+    #navigation .inner .search,
+    #navigation .inner .mystuff {
+      display: none; } }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+#footer {
+  display: block;
+  background-color: #f2f2f2;
+  padding: 10px 0;
+  color: #575e75;
+  font-size: .85rem; }
+</style><style type="text/css">/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.language-chooser .select select {
+  width: 13.75rem;
+  /* 3 columns */ }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+#footer .lists {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  #footer .lists dl {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    font-size: .8rem; }
+  #footer .lists dt {
+    display: block;
+    margin-bottom: 8px; }
+  #footer .lists dd {
+    display: block;
+    margin: 5px 0;
+    line-height: 1.2rem; }
+    #footer .lists dd a {
+      font-weight: 400; }
+
+#footer .copyright {
+  display: block;
+  width: 100%;
+  text-align: center; }
+  #footer .copyright p {
+    font-size: .7rem; }
+
+#footer .language-chooser {
+  text-align: center; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+#donor {
+  color: #575e75;
+  font-size: .875rem;
+  line-height: 1.5em;
+  background-color: #f2f2f2;
+  padding-bottom: 2.5rem;
+  padding-top: 1rem; }
+  #donor #donor-text {
+    text-align: center;
+    width: 58.75em;
+    margin: 0 auto; }
+
+@media only screen and (min-width: 768px) and (max-width: 942px) {
+  #donor #donor-text {
+    width: 53.75em; } }
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  #donor #donor-text {
+    width: 28.75em; } }
+
+@media only screen and (max-width: 480px) {
+  #donor #donor-text {
+    width: 18.75em; } }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.title-banner {
+  transition: background-image .5s ease, background-color .5s ease;
+  margin-bottom: 40px;
+  background-color: #0fbd8c;
+  background-position: center;
+  background-size: cover;
+  padding: 20px 0;
+  width: 100%; }
+
+.title-banner-h1,
+.title-banner-p {
+  margin: 0 auto;
+  padding: 5px 0;
+  text-align: center;
+  color: white; }
+
+.title-banner-p {
+  max-width: 500px; }
+
+.title-banner-strong {
+  font-weight: 700; }
+
+.title-banner.mod-blue-bg {
+  background-color: #4d97ff; }
+  .title-banner.mod-blue-bg a {
+    color: white; }
+  .title-banner.mod-blue-bg a.mod-underline {
+    text-decoration: underline; }
+</style><style type="text/css">/* UI Primary Colors */
+/* #FF661A */
+/* UI Secondary Colors */
+/* 3.0 colors */
+/* Using www naming convention for now, should be consistent with gui */
+/* #CF63CF Sounds Primary */
+/* modals */
+/* Overlay UI Gray Colors */
+/* Typography Colors */
+/* Down Deep */
+.warning-banner {
+  background-color: #ff661a;
+  margin-bottom: 0; }
+  .warning-banner .warning-banner-container {
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+</style><style type="text/css">/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* Media Queries */
+/* Width */
+/*
+* ... small | medium     | intermediate | big ...
+* ... medium-and-smaller |
+*          ... intermediate-and-smaller |
+*/
+/* Height */
+@media only screen and (max-width: 479px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 100%; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 480px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 941px) {
+  #view {
+    text-align: center; }
+  .inner {
+    margin: 0 auto;
+    width: 768px; } }
+
+@media only screen and (min-width: 942px) {
+  .inner {
+    margin: 0 auto;
+    width: 942px; } }
+
+.join {
+  position: absolute;
+  z-index: 1000;
+  top: 12px;
+  left: 12px;
+  left: calc(25% - 76px); }
+  .join .logo {
+    width: 76px; }
+
+@media only screen and (max-width: 479px), only screen and (min-width: 480px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 941px) {
+  .join {
+    left: calc(50% - 38px); } }
+</style><style data-jss="">
+.\#honey-offers\,\ \#honey-offers\ div-0-0-1 {
+  fontFamily: SuisseIntl, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+.\#honey-offers\ a-0-0-2 {
+  textDecoration: none;
+}
+</style></head>
+
+    <body class="overflow-hidden" data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+        <noscript>
+            <p>Your browser has Javascript disabled. Please go to your browser preferences and enable Javascript in order to use Scratch.</p>
+        </noscript>
+        <div id="app" aria-hidden="true"><div class="join"><a aria-label="Scratch" href="/"><img class="logo" src="/images/logo_sm.png"></a></div><div></div></div>
+
+        <!-- Vendor & Initialize (Session & Localization)-->
+        <script src="/js/common.bundle.js"></script>
+
+        <!-- Scripts -->
+        <script src="/js/join.intl.js"></script>
+        <script src="/js/join.bundle.js"></script><div class="ReactModalPortal"><div class="modal-overlay modal-overlay"><div class="modal-content mod-join modal-sizes modal-content mod-join" tabindex="-1" role="dialog"><div class="progression" step="0"><form autocomplete="off"><div class="join-flow-outer-content"><div><div class="modal-inner-content join-flow-inner-content join-flow-inner-username-step"><div class="modal-title join-flow-title">Login</div><div class="join-flow-description">Only Admins Please.</div><div><div class="join-flow-input-title">Your Username.</div><div class="col-sm-9 row row-with-tooltip"><input name="username" class="formik-input join-flow-input" autocapitalize="off" autocomplete="off" autocorrect="off" id="username" placeholder="Username" spellcheck="false" value=""></div><div class="join-flow-password-section"><div class="join-flow-input-title">Password.</div><div class="col-sm-9 row row-with-tooltip"><input name="password" class="formik-input join-flow-input" autocapitalize="off" autocomplete="off" autocorrect="off" id="password" placeholder="Password" spellcheck="false" type="text" value=""></div><div class="col-sm-9 row row-with-tooltip"></div><div class="checkbox"><input class="formik-checkbox" id="showPassword" name="showPassword" type="checkbox" form="[object Object]" value="true" checked=""><label class="formik-checkbox-label formik-label join-flow-input-title" for="showPassword">Show password</label></div></div></div></div></div><div><button class="modal-flush-bottom-button" type="submit"><div class="modal-title next-step-title">Lets Sign In!</div></button></div></div></form></div></div></div></div>
+
+        <!-- Translate title element -->
+        
+            <script>
+                var loc = window._locale || 'en';
+                if (typeof window._messages !== 'undefined' && loc !== 'en') {
+                    if (typeof window._messages[loc] === 'undefined') {
+                        loc = loc.split('-')[0];
+                    }
+                    if (typeof window._messages[loc] !== 'undefined') {
+                        var localizedTitle = window._messages[loc]['general.' + 'Join Scratch'.toLowerCase()] || '';
+                        if (localizedTitle.length > 0) {
+                            document.title = 'Scratch - ' + localizedTitle;
+                        }
+                    }
+                }
+            </script>
+        
+    
+
+<a class="hss-abp-subscribe" href="abp:subscribe?location=https://www.joinhoney.com/whitelist/honey-smart-shopping.txt&amp;title=Honey-Smart-Shopping" style="position: fixed; display: block; opacity: 0; z-index: 2147483647;"></a></body></html>
