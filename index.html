@@ -14,6 +14,10 @@
   }
 }
 
+.box .box-header {
+  background-color: rgba(0, 0, 0, 0.342);
+}
+
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   #view {
     text-align: center;
@@ -156,7 +160,7 @@ h4,
 h5,
 p {
   line-height: 1.7em;
-  color: #575e75;
+  color: white;
 }
 
 p {
@@ -1969,8 +1973,8 @@ row to appear to contain overflow. */
 
 .box {
   display: inline-block;
-  border: 1px solid #d9d9d9;
-  border-radius: 10px 10px 0 0;
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
   background-color: white;
   width: 100%; }
   @media only screen and (max-width: 479px) {
@@ -2008,7 +2012,6 @@ row to appear to contain overflow. */
     border-top: 1px solid white;
     border-bottom: 1px solid #d9d9d9;
     border-radius: 10px 10px 0 0;
-    background-color: #f2f2f2;
     padding: 8px 20px;
     height: 20px;
     overflow: hidden; }
@@ -2032,7 +2035,8 @@ row to appear to contain overflow. */
     display: block;
     clear: both;
     background-color: white;
-    padding: 8px 20px; }
+    padding: 8px 20px;
+    border-radius: 0 0 10px 10px; }
   .box .empty {
     margin-top: 20px; }
 </style>
