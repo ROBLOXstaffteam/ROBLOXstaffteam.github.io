@@ -41,8 +41,8 @@ body {
 
 button {
   background: #363636;
-  margin: 5px;
-  padding: 15px;
+  margin: 10px;
+  padding-top: 20px;
   border: 5px;
   color: white;
   border-radius: 15px;
@@ -50,12 +50,17 @@ button {
   cursor: pointer;
   transition-duration: 0.4s;
   outline: none;
+  font-size: 15px;
 }
 
 button:hover {
   background: #858585;
-  border-radius: 24px;
-  font-size: 17px;
+  border-radius: 15px;
+}
+button:hover > img {
+  transition-duration: 0.4s;
+  background: #858585;
+  width: 105px;
 }
 
 h1 {
@@ -67,6 +72,7 @@ img {
   border-radius: 10px;
   width: 100px;
   height: auto;
+  vertical-align: text-top;
 }
 
 .wjka {
@@ -76,30 +82,69 @@ img {
   bottom: 0px;
 }
 
-.PJBOTL {
-  width: 130px;
-  height: 180px;
+.book {
+  width: 150px;
+  margin-top: auto;
+  
 }
 
-.PJBOTL:hover {
+.book:hover {
   width: 140px;
+}
+
+.logo {
+  margin-top: -19px;
+  margin-right: -13px;
+  height: 60px;
+  width: auto;
 }
 </style>
 </head>
 <body>
 <!DOCTYPE html>
 <html>
-<head>
-<title>Sobloxsy Books.</title>
+  <head>
+    <title>Sobloxsy Books.</title>
+  </head>
+  <body>
+    <img src="https://sobloxsy.com/books/susobloxsybooks.png" align="center" />
+    <h1>
+      <img
+        src="https://files.sobloxsy.com/logo.png"
+        class="logo"
+        align="center"
+      />
+      Book PDFs.
+    </h1>
+    <div>
+      <button
+        class="book"
+        title="Percy Jackson & The Titans Curse"
+        onclick="window.location.href='https://sobloxsy.com/books/PercyJacksonTitans.pdf';"
+      >
+        <img src="https://files.sobloxsy.com/TTC.png" />
+        <p>Percy Jackson & The Titans Curse</p>
+      </button>
+      <button
+        class="book"
+        title="Percy Jackson The Battle of the Labyrinth"
+        onclick="window.location.href='https://sobloxsy.com/books/PercyJacksonBattleOfTheLamb.pdf';"
+      >
+        <img src="https://files.sobloxsy.com/PJBOTL.png" />
+        <p>Percy Jackson The Battle of the Labyrinth</p>
+      </button>
+      <button
+        class="book"
+        title="Tuck Everlasting"
+        onclick="window.location.href='https://sobloxsy.com/books/TuckEverlasting.PDF';"
+      >
+        <img src="https://files.sobloxsy.com/TE.png" />
+        <p>Tuck Everlasting</p>
+      </button>
+    </div>
+  </body>
+</html>
 
-</head>
-<body>
-
-<img src="https://sobloxsy.com/books/susobloxsybooks.png" align="center" /><h1>Sobloxsy Book PDFs.</h1>
-
-<button onclick="window.location.href='https://sobloxsy.com/books/PercyJacksonTitans.pdf';">Percy Jackson Titans</button>
-<button  class="PJBOTL" onclick="window.location.href='https://sobloxsy.com/books/PercyJacksonBattleOfTheLamb.pdf';"><img src="https://files.sobloxsy.com/PJBOTL.png"><p></p></button>
-<button onclick="window.location.href='https://sobloxsy.com/books/TuckEverlasting.PDF';">Tuck Everlasting</button>
 
 </body>
 </html>
