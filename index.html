@@ -288,22 +288,7 @@ dl dd {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 941px) {
-  #view {
-    text-align: center;
-  }
-  .inner {
-    margin: 0 auto;
-    width: 768px;
-  }
-}
 
-@media only screen and (min-width: 942px) {
-  .inner {
-    margin: 0 auto;
-    width: 942px;
-  }
-}
 
 .video-player {
   border: 0.25rem solid rgba(0, 0, 0, 0.15);
@@ -318,41 +303,7 @@ dl dd {
   color: white;
   line-height: 1.5em;
 }
-/*
-  .intro-banner .intro-button {
-    border-radius: 4px;
-    background-color: white;
-    color: #4d97ff;
-    padding: .625rem .75rem;
-    font-size: 1rem;
-    margin-right: .75rem; }
-    .intro-banner .intro-button.create-button:before {
-      display: inline-block;
-      margin-right: .5rem;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      background-image: url("/svgs/intro/create.svg");
-      width: 1.5rem;
-      height: 1.5rem;
-      vertical-align: -.35rem;
-      content: ""; }
-    .intro-banner .intro-button.join-button:before {
-      display: inline-block;
-      margin-right: .5rem;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      background-image: url("/svgs/intro/join.svg");
-      width: 1.5rem;
-      height: 1.5rem;
-      vertical-align: -.35rem;
-      content: ""; }
-  .intro-banner .intro-subnav {
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    background-color: rgba(77, 151, 255, 0.1); } */
+
 .subnav-button {
   margin: 0.625rem 0.5rem;
   padding: 0.2rem 1rem;
@@ -395,7 +346,7 @@ dl dd {
   background-size: auto;
   background-repeat: no-repeat;
   background-position: right;
-  background-image: url("/svgs/intro/background-cropped.svg");
+  background-image: url("https://soboxsy.com/svgs/intro/background-cropped.svg");
 }
 
 /*
@@ -522,7 +473,6 @@ mess up vertical alignment */
 }
 .dropdown > li a {
   display: block;
-  padding: 0 10px;
 }
 .dropdown > li a:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -1106,19 +1056,7 @@ row to appear to contain overflow. */
   height: 50px;
   vertical-align: bottom;
 }
-#navigation .link > a {
-  display: block;
-  padding: 13px 15px 4px 15px;
-  height: 33px;
-  text-decoration: none;
-  white-space: nowrap;
-  color: white;
-  font-size: 0.85rem;
-  font-weight: bold;
-}
-#navigation .link > a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
+
 
 /*
     Frameless           <http://framelessgrid.com/>
@@ -2440,12 +2378,6 @@ row to appear to contain overflow. */
   font-size: 0.923em;
   font-weight: 800;
 }
-.thumbnail .thumbnail-title a {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 
 .thumbnail .thumbnail-creator,
 .thumbnail .thumbnail-loves,
@@ -3079,18 +3011,7 @@ row to appear to contain overflow. */
   padding: 12px 0;
   min-height: 53px;
 }
-.news li a {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  text-decoration: none;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
+
 .news li a:hover {
   text-decoration: none;
 }
@@ -3231,12 +3152,7 @@ row to appear to contain overflow. */
   padding: 0;
   font-weight: 200;
 }
-.welcome .welcome-col > a {
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 35px;
-  height: 100px;
-}
+
 .welcome .welcome-col h4:before,
 .welcome .welcome-col > a:after {
   display: block;
@@ -3851,6 +3767,10 @@ iframe {
   fill: #555557;
   background-color: transparent
 }
+
+.videoheader {
+  color: white
+}
 </style>
 </head>
 <body>
@@ -3872,11 +3792,11 @@ iframe {
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="stylesheet" href="/css/lib/normalize.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script async="" src="//www.google-analytics.com/analytics.js"></script
-  ><script src="/js/polyfill.min.js"></script>
+  <script async="" src="//www.google-analytics.com/analytics.js"></script>
+  <script src="/js/polyfill.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
   <body class="sus">
-     
     <div id="view">
       <div class="splash">
         <div class="title-banner intro-banner">
@@ -3893,13 +3813,12 @@ iframe {
             </div>
             <div class="flex-row intro-video-container">
               <div class="">
+                <h3 class="videoheader">Latest Video</h3>
                 <iframe
+                  id="youtube_video"
                   width="415"
                   height="200"
-                  src="https://www.youtube.com/embed/g9O2avhrqdE"
-                  title="YouTube video player"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
               </div>
@@ -3923,12 +3842,6 @@ iframe {
         style=" vertical-align: middle; margin: 0 20px;"
       ></div>
     </div>
-    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path
-        fill-opacity="1"
-        d="M0,32L34.3,48C68.6,64,137,96,206,96C274.3,96,343,64,411,80C480,96,549,160,617,181.3C685.7,203,754,181,823,144C891.4,107,960,53,1029,42.7C1097.1,32,1166,64,1234,85.3C1302.9,107,1371,117,1406,122.7L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
-      ></path>
-    </svg>
     <script src="/js/common.bundle.js"></script>
     <script src="/js/splash.intl.js"></script>
     <script src="/js/splash.bundle.js"></script>
@@ -3937,10 +3850,13 @@ iframe {
 
 
 <script>
-function ShowVid () {
-    var iframe = $("#forPostyouradd");
-    iframe.attr("src", iframe.data("src")); 
-}
+var channelID = "UCbd2LfnYMUxs5CXRrk3-cfw";
+var reqURL = "https://www.youtube.com/feeds/videos.xml?channel_id=";
+$.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL)+channelID, function(data) {
+   var link = data.items[0].link;
+   var id = link.substr(link.indexOf("=")+1);
+$("#youtube_video").attr("src","https://youtube.com/embed/"+id + "?controls=0&showinfo=0&rel=0");
+});
 //# sourceURL=userscript.js
 </script>
 </body>
