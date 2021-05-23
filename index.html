@@ -345,8 +345,8 @@ dl dd {
   background-color: #555557;
   background-size: auto;
   background-repeat: no-repeat;
-  background-position: right;
-  background-image: url("https://soboxsy.com/svgs/intro/background-cropped.svg");
+  background-position: 650px -60px;
+  background-image: url("https://files.sobloxsy.com/blobv2.svg");
 }
 
 /*
@@ -2270,7 +2270,7 @@ row to appear to contain overflow. */
   display: inline-block;
   border: 2px solid #d9d9d9;
   border-radius: 10px;
-  background-color: white;
+  background-color: rgb(53, 53, 53);
   width: 40;
   margin-bottom: 20px;
 }
@@ -2905,7 +2905,7 @@ row to appear to contain overflow. */
   position: absolute;
   bottom: 0.75rem;
   right: 10%;
-  background-image: url("https://files.sobloxsy.com/blob3.svg");
+  background-image: url("");
   background-repeat: no-repeat;
   width: 122px;
   height: 81px;
@@ -3764,12 +3764,18 @@ iframe {
 }
 
 .svg {
-  fill: #555557;
+  fill: #252525;
   background-color: transparent
 }
 
 .videoheader {
   color: white
+}
+
+.visual {
+margin-bottom: -10px; 
+height: auto;
+width: 100%;
 }
 </style>
 </head>
@@ -3837,10 +3843,15 @@ iframe {
           </div>
         </div>
       </div>
-      <div
-        class="box activity"
-        style=" vertical-align: middle; margin: 0 20px;"
-      ></div>
+      <svg id="visual" viewBox="0 0 900 200">
+        <path
+          d="M0 153L21.5 149C43 145 86 137 128.8 143.8C171.7 150.7 214.3 172.3 257.2 158.5C300 144.7 343 95.3 385.8 79.8C428.7 64.3 471.3 82.7 514.2 98.7C557 114.7 600 128.3 642.8 125.5C685.7 122.7 728.3 103.3 771.2 108.7C814 114 857 144 878.5 159L900 174L900 201L878.5 201C857 201 814 201 771.2 201C728.3 201 685.7 201 642.8 201C600 201 557 201 514.2 201C471.3 201 428.7 201 385.8 201C343 201 300 201 257.2 201C214.3 201 171.7 201 128.8 201C86 201 43 201 21.5 201L0 201Z"
+          fill="#252525"
+          stroke-linecap="round"
+          stroke-linejoin="miter"
+          style="transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0s;"
+        ></path>
+      </svg>
     </div>
     <script src="/js/common.bundle.js"></script>
     <script src="/js/splash.intl.js"></script>
