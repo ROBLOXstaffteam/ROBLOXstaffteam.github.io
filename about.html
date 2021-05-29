@@ -4,43 +4,6 @@
 <meta charset="UTF-8" />
 
 <style id="webmakerstyle">
-@media only screen and (max-width: 479px) {
-  #view {
-    text-align: center;
-  }
-  .inner {
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  #view {
-    text-align: center;
-  }
-  .inner {
-    margin: 0 auto;
-    width: 480px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 941px) {
-  #view {
-    text-align: center;
-  }
-  .inner {
-    margin: 0 auto;
-    width: 768px;
-  }
-}
-
-@media only screen and (min-width: 942px) {
-  .inner {
-    margin: 0 auto;
-    width: 942px;
-  }
-}
-
 /* Tags */
 html,
 body {
@@ -246,74 +209,6 @@ dl dd {
   margin-right: -0.25rem;
 }
 
-@media only screen and (max-width: 479px) {
-  #view {
-    text-align: center;
-  }
-  .inner {
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  #view {
-    text-align: center;
-  }
-  .inner {
-    margin: 0 auto;
-    width: 480px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 941px) {
-  #view {
-    text-align: center;
-  }
-  .inner {
-    margin: 0 auto;
-    width: 768px;
-  }
-}
-
-@media only screen and (min-width: 942px) {
-  .inner {
-    margin: 0 auto;
-    width: 942px;
-  }
-}
-
-.row label {
-  font-weight: 500;
-}
-
-.input {
-  transition: all 0.5s ease;
-  margin-bottom: 0.75rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  background-color: #fafafa;
-  padding: 0 1rem;
-  height: 3rem;
-  color: #575e75;
-  font-size: 0.875rem;
-  /* IE10/11-specific style resets */
-}
-.input:focus {
-  transition: all 0.5s ease;
-  outline: none;
-  border: 1px solid #4d97ff;
-}
-.input.fail {
-  border: 1px solid #ffab1a;
-}
-.input.pass {
-  border: 1px solid #0fbd8c;
-}
-.input::-ms-reveal,
-.input::-ms-clear {
-  display: none;
-}
 
 .row .required-symbol {
   display: none;
@@ -387,151 +282,10 @@ dl dd {
   }
 }
 
-.dropdown {
-  display: none;
-  position: absolute;
-  right: 0;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 5px 5px;
-  background-color: #4d97ff;
-  padding: 10px;
-  min-width: 9rem;
-  max-width: 16.25rem;
-  overflow: visible;
-  color: white;
-  font-size: 0.8125rem;
-  font-weight: normal;
-}
-.dropdown.staging {
-  background-color: #ffab1a;
-}
-.dropdown.open {
-  display: block;
-}
-.dropdown a:link,
-.dropdown a:visited,
-.dropdown a:active {
-  background-color: transparent;
-  color: white;
-}
-.dropdown input {
-  margin-bottom: 12px;
-  width: calc(100% - 30px);
-}
-.dropdown label {
-  display: block;
-  margin-bottom: 5px;
-}
-.dropdown > li {
-  display: block;
-  line-height: 30px;
-}
-.dropdown > li.divider {
-  margin-top: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-.dropdown > li a {
-  display: block;
-  padding: 0 10px;
-}
-.dropdown > li a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-}
-.dropdown.with-arrow {
-  margin-top: 14px;
-  border-radius: 5px;
-  overflow: visible;
-}
-.dropdown.with-arrow:before {
-  display: block;
-  position: absolute;
-  top: -7px;
-  right: 10%;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  background-color: #4d97ff;
-  width: 14px;
-  height: 14px;
-  content: "";
-}
 
-.studio-status-icon-spinner {
-  /* This class can be used on an icon that should spin.
-          It first plays the intro animation, then spins forever. */
-  -webkit-animation-name: intro, spin;
-  animation-name: intro, spin;
-  -webkit-animation-duration: 0.25s, 1s;
-  animation-duration: 0.25s, 1s;
-  -webkit-animation-timing-function: cubic-bezier(0.3, -3, 0.6, 3),
-    cubic-bezier(0.4, 0.1, 0.4, 1);
-  animation-timing-function: cubic-bezier(0.3, -3, 0.6, 3),
-    cubic-bezier(0.4, 0.1, 0.4, 1);
-  -webkit-animation-delay: 0s, 0.25s;
-  animation-delay: 0s, 0.25s;
-  -webkit-animation-iteration-count: 1, infinite;
-  animation-iteration-count: 1, infinite;
-  -webkit-animation-direction: normal;
-  animation-direction: normal;
-  width: 1.4rem;
-  /* standard is 1.4 rem but can be overwritten by parent */
-  height: 1.4rem;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-}
 
-@-webkit-keyframes intro {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
-@keyframes intro {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
 
 @media only screen and (max-width: 479px) {
   #view {
@@ -1947,6 +1701,11 @@ dl dd {
   font-weight: normal;
   font-style: normal;
 }
+
+.smile {
+width: 10%;
+margin-bottom: -6px;
+}
 </style>
 </head>
 <body>
@@ -1994,7 +1753,11 @@ dl dd {
       <div class="page">
         <div id="view">
           <div class="inner about">
-            <h1 ><span>About Sobloxsy LLC.</span></h1>
+            <h1 ><span>About Sobloxsy LLC. <img
+          class="smile"
+          src="https://files.sobloxsy.com/Iconlogo2.svg"
+      />
+		</span></h1>
             <div class="masthead">
               <div class="body">
                 <p><span>We make website parodies. For example: Google, Microsoft and Apple. We don't make parodies without credit.</span></p>
@@ -2020,7 +1783,6 @@ dl dd {
 
   </body>
 </html>
-
 
 </body>
 </html>
