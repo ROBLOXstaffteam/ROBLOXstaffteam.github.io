@@ -16,7 +16,7 @@
 
 .box .box-header {
   display: flex;
-  background-color: rgb(109, 109, 109);
+  background-color: 404042;
   color: rgb(173, 167, 167);
   width: auto;
   margin: 0 auto;
@@ -121,7 +121,7 @@ a {
   cursor: pointer;
   font-weight: bold;
   color: black;
-  padding-top: 5px; 
+  padding-top: 5px;
 }
 a:link,
 a:visited,
@@ -207,23 +207,33 @@ dl dd {
   border: 0;
   cursor: pointer;
   font-size: 0.8rem;
-
+  height: 40px;
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.15);
   color: white;
   transition-duration: 0.4s;
-  
+}
+
+.button > p {
+  color: white;
+  margin-top: 2%;
+  font-size: 0.8rem;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .big-button {
   width: 120px;
+  margin: 5px
 }
 
 .btntext {
   color: white !important;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1rem;
+ text-align: center;
 }
 .btntext:hover {
   color: grey;
@@ -232,7 +242,7 @@ dl dd {
   outline: none;
   background-color: rgba(0, 0, 0, 0.377);
 }
-.button.white { 
+.button.white {
   background-color: rgb(124, 50, 50);
   color: #4d97ff;
 }
@@ -289,8 +299,6 @@ dl dd {
   }
 }
 
-
-
 .video-player {
   border: 0.25rem solid rgba(0, 0, 0, 0.15);
   border-radius: 0.75rem;
@@ -305,37 +313,38 @@ dl dd {
   line-height: 1.5em;
 }
 
-.subnav-button {
-  margin: 0.625rem 0.5rem;
-  padding: 0.2rem 1rem;
-  border-radius: 1.5rem;
-  
+.sub-nav {
+  width: 25%;
 }
 
 @font-face {
-    font-family: 'gothambold';
-    src: url('https://files.sobloxsy.com/Gotham-Bold_1.eot');
-    src: url('https://files.sobloxsy.com/Gotham-Bold_1.eot?#iefix') format('embedded-opentype'),
-        url('https://files.sobloxsy.com/Gotham-Bold_1.woff2') format('woff2'),
-        url('https://files.sobloxsy.com/Gotham-Bold_1.woff') format('woff'),
-        url('https://files.sobloxsy.com/Gotham-Bold_1.ttf') format('truetype'),
-        url('https://files.sobloxsy.com/Gotham-Bold_1.svg#Gotham-Bold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: "gothambold";
+  src: url("https://files.sobloxsy.com/Gotham-Bold_1.eot");
+  src: url("https://files.sobloxsy.com/Gotham-Bold_1.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://files.sobloxsy.com/Gotham-Bold_1.woff2") format("woff2"),
+    url("https://files.sobloxsy.com/Gotham-Bold_1.woff") format("woff"),
+    url("https://files.sobloxsy.com/Gotham-Bold_1.ttf") format("truetype"),
+    url("https://files.sobloxsy.com/Gotham-Bold_1.svg#Gotham-Bold")
+      format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'GothamMedium';
-    src: url('https://files.sobloxsy.com/Gotham-Medium.eot');
-    src: url('https://files.sobloxsy.com/Gotham-Medium.eot?#iefix') format('embedded-opentype'),
-        url('https://files.sobloxsy.com/Gotham-Medium.woff2') format('woff2'),
-        url('https://files.sobloxsy.com/Gotham-Medium.woff') format('woff'),
-        url('https://files.sobloxsy.com/Gotham-Medium.ttf') format('truetype'),
-        url('https://files.sobloxsy.com/Gotham-Medium.svg#Gotham-Medium') format('svg');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: "GothamMedium";
+  src: url("https://files.sobloxsy.com/Gotham-Medium.eot");
+  src: url("https://files.sobloxsy.com/Gotham-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://files.sobloxsy.com/Gotham-Medium.woff2") format("woff2"),
+    url("https://files.sobloxsy.com/Gotham-Medium.woff") format("woff"),
+    url("https://files.sobloxsy.com/Gotham-Medium.ttf") format("truetype"),
+    url("https://files.sobloxsy.com/Gotham-Medium.svg#Gotham-Medium")
+      format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 /*blob */
@@ -1058,7 +1067,6 @@ row to appear to contain overflow. */
   height: 50px;
   vertical-align: bottom;
 }
-
 
 /*
     Frameless           <http://framelessgrid.com/>
@@ -2480,7 +2488,6 @@ row to appear to contain overflow. */
   outline: none;
 }
 
-
 .slick-slider .slick-track,
 .slick-slider .slick-list {
   -webkit-transform: translate3d(0, 0, 0);
@@ -2962,8 +2969,8 @@ row to appear to contain overflow. */
 }
 
 @media only screen and (max-width: 767px) {
-  .intro-buttons,
-  .intro-subnav {
+  .sub-nav,
+  .subnav {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -3751,7 +3758,7 @@ a.social-messages-profile-link:hover {
 #youtube_video {
   border-radius: 20px;
   border-width: 5px;
-  border-color: rgba(0, 0, 0, 0.50);
+  border-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -3768,29 +3775,31 @@ a.social-messages-profile-link:hover {
 
 .svg {
   fill: #252525;
-  background-color: transparent
+  background-color: transparent;
 }
 
 .videoheader {
-  color: white
+  color: white;
 }
 
 .visual {
-margin-bottom: -10px; 
-height: auto;
-width: 100%;
+  margin-bottom: -10px;
+  height: auto;
+  width: 100%;
 }
 
 #youtube_video {
-  box-shadow: 5px 6px 22px 11px rgba(0,0,0,0.26);
+  box-shadow: 5px 6px 22px 11px #00000042;
 }
 
-.intro-subnav {
-  background-color: rgb(53, 52, 52);
+.subnav {
+  background-color: #353434;
+  padding: .5rem 0rem;
+  box-shadow: 0 0 0 5px #00000026;
 }
 
 .ytp-title-link yt-uix-sessionlink {
-  font-family: gothammedium !important;
+  font-family: gothammedium, "Helvetica", Arial, sans-serif !important;
 }
 
 .icon {
@@ -3801,8 +3810,9 @@ width: 100%;
 }
 
 ::selection {
-  filter: invert(1)
+  filter: invert(1);
 }
+
 </style>
 </head>
 <body>
@@ -3817,7 +3827,10 @@ width: 100%;
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sobloxsy" />
   <meta property="og:description" content="This is the sobloxsy website." />
-  <meta property="og:image" content="https://files.sobloxsy.com/Iconlogo2.svg" />
+  <meta
+    property="og:image"
+    content="https://files.sobloxsy.com/Iconlogo2.svg"
+  />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="986" />
   <meta property="og:image:height" content="860" />
@@ -4077,16 +4090,16 @@ width: 100%;
               </div>
             </div>
           </div>
-          <div class="flex-row intro-subnav">
-            <a href="/about">
-              <div class="subnav-button button">About Us</div></a
-            >
-            <a href="/sitemap">
-              <div class="subnav-button button">Sitemap</div></a
-            >
-            <a href="/products/">
-              <div class="subnav-button button">Our Products</div></a
-            >
+          <div class="subnav">
+            <button class="button big-button sub-nav">
+              <a class="btntext" href="/about">About us</a>
+            </button>
+            <button class="button big-button sub-nav">
+              <a class="btntext" href="/sitemap">Sitemap</a>
+            </button>
+            <button class="button big-button sub-nav">
+              <a class="btntext" href="/products">Products</a>
+            </button>
           </div>
         </div>
       </div>
