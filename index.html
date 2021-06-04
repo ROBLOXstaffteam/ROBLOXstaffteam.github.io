@@ -55,7 +55,7 @@ html,
 body {
   display: block;
   margin: 0;
-  background-color: #404042;
+  background-color: #262525;
   padding: 0;
   color: #575e75;
   font-family: "gothammedium", "Helvetica", Arial, sans-serif;
@@ -100,11 +100,11 @@ p.callout {
   margin: 1.5em 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
-  background-color: rgba(77, 151, 255, 0.1);
+  background-color: #4d97ff1a;
   padding: 1.25em;
 }
 p.callout.orange {
-  background-color: rgba(244, 157, 37, 0.1);
+  background-color: #f49d251a;
 }
 
 p a {
@@ -162,7 +162,8 @@ p {
 }
 
 ::selection {
-  background-color: rgba(77, 151, 255, 0.25);
+  background-color: #4d97ff40;
+  filter: invert(1)
 }
 
 ol,
@@ -226,14 +227,14 @@ dl dd {
 
 .big-button {
   width: 120px;
-  margin: 5px
+  margin: 5px;
 }
 
 .btntext {
   color: white !important;
   text-decoration: none;
   font-size: 1rem;
- text-align: center;
+  text-align: center;
 }
 .btntext:hover {
   color: grey;
@@ -2968,13 +2969,11 @@ row to appear to contain overflow. */
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .sub-nav,
-  .subnav {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
+.sub-nav,
+.subnav {
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 @media only screen and (max-width: 479px) {
@@ -3794,8 +3793,11 @@ a.social-messages-profile-link:hover {
 
 .subnav {
   background-color: #353434;
-  padding: .5rem 0rem;
+  padding: 0.5rem 0rem;
   box-shadow: 0 0 0 5px #00000026;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .ytp-title-link yt-uix-sessionlink {
