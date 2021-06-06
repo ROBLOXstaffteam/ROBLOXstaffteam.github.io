@@ -89,11 +89,31 @@ a {
 }
 
 .hold {
-  display: inline-grid;
-  grid-template-columns: auto auto auto auto;
-  padding: 10px;
+  display: grid;
+  place-items: center;
   margin-left: 10px;
   margin-right: 10px;
+  grid-template-columns: auto auto auto auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hold {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .hold {
+
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hold {
+
+    grid-template-columns: auto;
+  }
 }
 
 .smile {
@@ -150,6 +170,6 @@ a {
   </a>
 </div>
 
-
+ 
 </body>
 </html>
