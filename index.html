@@ -315,7 +315,7 @@ dl dd {
 }
 
 .sub-nav {
-  width: 25%;
+  width: 90%;
 }
 
 @font-face {
@@ -2969,8 +2969,7 @@ row to appear to contain overflow. */
   }
 }
 
-.sub-nav,
-.subnav {
+.sub-nav {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -3795,9 +3794,9 @@ a.social-messages-profile-link:hover {
   background-color: #353434;
   padding: 0.5rem 0rem;
   box-shadow: 0 0 0 5px #00000026;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  display: grid;
+  place-items: center;
+  grid-template-columns:  auto auto auto;
 }
 
 .ytp-title-link yt-uix-sessionlink {
@@ -3840,8 +3839,6 @@ a.social-messages-profile-link:hover {
   <link rel="stylesheet" href="/css/lib/normalize.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script async="" src="//www.google-analytics.com/analytics.js"></script>
-  <script src="/js/polyfill.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script
     data-ad-client="ca-pub-5751343033961763"
     async
@@ -4106,9 +4103,6 @@ a.social-messages-profile-link:hover {
         </div>
       </div>
     </div>
-    <script src="/js/common.bundle.js"></script>
-    <script src="/js/splash.intl.js"></script>
-    <script src="/js/splash.bundle.js"></script>
   </body>
 </html>
 
