@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,7 @@
 
 .box .box-header {
   display: flex;
-  background-color: 404042;
+  background-color: rgb(109, 109, 109);
   color: rgb(173, 167, 167);
   width: auto;
   margin: 0 auto;
@@ -55,7 +56,7 @@ html,
 body {
   display: block;
   margin: 0;
-  background-color: #262525;
+  background-color: #404042;
   padding: 0;
   color: #575e75;
   font-family: "gothammedium", "Helvetica", Arial, sans-serif;
@@ -100,11 +101,11 @@ p.callout {
   margin: 1.5em 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
-  background-color: #4d97ff1a;
+  background-color: rgba(77, 151, 255, 0.1);
   padding: 1.25em;
 }
 p.callout.orange {
-  background-color: #f49d251a;
+  background-color: rgba(244, 157, 37, 0.1);
 }
 
 p a {
@@ -121,7 +122,7 @@ a {
   cursor: pointer;
   font-weight: bold;
   color: black;
-  padding-top: 5px;
+  padding-top: 5px; 
 }
 a:link,
 a:visited,
@@ -162,8 +163,7 @@ p {
 }
 
 ::selection {
-  background-color: #4d97ff40;
-  filter: invert(1)
+  background-color: rgba(77, 151, 255, 0.25);
 }
 
 ol,
@@ -204,37 +204,27 @@ dl dd {
 .intro-button,
 .create-button {
   display: inline-block;
-  margin: 0.5em 0;
+  margin: 0.5em 0.5rem;
   border: 0;
   cursor: pointer;
   font-size: 0.8rem;
-  height: 40px;
+height: 40px;
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.15);
   color: white;
   transition-duration: 0.4s;
-}
-
-.button > p {
-  color: white;
-  margin-top: 2%;
-  font-size: 0.8rem;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
+  
 }
 
 .big-button {
   width: 120px;
-  margin: 5px;
 }
 
 .btntext {
   color: white !important;
   text-decoration: none;
-  font-size: 1rem;
-  text-align: center;
+  font-size: 20px;
 }
 .btntext:hover {
   color: grey;
@@ -243,7 +233,7 @@ dl dd {
   outline: none;
   background-color: rgba(0, 0, 0, 0.377);
 }
-.button.white {
+.button.white { 
   background-color: rgb(124, 50, 50);
   color: #4d97ff;
 }
@@ -300,6 +290,8 @@ dl dd {
   }
 }
 
+
+
 .video-player {
   border: 0.25rem solid rgba(0, 0, 0, 0.15);
   border-radius: 0.75rem;
@@ -314,38 +306,32 @@ dl dd {
   line-height: 1.5em;
 }
 
-.sub-nav {
-  width: 90%;
+
+
+@font-face {
+    font-family: 'gothambold';
+    src: url('https://files.sobloxsy.com/Gotham-Bold_1.eot');
+    src: url('https://files.sobloxsy.com/Gotham-Bold_1.eot?#iefix') format('embedded-opentype'),
+        url('https://files.sobloxsy.com/Gotham-Bold_1.woff2') format('woff2'),
+        url('https://files.sobloxsy.com/Gotham-Bold_1.woff') format('woff'),
+        url('https://files.sobloxsy.com/Gotham-Bold_1.ttf') format('truetype'),
+        url('https://files.sobloxsy.com/Gotham-Bold_1.svg#Gotham-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "gothambold";
-  src: url("https://files.sobloxsy.com/Gotham-Bold_1.eot");
-  src: url("https://files.sobloxsy.com/Gotham-Bold_1.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://files.sobloxsy.com/Gotham-Bold_1.woff2") format("woff2"),
-    url("https://files.sobloxsy.com/Gotham-Bold_1.woff") format("woff"),
-    url("https://files.sobloxsy.com/Gotham-Bold_1.ttf") format("truetype"),
-    url("https://files.sobloxsy.com/Gotham-Bold_1.svg#Gotham-Bold")
-      format("svg");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "GothamMedium";
-  src: url("https://files.sobloxsy.com/Gotham-Medium.eot");
-  src: url("https://files.sobloxsy.com/Gotham-Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://files.sobloxsy.com/Gotham-Medium.woff2") format("woff2"),
-    url("https://files.sobloxsy.com/Gotham-Medium.woff") format("woff"),
-    url("https://files.sobloxsy.com/Gotham-Medium.ttf") format("truetype"),
-    url("https://files.sobloxsy.com/Gotham-Medium.svg#Gotham-Medium")
-      format("svg");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'GothamMedium';
+    src: url('https://files.sobloxsy.com/Gotham-Medium.eot');
+    src: url('https://files.sobloxsy.com/Gotham-Medium.eot?#iefix') format('embedded-opentype'),
+        url('https://files.sobloxsy.com/Gotham-Medium.woff2') format('woff2'),
+        url('https://files.sobloxsy.com/Gotham-Medium.woff') format('woff'),
+        url('https://files.sobloxsy.com/Gotham-Medium.ttf') format('truetype'),
+        url('https://files.sobloxsy.com/Gotham-Medium.svg#Gotham-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 /*blob */
@@ -1068,6 +1054,7 @@ row to appear to contain overflow. */
   height: 50px;
   vertical-align: bottom;
 }
+
 
 /*
     Frameless           <http://framelessgrid.com/>
@@ -2489,6 +2476,7 @@ row to appear to contain overflow. */
   outline: none;
 }
 
+
 .slick-slider .slick-track,
 .slick-slider .slick-list {
   -webkit-transform: translate3d(0, 0, 0);
@@ -2969,10 +2957,13 @@ row to appear to contain overflow. */
   }
 }
 
-.sub-nav {
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+@media only screen and (max-width: 767px) {
+  .intro-buttons,
+  .intro-subnav {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
 }
 
 @media only screen and (max-width: 479px) {
@@ -3756,7 +3747,7 @@ a.social-messages-profile-link:hover {
 #youtube_video {
   border-radius: 20px;
   border-width: 5px;
-  border-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 0, 0, 0.50);
   box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -3773,34 +3764,29 @@ a.social-messages-profile-link:hover {
 
 .svg {
   fill: #252525;
-  background-color: transparent;
+  background-color: transparent
 }
 
 .videoheader {
-  color: white;
+  color: white
 }
 
 .visual {
-  margin-bottom: -10px;
-  height: auto;
-  width: 100%;
+margin-bottom: -10px; 
+height: auto;
+width: 100%;
 }
 
 #youtube_video {
-  box-shadow: 5px 6px 22px 11px #00000042;
+  box-shadow: 5px 6px 22px 11px rgba(0,0,0,0.26);
 }
 
-.subnav {
-  background-color: #353434;
-  padding: 0.5rem 0rem;
-  box-shadow: 0 0 0 5px #00000026;
-  display: grid;
-  place-items: center;
-  grid-template-columns:  auto auto auto;
+.intro-subnav {
+  background-color: rgb(53, 52, 52);
 }
 
 .ytp-title-link yt-uix-sessionlink {
-  font-family: gothammedium, "Helvetica", Arial, sans-serif !important;
+  font-family: gothammedium !important;
 }
 
 .icon {
@@ -3811,9 +3797,8 @@ a.social-messages-profile-link:hover {
 }
 
 ::selection {
-  filter: invert(1);
+  filter: invert(1)
 }
-
 </style>
 </head>
 <body>
@@ -3839,6 +3824,8 @@ a.social-messages-profile-link:hover {
   <link rel="stylesheet" href="/css/lib/normalize.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script async="" src="//www.google-analytics.com/analytics.js"></script>
+  <script src="/js/polyfill.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script
     data-ad-client="ca-pub-5751343033961763"
     async
@@ -4072,7 +4059,10 @@ a.social-messages-profile-link:hover {
               </h1>
               <div class="flex-row intro-buttons">
                 <button class="button big-button">
-                  <a class="btntext" href="/create">Create</a>
+                  <a class="btntext" href="https://create.sobloxsy.com">Create</a>
+                </button>
+				                <button class="button big-button">
+                  <a class="btntext" href="https://socoolgames.sobloxsy.com">Games</a>
                 </button>
               </div>
             </div>
@@ -4090,19 +4080,63 @@ a.social-messages-profile-link:hover {
             </div>
           </div>
           <div class="subnav">
-            <button class="button big-button sub-nav">
-              <a class="btntext" href="/about">About us</a>
-            </button>
-            <button class="button big-button sub-nav">
-              <a class="btntext" href="/sitemap">Sitemap</a>
-            </button>
-            <button class="button big-button sub-nav">
-              <a class="btntext" href="/products">Products</a>
-            </button>
+            <a href="/subnav" class="suba"
+              ><button class="subb">About us</button></a
+            >
+
+            <a href="/sitemap" class="suba"
+              ><button class="subb">Sitemap</button></a
+            >
+
+            <a href="/products" class="suba"
+              ><button class="subb">Products</button></a
+            >
           </div>
+
+          <style>
+
+
+                     body {
+                       margin: 0;
+                     }
+
+                       .subnav {
+                         background-color: #353434;
+                         padding: 0.5rem 0rem;
+                         box-shadow: 0 0 0 5px #00000026;
+                         display: grid;
+                         place-items: center;
+                         grid-template-columns: auto auto auto;
+                         margin: 0;
+                       }
+
+            .suba {width: 90%;}
+
+
+
+                       .subb {
+                         width: 100%;
+                         padding: 5px;
+                         margin: 0.5em 0;
+                         border: 0;
+                         cursor: pointer;
+                         font-size: 0.8rem;
+                         height: 40px;
+                         border-radius: 50px;
+                         background-color: rgba(0, 0, 0, 0.15);
+                         box-shadow: 0 0 0 5px rgb(0 0 0 / 15%);
+                         color: white;
+                         transition-duration: 0.4s;
+                         font-family: "GothamMedium";
+                         font-size: 100%;
+                       }
+          </style>
         </div>
       </div>
     </div>
+    <script src="/js/common.bundle.js"></script>
+    <script src="/js/splash.intl.js"></script>
+    <script src="/js/splash.bundle.js"></script>
   </body>
 </html>
 
